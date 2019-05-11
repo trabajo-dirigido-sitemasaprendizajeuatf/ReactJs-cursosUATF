@@ -1,0 +1,53 @@
+*{
+    border: 0;
+    padding: 0;
+}
+
+#sidebar{
+    
+    position: absolute;
+    width: 240px;
+    height: 100vh;
+    background: #FFFFFF;
+    left: -240px;
+    transition: all 500ms linear;
+}
+
+#sidebar.active{
+    left: 0;
+}
+#sidebar ul li{
+    color: #ffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid;
+}
+
+.sub-menu ul li{
+    text-decoration: none;
+    border: 0px;
+    padding: 0px  0px !important;
+    /* background: black; */
+    border-bottom: 0px solid !important;
+}
+.sub-menu ul li:hover{
+    text-decoration: none;
+    background: rgba(95, 94, 94, 0.267);
+    
+}
+.sub-menu ul li a{
+    color:#686F7A;
+    
+}
+#toggle-btn-navar i{
+    margin-right: 10px;
+}
+
+/* #sidebar .toogle-btn{
+    position: absolute;
+    left: 240px;
+} */
+
+
+    
