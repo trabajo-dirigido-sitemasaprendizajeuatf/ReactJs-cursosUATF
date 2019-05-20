@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+// import 'jquery'
+import $ from 'jquery'
 
 import Config from '../../config'
 
@@ -60,15 +62,20 @@ class Signin extends Component{
                             //Asignando al localStorage el token al momento del login-------npm startdfgdfg
                             console.log(res.token);
                             localStorage.setItem('token',res.token)
-                            this.props.updateToken2();    ////--->>> funcion que recibe del padre como parametro
+                            localStorage.setItem('id',res.id)
+                            this.props.updateToken2(res.name, res.email, res.role);    ////--->>> funcion que recibe del padre como parametro
 
                             console.log('Inicio de session adecuado')
                             this.setState({
                                 loginok:'incio de sesion correcto',
                                 error:'',
-                                campos:''
-                            })
+                                campos:'',
+                                email:'',
+                                password:'',
 
+                            })
+                            //codigo de jquery  cerrar modal signin
+                            
                         }
                     })
         }else{
@@ -143,7 +150,7 @@ class Signin extends Component{
 
                         <div className="modal-body mx-3">
                             <div className="md-form mb-5">
-                            <input value={this.state.email} onChange={this.onChange.bind(this)} name="email" type="email" id="defaultForm-email" className="form-control validate" placeholder="Introduzca su correo electronico"></input>
+                            <input value={this.state.email} onChange={this.onChange.bind(this)} name="email" type="text" id="defaultForm-email" className="form-control validate" placeholder="Introduzca su correo electronico"></input>
                             </div>
 
                             <div className="md-form mb-4">

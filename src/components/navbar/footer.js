@@ -66,8 +66,8 @@ class Footer extends Component{
 
             </div>
         
-            <div className="footer-copyright text-center text-dark py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/education/bootstrap/"> Ingenieria de Sistemas</a>
+            <div className="footer-copyright text-center text-dark py-3">© 2019 Copyright:Carrera Ingenieria de Sistemas
+            {/* <a href="https://mdbootstrap.com/education/bootstrap/"> Ingenieria de Sistemas</a> */}
             </div>
             
 

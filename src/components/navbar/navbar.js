@@ -9,16 +9,21 @@ import './navbar.css'
 import './barraLateral/main.css'
 import './barraLateral/main.js'
 
+// img's  
 import iconSistem from '../img/sistemas.jpg'
+import avatarImg from '../img/avatar.jpg'
+
 class Navbar extends Component{
 
     constructor(props){
         super(props)
             this.state={
-               token:''
+               tokenNav:'',
+
             }
             
-            
+            this.closeUser=this.closeUser.bind(this);
+            this.initialName=this.initialName.bind(this);
     }
 
     selecNavbar(){
@@ -30,7 +35,28 @@ class Navbar extends Component{
         }
     }
 
+    closeUser(e){
+
+        e.preventDefault()
+        localStorage.token="";
+        localStorage.id="";
+        
+        this.props.cerrarSesion()
+        
+
+    }
     
+    initialName(e){
+
+        var name=this.props.name;
+        var nameIncial=name.substr(0,1)
+        var nameInicialCapitalice=nameIncial.toUpperCase();
+
+        return(
+            <li>{nameInicialCapitalice}</li>
+        )
+        
+    }
 
     render(){
         // console.log(faker.internet.email())
@@ -111,25 +137,29 @@ class Navbar extends Component{
                         {
                             this.props.token ? 
                                 <li class="nav-item avatar dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                                    <a  class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     {/* "https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" */}
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0" alt="avatar image" height="38"></img>
-                                   
+                                    {/* <img  src={ avatarImg } class="rounded-circle z-depth-0" alt="avatar image" height="38"></img> */}
+                                    <div className="user-avatar" style={{backgroundColor: `${faker.internet.color()}`}}>
+                                    
+                                        <span className="user-initial">{this.initialName()} </span>
+                                    </div>
                                     
                                    
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
                                     aria-labelledby="navbarDropdownMenuLink-55">
-
+                                    <a class="dropdown-item" href="#">{this.props.email? this.props.email:this.props.name}</a>
                                     <Link className="nav-link" to="/signin" data-toggle="modal" data-target="#modalLoginForm">Signin</Link>
                                 
                                     <Link className="nav-link" to="/signup" data-toggle="modal" data-target="#modalRegisterForm">Signup</Link>
                                     
+                                    
                                     <a class="dropdown-item" href="#">Mi cuenta</a>
                                     <a class="dropdown-item" href="#">Cursos agregados</a>
                                     <a class="dropdown-item" href="#">My account</a>
-                                    <a class="dropdown-item" href="#">Cerrar sesión</a>
+                                    <a class="dropdown-item" href="#" onClick={this.closeUser}>Cerrar sesión</a>
                                     </div>
                                 </li>
                             : <td>
