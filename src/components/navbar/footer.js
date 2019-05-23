@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 class Footer extends Component{
     render(){
         return(
-            <footer className="page-footer font-small white pt-4">
+            <footer className="page-footer font-small white pt-4 ">
 
             <div className="container-fluid text-center text-md-left text-dark">
             

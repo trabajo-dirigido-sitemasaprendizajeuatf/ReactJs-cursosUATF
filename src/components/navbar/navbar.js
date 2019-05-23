@@ -65,11 +65,11 @@ class Navbar extends Component{
            
            <div>
             {/* <h1 style={{backgroundColor: `${faker.internet.color()}`}}>FAKER</h1> */}
-
-            <nav className="navbar navbar-expand-lg navbar-light bg-white">
+            {/* fixed-top */}
+            <nav className="navbar navbar-expand-lg navbar-light bg-white ">
             {/*  */}
-            <a class="navbar-brand" href="#">
-                <img src={iconSistem} height="45" alt="mdb logo"></img>
+            <a class="navbar-brand " href="#">
+                <img src={iconSistem} height="45" alt="mdb logo" className="animated jello slow infinite"></img>
             </a>
                 <a className="navbar-brand" href="#" id="toggle-btn-navar"><i class="fas fa-braille"></i>Categorias   </a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -143,7 +143,7 @@ class Navbar extends Component{
                                     {/* <img  src={ avatarImg } class="rounded-circle z-depth-0" alt="avatar image" height="38"></img> */}
                                     <div className="user-avatar" style={{backgroundColor: `${faker.internet.color()}`}}>
                                     
-                                        <span className="user-initial">{this.initialName()} </span>
+                                        <span className="user-initial">{this.initialName()===''? this.initialName():'@'} </span>
                                     </div>
                                     
                                    
@@ -185,10 +185,10 @@ class Navbar extends Component{
 
 {/* :::::::::::::::::::::::::::::::::::::BARRA LAETARL:::::::::::::::::::::::::::::::::::::::::::: */}
         
-            <div>
+            <div >
 
 
-                <div id="sidebar">
+                <div id="sidebar" >
                     
                         
                 
