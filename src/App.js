@@ -7,6 +7,9 @@ import Footer from './components/navbar/footer'
 import Signin from './components/login/signin'
 import Signup from './components/login/signup'
 import UrlApi from './config'
+// body
+import Body from '../src/components/boby/body'
+
 
 // pruebas
 import PEstados from './pruebas/estado'
@@ -101,9 +104,11 @@ class App extends Component {
         {/* <Route exact path="/signup" render={()=><Signup onClickF={this.asignarUsuarioState}/>}/> */}
         {/* <PEstados/> */}
       
-          <Signin token={ this.state.token} updateToken2={this.updateToken }/>
-
+        <Body/>
+          <Formulario/>
+          
         </header>
+        <Signin token={ this.state.token} updateToken2={this.updateToken }/>
         <Footer/>
       </div>
       </Router>

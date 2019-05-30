@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './login.css'
 
 import Config from '../../config'
 class Signup extends Component{

@@ -1,10 +1,11 @@
+/* ::::::::::::::  barra lateral */
 *{
     border: 0;
     padding: 0;
 }
 
 #sidebar{
-    
+    top: 70px;
     position: absolute;
     width: 240px;
     height: 100vh;
@@ -14,7 +15,9 @@
 }
 
 #sidebar.active{
+    top: 70px;
     left: 0;
+    position: fixed;
 }
 #sidebar ul li{
     color: #ffff;
@@ -49,5 +52,11 @@
     left: 240px;
 } */
 
+
+/* sobrepo---- */
+.menu-containner{
+    z-index: 1000;
+    position: fixed;
+}
 
     

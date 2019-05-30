@@ -39,7 +39,7 @@ class Formulario extends Component{
         
         return( 
             <div>
-                formulario 
+                    <video src="http://localhost:3007/video/VIDEO_1558878641494.MP4" autoPlay></video>
             </div>
         )
     }

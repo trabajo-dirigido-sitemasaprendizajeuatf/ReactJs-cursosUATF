@@ -14,3 +14,16 @@ function main(){
 
 }
 
+//btn-menu-navbar  --> ocualta la barra laateral
+$(document).ready(()=>{
+    $('#btn-menu-navbar').on('click',()=>{
+        var active=document.getElementById('sidebar')
+        
+
+        if($('#sidebar').hasClass('active')){
+            $('#sidebar').removeClass('active')
+        }
+    })
+    
+});
+
