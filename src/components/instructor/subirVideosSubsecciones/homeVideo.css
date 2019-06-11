@@ -1,0 +1,17 @@
+.container-video{
+    border:0px;
+    /* background-color: darkblue; */
+    padding-left: 2%;
+    padding-right: 2%;
+    min-height:500px;
+
+}
+
+.container-form{
+    padding-left: 5%;
+    padding-right: 5%;
+    -webkit-box-shadow: 0px 4px 19px 12px rgba(89,89,89,0.51);
+    -moz-box-shadow: 0px 4px 19px 12px rgba(89,89,89,0.51);
+    box-shadow: 0px 4px 19px 12px rgba(89,89,89,0.51);
+    
+}

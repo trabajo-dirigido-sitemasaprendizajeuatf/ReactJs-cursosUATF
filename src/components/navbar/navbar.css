@@ -6,7 +6,12 @@
 /* imag avatar */
 
 .user-avatar {
-    padding: 8px 15px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
     float: left;
     /* width: 2px; */
     color: #ffffff;
@@ -25,3 +30,7 @@
 }
 
 /* footer */
+
+.user-initial{
+    font-size: 20px;
+}

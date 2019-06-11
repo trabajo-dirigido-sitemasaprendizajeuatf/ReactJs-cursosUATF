@@ -1,0 +1,43 @@
+
+/* banner */
+.bannser-sections{
+    color: #FFFFFF;
+    text-align:  left;
+    background: #29303B;
+    width: 100%;
+    min-height: 100px;
+}
+
+#content{
+    padding-left:   5%;
+    padding-right: 40%;
+    padding-top: 1%;  
+    
+}
+#content h1,h2,h5{
+    text-transform: uppercase;
+}
+
+/* card content */
+#card-content{
+    position: fixed;
+    right: 1%;
+    z-index: 1;
+    width: 30%;
+    margin-right: 3%;
+    margin-top: 2%;
+    padding: 1px;
+}
+
+
+
+/* container acordion */
+.container-acordion{
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 64%;
+}
+
+.container-crear-seccion{
+    margin: 0 auto;
+}

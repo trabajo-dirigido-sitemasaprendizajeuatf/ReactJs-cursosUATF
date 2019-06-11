@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route }  from "react-router-dom"
+import { Router, Route }  from "react-router-dom"
+
+
 
 import './App.css';
 import Navbar from './components/navbar/navbar'
@@ -10,7 +12,22 @@ import UrlApi from './config'
 // body
 import Body from '../src/components/boby/body'
 
+//home instructor
+import Home from '../src/components/instructor/crearCurso/home'
+import CreateCourse from '../src/components/instructor/crearCurso/crearCurso'
 
+//crear seccion
+import CrearSeccion from '../src/components/instructor/CrearSeccion/CrearSeccion'
+
+//detale del curso
+import DetalleCurso from '../src/components/Students/DetalleCurso'
+import SubirPoster from './components/instructor/crearCurso/subirPoster'
+
+import HomeVide from './components/instructor/subirVideosSubsecciones/homeVideo'
+import NuevaSeccion from './components/instructor/CrearSeccion/nuevaSeccion'
+
+// history
+import History from './components/utils/history'
 // pruebas
 import PEstados from './pruebas/estado'
 import Formulario from './pruebas/formulario'
@@ -79,9 +96,6 @@ class App extends Component {
         .catch(err=>{
           console.log(err)
         })
-        
-        
-        
     }
 
 
@@ -91,11 +105,11 @@ class App extends Component {
     // console.log(this.state)
 
     return (
-      <Router>
+      <Router history={History}>
       <div className="App">
       {/* <Navbarprueba/> */}
       <Navbar token={ this.state.token }  cerrarSesion={this.cerrarSesion} 
-      name={this.state.nameUser} email={this.state.emailUser} id={this.state.idUser} /> 
+      name={this.state.nameUser} email={this.state.emailUser} id={this.state.idUser} role={this.state.role} /> 
         
         <header className="App-header">
          
@@ -104,10 +118,21 @@ class App extends Component {
         {/* <Route exact path="/signup" render={()=><Signup onClickF={this.asignarUsuarioState}/>}/> */}
         {/* <PEstados/> */}
       
-        <Body/>
-          <Formulario/>
+        <Route exact path="/instructor" render={()=><Home onClickF={this.asignarUsuarioState}/>}/>
+        <Route exact path="/" render={()=><Body onClickF={this.asignarUsuarioState}/>}/>
+        <Route exact path="/createcourse" render={()=><CreateCourse onClickF={this.asignarUsuarioState}/>} />
+        <Route exact path="/subirposter" render={()=><SubirPoster onClickF={this.asignarUsuarioState}/>} />
+
+        <Route exact  path="/seccions/:id" component={CrearSeccion}/>
+        <Route exact path="/seccions/addseccion/:n/:id" component={NuevaSeccion}  />
+
+        <Route  path="/DetalleCurso/:id"  component={DetalleCurso} />
+        <Route  path="/homevide/:id" component={HomeVide}/>
+        {/* <Body/> */}
+          {/* <Formulario/> */}
           
         </header>
+
         <Signin token={ this.state.token} updateToken2={this.updateToken }/>
         <Footer/>
       </div>

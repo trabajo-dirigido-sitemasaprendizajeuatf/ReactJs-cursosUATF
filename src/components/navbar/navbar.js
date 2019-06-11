@@ -9,6 +9,9 @@ import './navbar.css'
 import './barraLateral/main.css'
 import './barraLateral/main.js'
 
+// Home instructor
+import Home from '../instructor/crearCurso/home'
+
 // img's  
 import iconSistem from '../img/sistemas.jpg'
 import avatarImg from '../img/avatar.jpg'
@@ -60,6 +63,9 @@ class Navbar extends Component{
 
     render(){
         // console.log(faker.internet.email())
+        console.log(this.props);
+        console.log('ñññññññññ')
+        
         return(
            
            
@@ -68,8 +74,8 @@ class Navbar extends Component{
             {/* fixed-top */}
             <nav className="navbar navbar-expand-lg navbar-light bg-white  ">
             {/*  */}
-            <a class="navbar-brand " href="#">
-                <img src={iconSistem} height="45" alt="mdb logo" className="animated jello slow infinite"></img>
+            <a class="navbar-brand ">
+              <Link to="/">  <img src={iconSistem} height="45" alt="mdb logo" className="animated jello slow infinite "></img></Link>
             </a>
                 <a className="navbar-brand" href="#" id="toggle-btn-navar"><i class="fas fa-braille"></i>Categorias   </a>
                 <button id="btn-menu-navbar" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,13 +123,17 @@ class Navbar extends Component{
                     </form>
 
                     <ul class="navbar-nav ml-auto nav-flex-icons">
+                        {
+                            this.props.role==='teacher'? <li class="nav-item">
+                                <a >
+                                <i></i> <Link className="nav-link" to="/instructor">Instructor</Link>
+                                <span class="sr-only">(current)</span>
+                                </a>
+                                </li>
+                                :''
+                        }
                         
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <i></i> Instructor
-                            <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                             <i></i> Mis cursos</a>
@@ -151,6 +161,7 @@ class Navbar extends Component{
                                     <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
                                     aria-labelledby="navbarDropdownMenuLink-55">
                                     <a class="dropdown-item" href="#">{this.props.email? this.props.email:this.props.name}</a>
+                                   
                                     <Link className="nav-link" to="/signin" data-toggle="modal" data-target="#modalLoginForm">Signin</Link>
                                 
                                     <Link className="nav-link" to="/signup" data-toggle="modal" data-target="#modalRegisterForm">Signup</Link>
@@ -176,7 +187,7 @@ class Navbar extends Component{
                         }
                         
                     </ul>
-
+                    
                     <Signup/>
                     {/* <Signin/> */}
 
