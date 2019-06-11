@@ -15,6 +15,15 @@ export default class HomeVidel extends Component{
     }
 
 
+    dataparent(ojbCurso){
+        console.log('parent');
+        
+            console.log(ojbCurso);
+            
+    }
+
+    
+
     render(){
         const {history} =this.props
         return(
@@ -33,7 +42,7 @@ export default class HomeVidel extends Component{
                     <div class="col-12">
                     <FormAddVideo 
                         IDseccion={this.state.idSeccion}
-
+                        dataparent={this.dataparent}
                     />
                     </div>
                     <div class="col-12 bg-primary">

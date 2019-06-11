@@ -63,7 +63,7 @@ class Home extends Component{
 
                         <div class="view overlay">
                         <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>
-                        <Link  to={`/seccions/${data._id}`} id={data._id} >
+                        <Link  to={`/seccions/${data._id}`} >
                             <div class="mask rgba-white-slight"></div>
                         </Link>
                         </div>
