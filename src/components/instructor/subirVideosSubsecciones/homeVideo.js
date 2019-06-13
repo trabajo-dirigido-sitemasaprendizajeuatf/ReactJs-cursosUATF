@@ -28,12 +28,11 @@ export default class HomeVidel extends Component{
         const {history} =this.props
         return(
             <div>
+            <a class="btn-floating btn-lg btn-default"><i class="far fa-arrow-alt-circle-left "></i></a>
             <button onClick={()=>history.goBack()} className="btn-lg" ><i class="far fa-arrow-alt-circle-left "></i></button>
 
-                <th>
                     <p>  Home video </p>
                     {this.props.match.params.id}
-                </th>
 
                 <div class="container-video" >
                <div className="row">

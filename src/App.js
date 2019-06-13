@@ -25,7 +25,8 @@ import SubirPoster from './components/instructor/crearCurso/subirPoster'
 
 import HomeVide from './components/instructor/subirVideosSubsecciones/homeVideo'
 import NuevaSeccion from './components/instructor/CrearSeccion/nuevaSeccion'
-
+import TomarCursoPLayer from './components/Students/TomarElcursoPlay'
+import PlayVideo from './components/Students/PlayVideStudent/videoReact'
 // history
 import History from './components/utils/history'
 // pruebas
@@ -122,6 +123,9 @@ class App extends Component {
         <Route exact path="/" render={()=><Body onClickF={this.asignarUsuarioState}/>}/>
         <Route exact path="/createcourse" render={()=><CreateCourse onClickF={this.asignarUsuarioState}/>} />
         <Route exact path="/subirposter" render={()=><SubirPoster onClickF={this.asignarUsuarioState}/>} />
+
+        <Route exact path="/playerCourse/:id" component={TomarCursoPLayer} />
+        <Route  exact path="/playerCourse/idvideo/:id" component={PlayVideo} />
 
         <Route exact  path="/seccions/:id" component={CrearSeccion}/>
         <Route exact path="/seccions/addseccion/:n/:id" component={NuevaSeccion}  />

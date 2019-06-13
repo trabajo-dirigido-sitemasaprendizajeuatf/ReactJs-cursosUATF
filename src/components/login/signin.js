@@ -131,7 +131,7 @@ class Signin extends Component{
         return(
             
             <div>
-             <form onSubmit={this.send} className="text-center border border-light p-5">
+             <form onSubmit={this.send} className="text-center border border-light">
                  {/* class="modal fade" */}
                 <div    class="modal fade"     id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                     aria-hidden="true">

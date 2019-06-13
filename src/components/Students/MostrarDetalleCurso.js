@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './MostrarDetalleCurso.css'
 import { format, render, cancel, register } from 'timeago.js';
+import { Link } from 'react-router-dom'
 import Url from '../../config'
 
 export default class MostrarDetalleDelcurso extends Component{
@@ -53,7 +54,7 @@ export default class MostrarDetalleDelcurso extends Component{
                           <h6 className="card-title text-dark"><a>Autor:</a></h6>
                           <p className="card-text">{this.state.course.autor}</p>
                           <p className="card-text">Creado hace {format(this.state.course.createDateCourse)}</p>
-                          <a href="#" className="btn btn-primary">Tomar Curso</a>
+        <Link to={`/playerCourse/${this.props.course._id}`}> <a href="#" className="btn btn-primary">Tomar Curso</a> </Link>
                           <a href="#" className="btn btn-primary">Agregar Curso</a>
                         </div>
                      </div>
