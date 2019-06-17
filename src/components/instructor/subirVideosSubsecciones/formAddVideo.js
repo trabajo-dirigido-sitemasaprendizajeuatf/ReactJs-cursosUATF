@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import './homeVideo.css'
 import URL from '../../../config'
 import PlayerVide from '../playerVideoTeacher/videoReact'
+
+// importando loe requerimientos de toastTigy
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -123,12 +125,12 @@ export default class FormAddVideo extends Component{
         if(this.state.validartCampo){
             
             // () => toast("Wow so easy !");
-            toast.warn(" Complete los campos vacios !")
+            toast.warn(" Complete los campos vacios !",{position:"top-left"})
             this.setState({validartCampo:false})
         }
 
         if(this.state.archivoValido){
-                toast.error('tipo de archivo valido')
+                toast.error('tipo de archivo valido',{position:"top-left"})
                 this.setState({archivoValido:false})
         }
         if(this.state.ok){ toast.success(' Subiendo archivo espere unos segundo ! ') 
@@ -141,7 +143,10 @@ export default class FormAddVideo extends Component{
             console.log(this.state.title);
             if(this.state.ok && this.state.objVideo){
                 return(
-                    <PlayerVide objVideo2={this.state.objVideo} />
+                    <PlayerVide objVideo2={this.state.objVideo}
+                                duration={this.props.durationVideo}
+                                allTime={this.props.allTime}
+                     />
 
                 )
             }else
@@ -161,27 +166,39 @@ export default class FormAddVideo extends Component{
                 pauseOnHover
                 />
 
-                <div className="container-form">
+                        <div class="modal-header primary-color white-text">
+                            <h4 class="title">
+                            <i class="fas fa-video"></i>  Agregar Video</h4>
+                    
+                        </div>
+
+                <div className="container-form bg-white border">
+                
                 <div className="container">
                 {/* <h1>subir Poster</h1> */}
                 <tr>{this.props.IDseccion}</tr>
 
-                <form  onSubmit={this.sendData}  class="text-center border border-light p-5" >
+                <form  onSubmit={this.sendData}  class="text-center  border-light p-5" >
+            
+
                 {this.renderAlert()}
                     <p class="h3 mb-4">subir video del curso</p>
                     <p>Seleccione un video</p>
                     <div class="custom-file">
 
                       
-                        <br/>
 
-                        
+                        <div class="md-form form-sm">
                         <input ref={this.myRef} type="file" onChange={this.onChangeFile.bind(this)}  value={this.state.video} name="video" class="custom-file-input" id="customFileLang" lang="in"></input>
-                        <input value={this.state.title} onChange={this.onChange.bind(this)} name="title" type="text" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Subtitulo o titulo del video"></input>
+                        <label  class="custom-file-label" for="customFileLang">{this.state.namefile.split('',35).join('')}</label>
+                        </div>
+                        <div class="md-form form-sm">
+                         <input value={this.state.title} onChange={this.onChange.bind(this)} name="title" type="text" id="defaultLoginFormEmail" class="form-control form-control-sm" placeholder="Subtitulo o titulo del video"></input>
                         <br/>
-                        <label  class="custom-file-label" for="customFileLang">{this.state.namefile.split('',20).join('')}</label>
+                        </div>
+                        
                     </div>
-                            <button  class="btn btn-info btn-block" type="submit">Subir  video</button>
+                            <button  class="btn btn-primary btn-block" type="submit">Subir  video</button>
                 </form>
                 </div>
             </div>

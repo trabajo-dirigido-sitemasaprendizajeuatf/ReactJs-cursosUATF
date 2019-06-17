@@ -1,3 +1,4 @@
+
 .container-video{
     border:0px;
     /* background-color: darkblue; */
@@ -10,7 +11,5 @@
 .container-form{
     padding-left: 5%;
     padding-right: 5%;
-    -webkit-box-shadow: -1px 1px 9px 1px rgba(0,0,0,0.75);
--moz-box-shadow: -1px 1px 9px 1px rgba(0,0,0,0.75);
-box-shadow: -1px 1px 9px 1px rgba(0,0,0,0.75);
+
 }

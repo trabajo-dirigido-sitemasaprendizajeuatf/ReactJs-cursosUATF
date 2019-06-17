@@ -14,7 +14,8 @@ const config={
     UrlMostarCursoPorId:'http://localhost:3005/courses/api/v1.0/mostrarcursoforid',
     UrlMostarSeccionUnCurso:'http://localhost:3005/courses/api/v1.0/listarsecciones/idcourse=',
     Urladdnewseccion:'http://localhost:3005/courses/api/v1.0/seccion',
-    UrlUploadVideo:'http://localhost:3005/uploadvideo/idSeccion='
+    UrlUploadVideo:'http://localhost:3005/uploadvideo/idSeccion=',
+    UrlaCuestionarioRepaso:'http://localhost:3005/cuestionariorepaso'
     
     
 }

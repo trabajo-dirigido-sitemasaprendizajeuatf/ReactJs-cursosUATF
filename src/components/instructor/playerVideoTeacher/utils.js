@@ -41,9 +41,14 @@ function percentageNumber(number,numberTotal){
   return persentage
 }
 
+function second(time){
+  return  Math.floor((Math.floor(time/60)*60)+(time%60))
+}
+
 
 export default {
       parseTimeString,
       parseTimeMinute,
-      percentageNumber
+      percentageNumber,
+      second
 }

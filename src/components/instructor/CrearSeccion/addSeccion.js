@@ -160,13 +160,6 @@ export default class AddSeccion extends Component{
                     </Link>
                 </div>
 
-
-    
-           
-
-
-
-
           </div>
         )
     }

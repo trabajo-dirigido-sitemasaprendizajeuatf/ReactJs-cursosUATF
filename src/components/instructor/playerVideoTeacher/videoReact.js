@@ -41,6 +41,8 @@ class Playvideo extends Component{
           progressTime:p
 
         })
+
+        this.props.duration(utils.second(p))    //funcion que envie al padre homeVideo
        
     }
     // duracion del video
@@ -51,8 +53,12 @@ class Playvideo extends Component{
       console.log(e.srcElement.currentTime);
       console.log(e);
       
+      
+      
           duration1=e.srcElement.duration;
-          
+
+          this.props.allTime(duration1)
+
           this.setState({
             duration:duration1
 
@@ -78,7 +84,7 @@ class Playvideo extends Component{
     return (
       <div>
           <dir>
-              <video ref={this.durationRef} id="movie" class="embed-responsive embed-responsive-16by9" controls poster="#">
+              <video ref={this.durationRef} id="movie" class="embed-responsive embed-responsive-16by9" controls volume="50" poster="#">
                   <source src={this.state.OBJVIDEO.linkfile} />
                   <embed src={this.state.OBJVIDEO.linkfile} type="video/mp4" width="854" height="500" scale="0.85" />
               </video>

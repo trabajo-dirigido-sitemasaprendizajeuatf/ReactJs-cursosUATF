@@ -4,6 +4,7 @@ import Playvideo from './PlayVideStudent/videoReact'
 import URL from '../../config'
 import './TomarElcursoPlayer.css'
 
+import ChatGbobalStudent from './chats/chatGlobalStudent'
 
 export default class TomarCursoPlay extends Component{
 
@@ -24,8 +25,8 @@ export default class TomarCursoPlay extends Component{
     onChange=(link)=>{
 
 
-        console.log(link.replace("\\",'/'));
-        link=link.replace("\\",'/')
+        // console.log(link.replace("\\",'/'));
+        // link=link.replace("\\",'/')
       
       
       this.setState({
@@ -102,9 +103,9 @@ export default class TomarCursoPlay extends Component{
                                 return (
                                     <tr>
                                     <td class="flag-name" id="title-video">
-                                   <div    ref={this.myRef} id={data2.idVideo} onClick={()=> this.onChange(data2.linkfile)}>
-                                     <i class="fas fa-play-circle p-1"  ></i>{data2.title}: {data2.idVideo}
-                                    </div>
+                                   <a><div ref={this.myRef} id={data2.idVideo} onClick={()=> this.onChange(data2.linkfile)}>
+                                     <i class="fas fa-play-circle p-1"  ></i>{data2.title}
+                                    </div></a>
                                      {/* <input type="text" name="idvideo" onClick={this.onChange.bind(this)} value={data2.linkfile}></input> */}
                                      </td>
                                     <td class="disabled"></td>
@@ -138,7 +139,7 @@ export default class TomarCursoPlay extends Component{
 <ul class="nav tabs-cyan" id="myClassicTabShadow" role="tablist">
   <li class="nav-item">
     <a class="nav-link  waves-light active show" id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
-      role="tab" aria-controls="profile-classic-shadow" aria-selected="true">Profile</a>
+      role="tab" aria-controls="profile-classic-shadow" aria-selected="true">Comentarios</a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-light" id="follow-tab-classic-shadow" data-toggle="tab" href="#follow-classic-shadow"
@@ -156,12 +157,10 @@ export default class TomarCursoPlay extends Component{
 
 <div class="tab-content card" id="myClassicTabContentShadow">
   <div class="tab-pane fade active show" id="profile-classic-shadow" role="tabpanel" aria-labelledby="profile-tab-classic-shadow">
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-      totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
-      sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui
-      dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora
-      incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+    <p>
+          <ChatGbobalStudent/>
+
+    </p>
   </div>
   <div class="tab-pane fade" id="follow-classic-shadow" role="tabpanel" aria-labelledby="follow-tab-classic-shadow">
     <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
