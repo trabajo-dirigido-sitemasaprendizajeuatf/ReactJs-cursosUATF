@@ -109,8 +109,11 @@ export default class TomarCursoPlay extends Component{
                                      {/* <input type="text" name="idvideo" onClick={this.onChange.bind(this)} value={data2.linkfile}></input> */}
                                      </td>
                                     <td class="disabled"></td>
-                                    <td><i class="far fa-arrow-alt-circle-down"></i>Materia de apoyo</td>
-                                    </tr>
+                                    <td><i class="far fa-arrow-alt-circle-down">
+                                      <a href="../pdfs/reporte2-05-10.pdf" download="Reporte2Mayo2010">Materia de apoyo</a>
+                                    </i></td>
+                                    
+                                      </tr>
                                 )
                             })}
                         </tbody>

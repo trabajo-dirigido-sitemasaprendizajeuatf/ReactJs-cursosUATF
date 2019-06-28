@@ -72,7 +72,7 @@ export default class MostrarDetalleDelcurso extends Component{
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5" aria-expanded="false"
                       aria-controls="collapse5">
                       <h3 class="mb-0 red-text">
-                        You're the greatest accordion! <div class="animated-icon1 float-right mt-1"><span></span><span></span><span></span></div>
+                        TEMARIO<div class="animated-icon1 float-right mt-1"><span></span><span></span><span></span></div>
                       </h3>
                     </a>
                   </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { SyncLoopHook } from 'tapable';
+import './crearCurso.css'
 
 export default class SubirPoster extends Component{
     constructor(props){
@@ -42,9 +43,9 @@ export default class SubirPoster extends Component{
     render(){
         return(
             <div>
-                <div className="container w-50">
+                <div className="container w-50" id="container-poster">
                 {/* <h1>subir Poster</h1> */}
-                <h1>{this.props.idcourse}</h1>
+                {/* <h1>{this.props.idcourse}</h1> */}
 
                 <form  onSubmit={this.sendData}  class="text-center border border-light p-5" >
 
@@ -58,7 +59,7 @@ export default class SubirPoster extends Component{
                     </div>
                         <div>
                             <br/>
-                            <button  class="btn btn-info btn-block" type="submit">Sign in</button>
+                            <button  class="btn btn-info btn-block" type="submit">Enviar poster</button>
                         </div>
                     
 

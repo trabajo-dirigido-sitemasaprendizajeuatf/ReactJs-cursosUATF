@@ -171,10 +171,17 @@ export default class AddExamVideo extends Component{
 
     sendData(){
 
+        var examen={idVideo:this.props.objVideo._id,
+                    examnen:this.state.cuestionario
+
+        }
+
+        console.log(examen,'qqqqqqqqqqqqqqqqqqqqqq')
+
         var url=URL.UrlaCuestionarioRepaso
         var params={
             method:'POST',
-            body:JSON.stringify(this.state.cuestionario),
+            body:JSON.stringify(examen),
             headers:{
                 'Content-Type': 'application/json'
             }

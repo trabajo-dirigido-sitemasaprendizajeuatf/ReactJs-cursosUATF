@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Url from '../../../config'
 import { Link } from 'react-router-dom'
 import SubirPoster from './subirPoster'
-
+import './crearCurso.css'
 class CreateCourso extends Component{
 
     constructor(props){
@@ -126,7 +126,7 @@ class CreateCourso extends Component{
                     <br/>
                     <h3 className="font-weight-bold">Datos de curso</h3>
                    
-            <div className="container w-50 p-3 bg-white">
+            <div className="container w-50 p-3 bg-white" id="container-form">
             {this.renderAlert()}
                 <form onSubmit={this.sendData}>
                 <div class="form-row">

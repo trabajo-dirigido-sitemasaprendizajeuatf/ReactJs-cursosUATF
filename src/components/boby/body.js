@@ -107,7 +107,7 @@ class Body extends Component{
                         <p class="card-text">{data.autor}</p>
                         <p class="card-text">{format(data.createDateCourse)}</p>
                         
-                        <button type="button" class="btn btn-light-blue btn-md">Añadir Seccion</button>
+                        {/* <button type="button" class="btn btn-light-blue btn-md">Añadir Seccion</button> */}
 
                         </div>
 

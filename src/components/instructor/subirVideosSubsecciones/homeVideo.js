@@ -14,15 +14,22 @@ export default class HomeVidel extends Component{
                 
                 // video time, duration
                 timeAllVideo:'',
-                timeActualityVideo:''
+                timeActualityVideo:'',
+
+                //idVideo
+                objVideo:''
             }
     }
 
 
-    dataparent(ojbCurso){
+    dataparent=(ojbCurso)=>{
         console.log('parent,  home vide ----');
         
             console.log(ojbCurso);
+            console.log(ojbCurso._id)
+            this.setState({
+                objVideo:ojbCurso
+            })
             
     }
 
@@ -32,7 +39,7 @@ export default class HomeVidel extends Component{
 
         console.log('duration videoooooooooooooooo homevideo');
         
-        console.log(typeof durationVideo)
+        // console.log(typeof durationVideo)
         this.setState({
             timeActualityVideo:durationVideo
         })
@@ -74,6 +81,8 @@ export default class HomeVidel extends Component{
                     <AddExamVideo
                         duration={this.state.timeAllVideo}
                         timeall={this.state.timeAllVideo}
+                        objVideo={this.state.objVideo}
+
                     />
                     </div>
                 </div>
