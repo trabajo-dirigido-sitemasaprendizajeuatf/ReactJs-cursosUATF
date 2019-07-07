@@ -3,6 +3,9 @@ import FormAddVideo from './formAddVideo'
 import AddExamVideo from './addExamVideo'
 import AddMaterialApoyo from './addMaterialApoyo'
 
+// mostrar examen
+import ShowExamenVideo from './showExamenVideo'
+
 import './homeVideo.css'
 export default class HomeVidel extends Component{
 
@@ -77,14 +80,8 @@ export default class HomeVidel extends Component{
                         durationVideo={this.durationVide}
                     />
                     </div>
-                    <div class="col-12 ">
-                    <AddExamVideo
-                        duration={this.state.timeAllVideo}
-                        timeall={this.state.timeAllVideo}
-                        objVideo={this.state.objVideo}
-
-                    />
-                    </div>
+                
+                   
                 </div>
                 <div class="col-4 ">
                     <AddMaterialApoyo/>
@@ -92,6 +89,21 @@ export default class HomeVidel extends Component{
                 
                 </div>
                 </div>
+                {/*---Examen---*/}
+                <div className="row bg-dark">
+                    <div class="col-8 ">
+                    <AddExamVideo
+                        duration={this.state.timeAllVideo}
+                        timeall={this.state.timeAllVideo}
+                        objVideo={this.state.objVideo}
+
+                    />
+                    </div>
+                    <div class="col-4">
+                    <ShowExamenVideo/>
+                    </div>
+
+                    </div>
             </div>
         )
     }

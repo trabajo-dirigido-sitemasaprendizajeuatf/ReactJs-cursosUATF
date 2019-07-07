@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import 'jquery'
 import $ from 'jquery'
+import 'bootstrap/js/src/modal'
 
 import Config from '../../config'
 
@@ -75,7 +76,7 @@ class Signin extends Component{
 
                             })
                             //codigo de jquery  cerrar modal signin
-                            
+                            //$('#modalLoginForm').modal('hide')
                         }
                     })
         }else{

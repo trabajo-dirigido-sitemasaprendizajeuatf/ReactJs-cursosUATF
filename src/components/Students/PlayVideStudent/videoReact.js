@@ -4,9 +4,14 @@ import React, { Component } from 'react';
 import './VideoReact.css'
 import video from './Chernobyl.mp4'
 // import poster from '../../img/sia.png'
+import MainVideoExamen from '../videoExamen/mainVideoExamen'
 
 // importando la funcion que convierte los minutos a horas
 import utils from './utils'
+
+//for view modal in time determined
+import 'bootstrap/js/src/modal'
+import $ from 'jquery'
 
 class Playvideo extends Component{
 
@@ -73,11 +78,19 @@ class Playvideo extends Component{
   
   }
 
+  examen=()=>{
+
+
+    $('#modalContactForm').modal('show');
+    this.durationRef.current.pause();
+
+  }
 
   render(){ 
     // var timeVideo = document.getElementById("movie")
     //  console.log(timeVideo);
     console.log(this.props.link2);
+    console.log(typeof( this.state.progressTime));
     
        
     return (
@@ -98,7 +111,19 @@ class Playvideo extends Component{
                 <progress max="100" value={utils.percentageNumber(this.state.progressTime,this.state.duration)} ></progress> <br/>
 
                 <span> {utils.percentageNumber(this.state.progressTime,this.state.duration)===100? "video completado" : 'video no completad'}  </span>
+                
+                {
+                  
+                 parseInt(this.state.progressTime)==26?this.examen():''
 
+                }
+  
+                <MainVideoExamen/>
+
+                <div class="text-center">
+  <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalContactForm">Launch
+    Modal Contact</a>
+</div>
               
               </div>
 

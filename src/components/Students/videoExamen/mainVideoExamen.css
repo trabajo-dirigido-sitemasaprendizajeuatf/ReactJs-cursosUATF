@@ -1,0 +1,32 @@
+/* containner formulario */
+
+.modal-content{
+    /* position: static; */
+    margin-left: -26%;
+    margin-right: 10%;
+    width: 150%;
+}
+
+
+/* formulario de preguntas */
+.pregresp {
+    border: 1px solid #7DA5E0;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    }
+    
+    .pregunta {
+    text-align: left;
+    color: #7DA5E0;
+    }
+    
+    .respuestas {
+    padding-left: 20px;
+    text-align: left;
+    color: #000000;
+    }
+
+    

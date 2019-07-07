@@ -1,17 +1,22 @@
 
 
 .body-formlario{
+  width: 85%;
+  padding-left: 21%;
+  padding-right: 7%; 
     padding-top: 2%;
     padding-block-end: 2%;
+    
 }
 .formulario-pregunta{
+    margin: 0%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
 
 
-/* range input------------ */
+/* ---- range input------------ */
 .inputDiv {
     width: 300px;
     margin: 30px auto;

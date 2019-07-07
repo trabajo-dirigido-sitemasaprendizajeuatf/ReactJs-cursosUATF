@@ -1,63 +1,73 @@
 import React, { Component } from 'react'
 
+import './mainVideoExamen.css'
+
 export default class MainVideoExamen extends Component{
 
     constructor(props){
         super(props)
 
-        this.state(
-
-        )
+        this.state={
+            
+        }
     }
 
     render(){
         return(
 
             <div>
+            {/* modal fade */}
                 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
   <div class="modal-dialog cascading-modal" role="document">
     <div class="modal-content">
 
       <div class="modal-header light-blue darken-3 white-text">
-        <h4 class="title"><i class="fas fa-pencil-alt"></i> Examen</h4>
+        <h4 class="title"><i class="fas fa-pencil-alt"></i>Complete el siguiente examen</h4>
         <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body mb-0">
-        <div class="md-form form-sm">
-          <i class="fas fa-envelope prefix active"></i>
-          <input type="text" id="form8" class="form-control"></input>
-          <label for="form8" class="active">Your name</label>
-        </div>
+      <div class="modal-body ">
+        
 
-        <div class="md-form form-sm">
-          <i class="fas fa-lock prefix active"></i>
-          <input type="password" id="form9" class="form-control"></input>
-          <label for="form9" class="active">Your email</label>
-        </div>
+    <form class="conten-form">
 
-        <div class="md-form form-sm">
-          <i class="fas fa-tag prefix"></i>
-          <input type="search" id="form-autocomplete-2" class="form-control mdb-autocomplete"></input>
-          <button class="mdb-autocomplete-clear">
-            <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="https://www.w3.org/2000/svg">
-              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-              <path d="M0 0h24v24H0z" fill="none" />
-            </svg>
-          </button>
-          <label for="form-autocomplete-2" class="active">Subject</label>
+        <div class="pregresp">
+        <div class="pregunta">1. ¿Crees que HTML es una buena tecnología xxxxxxxxxxxxxxxxxxxxxxx?<br />
         </div>
-
-        <div class="md-form form-sm">
-          <i class="fas fa-pencil-alt prefix"></i>
-          <textarea type="text" id="form67" class="md-textarea mb-0"></textarea>
-          <label for="form67">Your message</label>
+        <div class="respuestas">
+          <input type="radio" name="preg1" value="1" /> Sí<br />
+          <input type="radio" name="preg1" value="2" /> No<br />
+          <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
         </div>
+      </div>
 
+      <div class="pregresp">
+        <div class="pregunta">2. ¿Crees que HTML es una buena tecnología xxxxxxxxxxxxxxxxxxxxxxx?<br />
+        </div>
+        <div class="respuestas">
+          <input type="radio" name="preg2" value="1" /> Sí<br />
+          <input type="radio" name="preg2" value="2" /> No<br />
+          <input type="radio" name="preg2" value="3" /> Ns/Nc<br />
+        </div>
+      </div>
+
+
+      <div class="pregresp">
+        <div class="pregunta">3. ¿Crees que HTML es una buena tecnología xxxxxxxxxxxxxxxxxxxxxxx?<br />
+        </div>
+        <div class="respuestas">
+          <input type="radio" name="preg1" value="1" /> Sí<br />
+          <input type="radio" name="preg1" value="2" /> No<br />
+          <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+        </div>
+      </div>
+
+</form>
+        
         <div class="text-center mt-1-half">
-          <button class="btn btn-info mb-2 waves-effect waves-light">Send <i class="fas fa-send ml-1"></i></button>
+          <button class="btn btn-info mb-2 waves-effect waves-light">Send </button>
         </div>
 
       </div>
@@ -65,10 +75,10 @@ export default class MainVideoExamen extends Component{
   </div>
 </div>
 
-<div class="text-center">
+{/* <div class="text-center">
   <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalContactForm">Launch
     Modal Contact</a>
-</div>
+</div> */}
             </div>
         )
     }

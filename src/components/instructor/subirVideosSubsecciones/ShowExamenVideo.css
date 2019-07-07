@@ -1,0 +1,38 @@
+/* body-formulario pregunta examen */
+#modalContactForm2{
+    width: 80%;
+    padding-left: 10%;
+}
+
+#form-examen-show{
+    width: auto;
+
+}
+
+
+/* formulario de preguntas */
+.pregresp2 {
+    border: 1px solid #7DA5E0;
+    padding: 10px;
+    margin: 10px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    }
+    
+    .pregunta2 {
+    text-align: left;
+    color: #7DA5E0;
+    }
+    
+    .respuestas2 {
+    padding-left: 19px;
+    text-align: left;
+    color: #000000;
+    }
+
+    .respuestasCorrectas{
+        color: forestgreen
+    }
+
+    
