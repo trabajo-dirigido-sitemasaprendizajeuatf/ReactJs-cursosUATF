@@ -7,6 +7,7 @@ import AddMaterialApoyo from './addMaterialApoyo'
 import ShowExamenVideo from './showExamenVideo'
 
 import './homeVideo.css'
+import { log } from 'util';
 export default class HomeVidel extends Component{
 
     constructor(props){
@@ -20,7 +21,13 @@ export default class HomeVidel extends Component{
                 timeActualityVideo:'',
 
                 //idVideo
-                objVideo:''
+                objVideo:'',
+
+                // showExamenVideo
+                showVideoExamen:[],
+
+           
+               
             }
     }
 
@@ -53,6 +60,17 @@ export default class HomeVidel extends Component{
             this.setState({
                 timeAllVideo:data2
             })
+    }
+
+    ExamenVideoShow=(objVideo)=>{
+        
+        // console.log('ExamenVideoShow -------');
+        console.log(objVideo);
+        this.setState({
+            showVideoExamen:objVideo
+        })
+
+        
     }
 
     render(){
@@ -91,16 +109,20 @@ export default class HomeVidel extends Component{
                 </div>
                 {/*---Examen---*/}
                 <div className="row bg-dark">
-                    <div class="col-8 ">
+                    <div class="col-7 ">
                     <AddExamVideo
                         duration={this.state.timeAllVideo}
                         timeall={this.state.timeAllVideo}
                         objVideo={this.state.objVideo}
+                        ExamenVideoShow={this.ExamenVideoShow}
+
 
                     />
                     </div>
-                    <div class="col-4">
-                    <ShowExamenVideo/>
+                    <div class="col-5">
+                    <ShowExamenVideo
+                        showVideoExamen={this.state.showVideoExamen}
+                    />
                     </div>
 
                     </div>

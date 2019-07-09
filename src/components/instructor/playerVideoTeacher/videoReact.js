@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import video from '../../videos/video.MP4'
 
 import './VideoReact.css'
-// import videosia from '../../videos/sia.mp4'
+import videosia from './Chernobyl.mp4'
 // import poster from '../../img/sia.png'
 
 // importando la funcion que convierte los minutos a horas
@@ -86,6 +86,7 @@ class Playvideo extends Component{
           <dir>
               <video ref={this.durationRef} id="movie" class="embed-responsive embed-responsive-16by9" controls volume="50" poster="#">
                   <source src={this.state.OBJVIDEO.linkfile} />
+                  {/* <source src={videosia} /> */}
                   <embed src={this.state.OBJVIDEO.linkfile} type="video/mp4" width="854" height="500" scale="0.85" />
               </video>
 

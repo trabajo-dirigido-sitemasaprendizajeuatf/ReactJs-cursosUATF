@@ -21,7 +21,7 @@ export default class FormAddVideo extends Component{
                 archivoValido:false,
                 validartCampo:false,
                 namefile:'Subir video',
-                ok:false
+                ok:false                 //controla qu el viode aya cargado  true or false 
             }
 
             this.myRef=React.createRef();

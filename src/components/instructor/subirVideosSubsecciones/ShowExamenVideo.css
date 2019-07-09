@@ -32,7 +32,9 @@
     }
 
     .respuestasCorrectas{
-        color: forestgreen
+        color: forestgreen;
+        text-align: left;
+        
     }
 
     

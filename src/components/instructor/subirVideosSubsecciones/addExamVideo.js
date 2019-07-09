@@ -27,11 +27,15 @@ export default class AddExamVideo extends Component{
                 possibleAnswer:[],
                 answer:[],
 
+                // idUser:localStorage.getItem("id"),
+
                 cuestionario:[],
                 // alerts
                 alert:false,
                 success:false,
-                ok:false,
+                okSendExamen:false,
+                examenAgregadoAlVideo:false,
+                minimoexamen:false,
 
                 //puento en el que se mostrara el examen
                 init:0,
@@ -123,13 +127,14 @@ export default class AddExamVideo extends Component{
         if(aux1!=undefined && aux2[0]!=undefined && aux3[0]!=undefined && aux1!=''&&aux2[0]!=''&&aux3[0]!=''){
            
            var aux4={
-            prsegunta:aux1,
+            pregunta:aux1,
             posiblerespuesta:aux2,
             respuestaCorrecta:aux3
             }
         
     
             this.CUESTIONARIO.push(aux4)
+            this.props.ExamenVideoShow(this.CUESTIONARIO)
             // this.CUESTIONARIO.map(data=>{console.log(data)},'qqqqqqqqqqqq')
             
     
@@ -172,31 +177,46 @@ export default class AddExamVideo extends Component{
     sendData(){
 
         var examen={idVideo:this.props.objVideo._id,
-                    examnen:this.state.cuestionario
+                    // idvideoPrueb:'44555r5r5r5rr55',
+                    examen:this.state.cuestionario,
+                    // showTimeExamPrueba:4555,
+                    showTimeExam:this.state.init
 
         }
+
 
         console.log(examen,'qqqqqqqqqqqqqqqqqqqqqq')
 
-        var url=URL.UrlaCuestionarioRepaso
-        var params={
-            method:'POST',
-            body:JSON.stringify(examen),
-            headers:{
-                'Content-Type': 'application/json'
+        if(this.CUESTIONARIO.length>3){
+            var url=URL.UrlaCuestionarioRepaso
+            var params={
+                method:'POST',
+                body:JSON.stringify(examen),
+                headers:{
+                    'Content-Type': 'application/json'
+                }
             }
+    
+            fetch(url,params)
+             .then(data=>data.json())
+             .then(res=>{
+    
+               
+                console.log(res);
+                 
+             })
+             this.setState({
+                okSendExamen:true
+            })
+        }else{
+            this.setState({
+                minimoexamen:true
+            })
         }
-
-        fetch(url,params)
-         .then(data=>data.json())
-         .then(res=>{
-             console.log(res);
-            this.setState({ok:true})
-             
-         })
+       
     }
 
-    renderAlrt2(){
+    renderAlrt2=()=>{
 
         if(this.state.alert){
                 toast.warn('complete la pregunta',{position: "top-right"})
@@ -206,17 +226,34 @@ export default class AddExamVideo extends Component{
         if(this.state.success){
             toast.success('Pregunta agregada',{position: "top-right"})
             this.setState({success:false})
+        }else{}
+
+        if(this.state.okSendExamen){
+            console.log('alert------------------------------')
+            toast.success('El examen se agregado al video',{position: "top-right"})
+            this.setState({okSendExamen:false})
         }
+
+       
     }
 
+    minimoExamen=()=>{
+        if(this.state.minimoexamen){
+            toast.warn('Debe Reaizar por lo menos 3 preguntas',{position: "top-right"})
+            this.setState({minimoexamen:false})
+    }else{}
+    }
+    
+
     updateTime=(e)=>{
-        console.log('update time---');
+        // console.log('update time---');
         
 
         this.setState({
             init:e.target.value
         })
-        console.log(this.state.init)
+
+        // console.log(this.state.init)
 
     }
 
@@ -247,10 +284,10 @@ export default class AddExamVideo extends Component{
                 />  
 
                 {this.renderAlrt2()}
+                {this.minimoExamen()}
                 <div class="container-form-pregunta" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="" role="document" id="form-global">
 
-                   
                     <div class="modal-content" >
 
                         <div class="modal-header primary-color white-text">
