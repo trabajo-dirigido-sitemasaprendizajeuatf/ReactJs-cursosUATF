@@ -13,3 +13,29 @@
     padding-right: 5%;
 
 }
+
+/* buttons  */
+.button-menu-video{
+    display: flex;
+  justify-content: center;
+    border-radius: 2px;
+    padding: 10px;
+  margin: 10px;
+  /* background-color: yellow; */
+}
+
+/* texto de recomedaciones */
+.content-text{
+    text-align: left;
+    color: #ffff;
+    
+}
+.date-context{
+   
+    text-align: end;
+    color: gold;
+}
+.container-video{
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+}

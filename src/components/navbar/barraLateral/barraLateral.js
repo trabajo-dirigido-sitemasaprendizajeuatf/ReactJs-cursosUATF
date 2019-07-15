@@ -32,7 +32,7 @@ class BarraLateral extends Component{
                 
                     <ul>
                     
-                        <li><a href="#"  data-toggle="collapse" data-target="#navbarSupportedContent2"> <i class="fas fa-book-reader"></i> Todos Cursos</a></li>
+                        <li><a href="#"  data-toggle="collapse" data-target="#navbarSupportedContent2"> <i class="fas fa-graduation-cap"></i> Carreras</a></li>
                             <div className="sub-menu">
 
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">

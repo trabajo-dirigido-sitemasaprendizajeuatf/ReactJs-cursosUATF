@@ -15,7 +15,10 @@ const config={
     UrlMostarSeccionUnCurso:'http://localhost:3005/courses/api/v1.0/listarsecciones/idcourse=',
     Urladdnewseccion:'http://localhost:3005/courses/api/v1.0/seccion',
     UrlUploadVideo:'http://localhost:3005/uploadvideo/idSeccion=',
-    UrlaCuestionarioRepaso:'http://localhost:3005/cuestionariorepaso'
+    UrlaCuestionarioRepaso:'http://localhost:3005/cuestionariorepaso',
+    // http://localhost:3005/Upload/file/Materia/Apoyo/idVideo=5d20d5a71b6a092c1408243c/filename=este es el nombre del file
+    UrlUploadMaterialSupport:`http://localhost:3005/Upload/file/Materia/Apoyo`,
+    UrlUploadLinks:`http://localhost:3005/Upload/links`
     
     
 }

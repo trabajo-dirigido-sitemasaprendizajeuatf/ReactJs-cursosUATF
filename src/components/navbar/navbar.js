@@ -80,7 +80,7 @@ class Navbar extends Component{
             <a class="navbar-brand ">
               <Link to="/">  <img src={iconSistem} height="45" alt="mdb logo" className="animated jello slow infinite "></img></Link>
             </a>
-                <a className="navbar-brand" href="#" id="toggle-btn-navar"><i class="fas fa-braille"></i>Categorias   </a>
+                <a className="navbar-brand" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
                 <button id="btn-menu-navbar" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -208,7 +208,7 @@ class Navbar extends Component{
                 
                     <ul>
                     
-                        <li><a href="#"  data-toggle="collapse" data-target="#navbarSupportedContent2"> <i class="fas fa-book-reader"></i> Todos Cursos</a></li>
+                        <li><a href="#"  data-toggle="collapse" data-target="#navbarSupportedContent2"> <i class="fas fa-graduation-cap"></i>Ingenieria de sistemas</a></li>
                             <div className="sub-menu">
 
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent2">
@@ -228,8 +228,8 @@ class Navbar extends Component{
                                 </div>
                             </div>
                         
-                        <li><a href="#"> <i class="fas fa-atlas"></i>Por materias</a></li>
-                        <li><a href="#"><i class="fas fa-boxes"></i>Otros</a></li>
+                        <li><a href="#"> <i class="fas fa-atlas"></i>Telecomunicaciones</a></li>
+                        <li><a href="#"><i class="fas fa-boxes"></i>Postgrado ingenieria de sistemas</a></li>
                         <li><a href="#"><i class="fas fa-boxes"></i>Otros</a></li>
                         <li><a href="#"><i class="fas fa-boxes"></i>Otros</a></li>
                         <li><a href="#"><i class="fas fa-boxes"></i>Otros</a></li>

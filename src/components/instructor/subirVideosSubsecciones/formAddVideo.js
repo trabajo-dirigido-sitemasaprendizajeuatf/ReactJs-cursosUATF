@@ -140,7 +140,8 @@ export default class FormAddVideo extends Component{
     }
 
     render(){
-            console.log(this.state.title);
+            // console.log(this.state.title);
+            // console.log(this.state);
             if(this.state.ok && this.state.objVideo){
                 return(
                     <PlayerVide objVideo2={this.state.objVideo}
@@ -176,14 +177,14 @@ export default class FormAddVideo extends Component{
                 
                 <div className="container">
                 {/* <h1>subir Poster</h1> */}
-                <tr>{this.props.IDseccion}</tr>
+                {/* <tr>{this.props.IDseccion}</tr> */}
 
                 <form  onSubmit={this.sendData}  class="text-center  border-light p-5" >
             
 
                 {this.renderAlert()}
-                    <p class="h3 mb-4">subir video del curso</p>
-                    <p>Seleccione un video</p>
+                    {/* <p class="h3 mb-4">subir video del curso</p> */}
+                    {/* <p>Seleccione un video</p> */}
                     <div class="custom-file">
 
                       

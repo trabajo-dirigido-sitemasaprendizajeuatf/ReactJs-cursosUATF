@@ -3,7 +3,20 @@
 
 /* container form-body material de apoyo */
 #modal-content-from{
+   /* background: red; */
+   padding-top: -120px;
    margin-left: 1%;
    width: 100%; 
 
+}
+
+#from-modal-file1{
+   padding-bottom: 23px;
+   margin-bottom: 0px;
+}
+
+#from-modal-file{
+   padding-bottom: 23px;
+   margin-bottom: 0px;
+   /* margin: 0 0 0 25%; */
 }

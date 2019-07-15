@@ -203,6 +203,10 @@ export default class AddExamVideo extends Component{
     
                
                 console.log(res);
+                this.CUESTIONARIO=[]
+                this.props.ExamenVideoShow(this.CUESTIONARIO)
+
+
                  
              })
              this.setState({
@@ -217,8 +221,11 @@ export default class AddExamVideo extends Component{
     }
 
     renderAlrt2=()=>{
+       console.log(this.state);
 
         if(this.state.alert){
+       console.log('alert--------------------------');
+
                 toast.warn('complete la pregunta',{position: "top-right"})
                 this.setState({alert:false})
         }else{}
@@ -273,7 +280,7 @@ export default class AddExamVideo extends Component{
 
                 <ToastContainer
                 position="top-right"
-                autoClose={5000}
+                autoClose={5001}
                 hideProgressBar={true}
                 newestOnTop={false}
                 closeOnClick

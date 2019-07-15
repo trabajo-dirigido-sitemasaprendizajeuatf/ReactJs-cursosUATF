@@ -5,6 +5,9 @@ import './VideoReact.css'
 import videosia from './Chernobyl.mp4'
 // import poster from '../../img/sia.png'
 
+import { ToastContainer, toast } from 'react-toastify';
+
+
 // importando la funcion que convierte los minutos a horas
 import utils from './utils'
 
@@ -84,22 +87,35 @@ class Playvideo extends Component{
     return (
       <div>
           <dir>
+          <ToastContainer
+                position="top-right"
+                autoClose={5001}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnVisibilityChange
+                draggable
+                pauseOnHover
+                /> 
+
+
               <video ref={this.durationRef} id="movie" class="embed-responsive embed-responsive-16by9" controls volume="50" poster="#">
                   <source src={this.state.OBJVIDEO.linkfile} />
                   {/* <source src={videosia} /> */}
-                  <embed src={this.state.OBJVIDEO.linkfile} type="video/mp4" width="854" height="500" scale="0.85" />
+                  <embed src={this.state.OBJVIDEO.linkfile} type="video/mp4" width="854" height="550" scale="0.85" />
               </video>
 
               {/* _::::::::metadatos del video del video::::::: */}
               <div>
-                <span> tiempo ss:  {this.state.duration}</span> <br/>
+                {/* <span> tiempo ss:  {this.state.duration}</span> <br/>
                 <span> tiempo hh/mm/ss:  {utils.parseTimeString(this.state.duration)}</span>  <br/>
                 <span> tiempo ss:  {this.state.progressTime}</span> <br/>
                 <span> tiempo hh/mm/ss:  {utils.parseTimeString(this.state.progressTime)}</span> <br/>
                 <span>porcentaje:{utils.percentageNumber(this.state.progressTime,this.state.duration)} %  </span> <br/>
                 <progress max="100" value={utils.percentageNumber(this.state.progressTime,this.state.duration)} ></progress> <br/>
 
-                <span> {utils.percentageNumber(this.state.progressTime,this.state.duration)===100? "video completado" : 'video no completad'}  </span>
+                <span> {utils.percentageNumber(this.state.progressTime,this.state.duration)===100? "video completado" : 'video no completad'}  </span> */}
 
               
               </div>
