@@ -34,3 +34,10 @@
 .user-initial{
     font-size: 20px;
 }
+
+#navbar-global{
+    z-index: 1050;
+    width: 100%;
+    min-height: 30px;
+    position: fixed;
+}

@@ -215,12 +215,12 @@ export default class HomeVidel extends Component{
                     </div> */}
 
                     {/* boton que regresa atras */}
-                    <div class="contenedorbtn">
+                    {/* <div class="contenedorbtn">
                     <button class="botonF1" onClick={()=>history.goBack()}>
                     
                     <span><h6 className="textbtn">Volver</h6></span>
                     </button>
-                </div>
+                </div> */}
 
 
 

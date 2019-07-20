@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+body{
+  padding: 0 !important;
+  width: 100%;
+}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -9,6 +13,7 @@
 }
 
 .App-header {
+  padding-top: 65px;
   background-color: #e1e9fa;
   min-height: 100vh;
   /* display: flex; */

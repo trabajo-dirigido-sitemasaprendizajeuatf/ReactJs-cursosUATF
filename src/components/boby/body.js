@@ -3,6 +3,9 @@ import UrlListarCursos from '../../config'
 import { Link } from 'react-router-dom'
 import DetalleCurso from '../Students/DetalleCurso'
 import { format, render, cancel, register } from 'timeago.js';
+import Banner from './banner'
+
+import './body.css'
 
 class Body extends Component{
 
@@ -74,7 +77,7 @@ class Body extends Component{
 
        }else
         return(
-            <div className="">
+            <div className="home-body">
                 {/* <div className="containerBtn text-left">
                 <Link className="text-white" to="CreateCourse" >
                     <button type="button" class="btnButton btn btn-primary " id="fullHeightModalRight">
@@ -84,7 +87,12 @@ class Body extends Component{
                 </div> */}
 
             {/* courses */}
-            <div className="container-course "> 
+
+
+
+            <Banner/>
+
+            <div className="container-course"> 
             <div className=""></div>
                 <div class="card-deck " >
                 

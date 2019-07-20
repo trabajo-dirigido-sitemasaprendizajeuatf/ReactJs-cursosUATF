@@ -75,12 +75,13 @@ class Navbar extends Component{
            <div>
             {/* <h1 style={{backgroundColor: `${faker.internet.color()}`}}>FAKER</h1> */}
             {/* fixed-top */}
-            <nav className="navbar navbar-expand-lg navbar-light bg-white  ">
+                                    {/*fixed-top  */}
+            <nav className="navbar  navbar-expand-lg  navbar-white white scrolling-navbar navbar-course" id="navbar-global">
             {/*  */}
-            <a class="navbar-brand ">
-              <Link to="/">  <img src={iconSistem} height="45" alt="mdb logo" className="animated jello slow infinite "></img></Link>
+            <a class="navy-blue-skin">
+              <Link to="/">  <img src={iconSistem} height="44" alt="mdb logo" className="animated jello slow infinite "></img></Link>
             </a>
-                <a className="navbar-brand" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
+                <a className="navbar-brand text-dark" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
                 <button id="btn-menu-navbar" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -92,7 +93,7 @@ class Navbar extends Component{
                     {/* //---------------- */}
                     {
                         this.props.token ? 
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        <a className="nav-link text-dark" href="#">Home <span className="sr-only">(current)</span></a>
                         : ''
                     }
 
@@ -100,7 +101,7 @@ class Navbar extends Component{
                         {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                         </a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -128,8 +129,8 @@ class Navbar extends Component{
                     <ul class="navbar-nav ml-auto nav-flex-icons">
                         {
                             this.props.role==='teacher'? <li class="nav-item">
-                                <a >
-                                <i></i> <Link className="nav-link" to="/instructor">Instructor</Link>
+                                <a>
+                                <i></i>  <Link className="nav-link text-dark" to="/instructor">Instructor</Link>
                                 <span class="sr-only">(current)</span>
                                 </a>
                                 </li>
@@ -138,7 +139,7 @@ class Navbar extends Component{
                         
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link text-dark" href="#">
                             <i></i> Mis cursos</a>
                         </li>
                         <li class="nav-item">
