@@ -4,6 +4,9 @@ import { format, render, cancel, register } from 'timeago.js';
 import { Link } from 'react-router-dom'
 import Url from '../../config'
 
+// valoracion de estrelas
+import RatingStar from '../boby/ratingStar'
+
 export default class MostrarDetalleDelcurso extends Component{
     constructor(props){
         super(props)
@@ -43,6 +46,7 @@ export default class MostrarDetalleDelcurso extends Component{
                   <h5>Sigla: {this.state.course.sigla}</h5>
                   <h5>{this.props.idCourse}</h5>
                   <h6>{this.state.course.descripcion}</h6>
+                  <p>{<RatingStar idCourse={this.props.course._id} />}</p>
                  <br/>
 
                 </div>
@@ -61,9 +65,9 @@ export default class MostrarDetalleDelcurso extends Component{
               </div>
             </div>
 
-              <div className="container-acordion">
+              <div className="container-acordion pt-3">
                 <div class="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx194" role="tablist" aria-multiselectable="true">
-                <h2 class="text-left text-uppercase  py-4 px-3">Contenido del curso:</h2>
+                <h2 class="text-left text-uppercase  py-0 px-5">Contenido del curso:</h2>
 
                 <hr class="mb-0"></hr>
                 <div class="card">
@@ -105,16 +109,16 @@ export default class MostrarDetalleDelcurso extends Component{
                     <div class="card-header" role="tab" id="heading6">
                       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href={`#${valor}`} aria-expanded="false" aria-controls="collapse6">
                         
-                              <h3 class="mb-0 text-dark">
+                              <h3 class="mb-0 text-dark  seccion-tema ">
                           seccion:{data.seccion} {data.titleSeccion}<div class="animated-icon1 float-right mt-1"><span></span><span></span><span></span></div>
                         </h3>
                       </a>
                     </div>
 
                     <div id={valor} class="collapse" role="tabpanel" aria-labelledby="heading6" data-parent="#accordionEx194">
-                      <div class="card-body pt-0">
-                        <p> { data.video.map(title=>{
-                              return <p>{title.title}</p>
+                      <div class="card-body font-weight-light card-cont-seccion">
+                        <p className="text-left pl-5"> { data.video.map(title=>{
+                              return <p className="titile-sec"> <i class="far fa-play-circle fa-xs "></i>  {title.title}</p>
                         }) }</p>
                       </div>
                     </div>

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import DetalleCurso from '../Students/DetalleCurso'
 import { format, render, cancel, register } from 'timeago.js';
 import Banner from './banner'
+import StarRating from './ratingStar'
+
 
 import './body.css'
 
@@ -47,30 +49,18 @@ class Body extends Component{
         console.log('home teacher')
        if(!this.state.curso[0]){
            return(
+            <div className="pt-5">
+            
+            <h1 className="pt-5">Loading....</h1>
+              
             <div>
-            <br/>
-            <h1>loading....</h1>
-            <div class="spinner-grow text-primary" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-secondary" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-success" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-danger" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-warning" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-info" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
-           <div class="spinner-grow text-light" role="status">
-           <span class="sr-only">Loading...</span>
-           </div>
+                <i class="fas indigo-text fa-circle-notch fa-spin fa-2x"></i>
+                {/* <i class="fas fa-spinner fa-spin"></i> */}
+                
+            </div>
+
+    
+           
            
    </div>
            )
@@ -92,7 +82,10 @@ class Body extends Component{
 
             <Banner/>
 
+            
             <div className="container-course"> 
+            <h3 className="font-weight-bolde pb-5 text-left"> Nuestros cursos ahora a tu alcance</h3>
+
             <div className=""></div>
                 <div class="card-deck " >
                 
@@ -108,13 +101,19 @@ class Body extends Component{
                         </Link>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body info">
                         
-                        <h6 class="card-title">{data.namecourse}</h6>
-                        <p class="card-text">{data.sigla}</p>
-                        <p class="card-text">{data.autor}</p>
-                        <p class="card-text">{format(data.createDateCourse)}</p>
+                        <h6 class="card-title text-left">{data.namecourse}</h6>
+                        <p class="card-text text-left">{data.sigla}</p>
+                        <p class="card-text text-left">{data.autor}</p>
+                        {/* <p class="card-text">{format(data.createDateCourse)}</p> */}
+                        <div className="content-rating">
+                        <p class="card-text text-center pt-3 pb-3  container-ratinstar"> {<StarRating idCourse={data._id}/>} </p>
+
+                        </div>
                         
+                         
+                         
                         {/* <button type="button" class="btn btn-light-blue btn-md">Añadir Seccion</button> */}
 
                         </div>

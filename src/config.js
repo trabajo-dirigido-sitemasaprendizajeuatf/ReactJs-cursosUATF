@@ -18,8 +18,8 @@ const config={
     UrlaCuestionarioRepaso:'http://localhost:3005/cuestionariorepaso',
     // http://localhost:3005/Upload/file/Materia/Apoyo/idVideo=5d20d5a71b6a092c1408243c/filename=este es el nombre del file
     UrlUploadMaterialSupport:`http://localhost:3005/Upload/file/Materia/Apoyo`,
-    UrlUploadLinks:`http://localhost:3005/Upload/links`
-    
+    UrlUploadLinks:`http://localhost:3005/Upload/links`,
+    UrlRatingStar:`http://localhost:3005/avarage/rating/start`
     
 }
 

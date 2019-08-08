@@ -44,8 +44,8 @@ class Home extends Component{
             <div className="">
                 <div className="containerBtn text-left">
                 <Link className="text-white" to="CreateCourse" >
-                    <button type="button" class="btnButton btn btn-primary " id="fullHeightModalRight">
-                        <i class="fas fa-chalkboard-teacher"></i> CREAR NUEVO CURSO 
+                    <button type="button" class="btnButton btn btn-primary" id="fullHeightModalRight">
+                    <h6><i class="fas icon-add fa-plus fa-1x"></i> CREAR NUEVO CURSO</h6>
                     </button>
                 </Link>
                 </div>

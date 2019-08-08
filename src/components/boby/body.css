@@ -1,3 +1,17 @@
 .home-body{
  width: 100%;   
 }
+.content-rating{
+    padding: 15% 0 0 0;
+}
+
+.container-ratinstar{
+    position:absolute;
+    bottom: 3%;
+    top: 82%;
+    left: 3%;
+    right: 3%;
+    text-align: center;
+    /* background: rebeccapurple; */
+    margin-bottom: 3%;
+}

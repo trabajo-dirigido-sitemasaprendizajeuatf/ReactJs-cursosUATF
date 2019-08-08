@@ -76,7 +76,7 @@ class Navbar extends Component{
             {/* <h1 style={{backgroundColor: `${faker.internet.color()}`}}>FAKER</h1> */}
             {/* fixed-top */}
                                     {/*fixed-top  */}
-            <nav className="navbar  navbar-expand-lg  navbar-white white scrolling-navbar navbar-course" id="navbar-global">
+            <nav className="navbar  navbar-expand-lg navbar-white white scrolling-navbar fixed-top" id="navbar-global">
             {/*  */}
             <a class="navy-blue-skin">
               <Link to="/">  <img src={iconSistem} height="44" alt="mdb logo" className="animated jello slow infinite "></img></Link>
@@ -112,15 +112,11 @@ class Navbar extends Component{
                         <a className="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item ">
                         <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                     </ul>
-                    
-                    
 
-                    
-                    
                     <form class="form-inline active-cyan-4 long">
                         <input class="form-control form-control-sm mr-3 w-75" id="search" type="text" placeholder="Search" aria-label="Search"></input>
                         <i class="fas fa-search" aria-hidden="true"></i>
