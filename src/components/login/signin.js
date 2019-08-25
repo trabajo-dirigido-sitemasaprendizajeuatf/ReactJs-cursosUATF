@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import 'jquery'
 import $ from 'jquery'
 import 'bootstrap/js/src/modal'
-
+import './login.css'
 import Config from '../../config'
 
 class Signin extends Component{
@@ -131,14 +131,15 @@ class Signin extends Component{
 
         return(
             
-            <div>
-             <form onSubmit={this.send} className="text-center border border-light">
+            <div className="container-formulario">
+             <form onSubmit={this.send} className="form-login text-center">
                  {/* class="modal fade" */}
-                <div    class="modal fade"     id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                    aria-hidden="true">
+                <div    class="modal fade"     id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                        <div className="modal-header text-center">
+
+                        <div className="modal-content color ">
+                        <div className="bg-imagen">
+                        <div className="modal-header text-center ">
                             <h4 className="modal-title w-100 font-weight-bold">Sign in</h4>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -159,10 +160,12 @@ class Signin extends Component{
                             </div>
 
                         </div>
-                        <div className="modal-footer d-flex justify-content-center">
+                        </div>
+                        <div className="btn-login modal-footer d-flex justify-content-center">
                             <button type="submit" className="btn btn-default">Login</button>
                         </div>
                         </div>
+                        
                     </div>
                     </div>
             

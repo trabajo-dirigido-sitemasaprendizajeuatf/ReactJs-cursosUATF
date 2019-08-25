@@ -36,7 +36,7 @@ export default class DetalleCurso extends Component{
             return <h1>loading....</h1>
         }else   
         return(
-            <div>
+            <div className="pb-5">
             <MostrarDetalleCurso course={this.state.course}/>
                 {/* <h1>Detalle del curso</h1>
                 <h1>{this.props.match.params.id}</h1> */}

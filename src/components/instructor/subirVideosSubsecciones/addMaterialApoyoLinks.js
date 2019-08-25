@@ -81,21 +81,74 @@ export default class addMaterialApoyoLinks extends Component{
     renderAlert=()=>{
 
         if(this.state.inputs){
-            toast.warn("Comlete los campos vacios",{position:'top-left'})
-            this.setState({inputs:false})
+            // toast.warn("Comlete los campos vacios",{position:'top-left'})
+            // this.setState({inputs:false})
+
+            setTimeout(()=>{this.setState({
+                inputs:false
+                    })
+                },7000)
+            return(
+                <div class=" text-info p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   ¡Comlete los campos vacios!
+
+                </div>
+            )
         }
         if(this.state.resServer){
-            toast.warn("ERROR: No se guardaron los datos",{position:'top-left'})
-            this.setState({resServer:null})
+            // toast.warn("ERROR: No se guardaron los datos",{position:'top-left'})
+            // this.setState({resServer:null})
+            setTimeout(()=>{this.setState({
+                resServer:null
+                    })
+                },7000)
+            return(
+                <div class=" text-info p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   ERROR: No se guardaron los datos
+
+                </div>
+            )
         }
 
         if(this.state.succes){
-            toast.success("El Link se guardo correctamente",{position:'top-left'})
+            // toast.success("El Link se guardo correctamente",{position:'top-left'})
+            setTimeout(()=>{this.setState({
+                info:null
+                    })
+                },7000)
+            return(
+                <div class=" text-info p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   El Link se guardo correctamente
+
+                </div>
+            )
         }
 
         if(this.state.info){
-            toast.info("Antes de enviar el material de apoyo agregue un video",{position:'top-left'})
-            this.setState({info:null})
+            // toast.info("Antes de enviar el material de apoyo agregue un video",{position:'top-left'})
+            // this.setState({info:null})
+            setTimeout(()=>{this.setState({
+                info:null
+                    })
+                },7000)
+            return(
+                <div class=" text-info p-0" role="alert ">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   !Antes de enviar el material de apoyo agregue un video¡
+
+                </div>
+            )
         }
     }
 
@@ -105,7 +158,7 @@ export default class addMaterialApoyoLinks extends Component{
         return(
             <div>
 
-                    <ToastContainer
+                    {/* <ToastContainer
                         position="top-left"
                         autoClose={5000}
                         hideProgressBar={true}
@@ -115,11 +168,10 @@ export default class addMaterialApoyoLinks extends Component{
                         pauseOnVisibilityChange
                         draggable
                         pauseOnHover
-                    />
+                    /> */}
 
 
                     {/* modal fade */}
-                    {this.renderAlert()}
                 <div class="" id="modalContactForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog cascading-modal mt-5" id="from-modal-file" role="document">
 
@@ -133,6 +185,8 @@ export default class addMaterialApoyoLinks extends Component{
                             
                             </div>
                             <div class="modal-body" id="modal-body-upload-material-apoyo">
+                   {this.renderAlert()}
+
                             <h6>Puede agregar un link de descarga,video,etc..</h6>
                             <div class="md-form form-sm">
                                 <input  type="text" value={this.state.link} onChange={this.onChangeInput.bind(this)}  name="link" class="custom-file-input" id="customFileLang" lang="in"></input>

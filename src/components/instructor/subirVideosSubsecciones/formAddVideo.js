@@ -152,7 +152,7 @@ export default class FormAddVideo extends Component{
                 )
             }else
         return(
-            <div>
+            <div className="z-depth-2">
 
 
                 <ToastContainer

@@ -19,8 +19,18 @@ const config={
     // http://localhost:3005/Upload/file/Materia/Apoyo/idVideo=5d20d5a71b6a092c1408243c/filename=este es el nombre del file
     UrlUploadMaterialSupport:`http://localhost:3005/Upload/file/Materia/Apoyo`,
     UrlUploadLinks:`http://localhost:3005/Upload/links`,
-    UrlRatingStar:`http://localhost:3005/avarage/rating/start`
+
+                 //  http://localhost:3005/avarage/rating/start 
+    UrlRatingStar:`http://localhost:3005/avarage/rating/start`,
+
+        // material de apoyo (examen, mat doc. y url) 
+    UrlExamenVideo: `http://localhost:3005/take/exam/student`,
     
+        // registro de los examenes y las vistas de los video
+    UlrCourseTakeExam: `http://localhost:3005/courses/takes/exam`,
+
+        // controla los examenes que ya fueron tomados por un usuario de un video
+    UrlTakeExamControl: `http://localhost:3005/courses/examen/resolved`
 }
 
 export default config

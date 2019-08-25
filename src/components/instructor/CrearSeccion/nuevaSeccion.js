@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './mainCrearSeccion.css'
 import URL from '../../../config'
-
+import './nuevaSeccion.css'
 import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "react-router-dom";
 import history from '../../utils/history'
 
@@ -86,7 +86,7 @@ class NuevaSeccion extends Component{
         
         if(!this.state.errcampos){
             return(
-                <div class="alert alert-danger" role="alert">
+                <div class=" alert alert-danger" role="alert">
                 Complete el titulo de la seccion
                 </div>
             )
@@ -120,14 +120,12 @@ class NuevaSeccion extends Component{
         
         return(
             <div>
-            <div className="container-form-newSeccion">
+            <div className="container-form-newSeccion pt-5 pb-5">
                 {this.renderAlert()}
-                <form  class="text-center border border-light p-5 form-newSeccion">
+                <form  class="text-center border border-light p-5 form-newSeccion z-depth-4">
                     <p class="h4 mb-4">Crear una nueva seccion</p>
                     <p>Para crear una nueva seccion, complete los campos vacios</p>
-                    <p>
-                        <a href="" target="_blank">See the last newsletter</a>
-                    </p>
+                    
                     <input value={this.state.titleSeccion}  onChange={this.onChange.bind(this)} name="titleSeccion" type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4  " placeholder="Titulo de la seccion"></input>
                     <input  value={this.state.seccion}  name="seccion" type="number" id="defaultSubscriptionFormEmail" class="form-control mb-4" placeholder="ej:1,2,3,4"></input>
                 

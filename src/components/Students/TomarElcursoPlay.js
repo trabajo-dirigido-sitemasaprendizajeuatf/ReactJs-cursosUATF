@@ -5,6 +5,7 @@ import URL from '../../config'
 import './TomarElcursoPlayer.css'
 
 import ChatGbobalStudent from './chats/chatGlobalStudent'
+import URLtakeExman from '../../config'
 
 export default class TomarCursoPlay extends Component{
 
@@ -13,7 +14,10 @@ export default class TomarCursoPlay extends Component{
         this.state={
             IDCOURSE:this.props.match.params.id,
             ObjSeccionesDelCurso:[],
-            linkvideo:''
+            linkvideo:'',
+            idVideo:'',
+            objExamVideo:[],
+            objTakeExamControl:[]
         }
         this.myRef=React.createRef()
         // this.onChange=this.onChange.bind(this)
@@ -22,7 +26,7 @@ export default class TomarCursoPlay extends Component{
     };
 
 
-    onChange=(link)=>{
+    onChange=(link,idVid)=>{
 
 
         // console.log(link.replace("\\",'/'));
@@ -30,9 +34,43 @@ export default class TomarCursoPlay extends Component{
       
       
       this.setState({
-          linkvideo:link
+          linkvideo:link,
+          idVideo:idVid
       })
       console.log('o')
+      var url = URLtakeExman.UrlExamenVideo;
+        var idVideo={idVideo:idVid}
+  
+         var params={
+          method:'POST',
+          body:JSON.stringify(idVideo),
+          headers:{
+            'Content-Type':'application/json'
+          }
+        }
+  
+        fetch(url,params)
+          .then(data=>data.json())
+          .then(data=>{
+            console.log('video react ---->>>')
+            console.log(data)
+            this.setState({
+                objExamVideo:data,
+                
+            })
+            var idUser = localStorage.getItem('id')
+            var idVideo;
+
+            data.map((d,i)=>{ 
+              idVideo = d.idVideo;
+            })
+
+          this.fetchCheckExam(idUser,idVideo)
+
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
     }
 
 
@@ -43,14 +81,56 @@ export default class TomarCursoPlay extends Component{
         fetch(url)
          .then(res=>res.json())
          .then(data=>{
+          //  console.log("++++++++++++++++++++ddddd")
             console.log(data);
             this.setState({
                 ObjSeccionesDelCurso:data
             })
+
+            
             
          })
          .catch(err=>{console.log(err)})
+
+
+         //verifica si el examen ya fue tomado
+
+        //  fectchCheckExam()
     }
+
+    //realiza una peticion al servidor de los examenes ya tomados
+    fetchCheckExam=(idUser,idVideo)=>{
+
+
+      var objPeticion = {
+        idUser:idUser,
+        idVideo:idVideo
+      }
+      var url = URL.UrlTakeExamControl
+      var params = {
+        method:'POST',
+        body:JSON.stringify(objPeticion),
+        headers:{
+          'Content-Type': 'application/json'
+        }
+      }
+
+      fetch(url,params)
+        .then(data=>data.json())
+        .then(res=>{
+          this.setState({
+            objTakeExamControl:res
+          })
+          console.log('====================================');
+          console.log(res)
+          console.log('====================================');
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+      
+    }
+
 
     render(){
       console.log(this.state.linkvideo,'9999999');
@@ -68,7 +148,13 @@ export default class TomarCursoPlay extends Component{
                     
                         <div class="video overlay rounded z-depth-1-half mb-2">
                         {/* <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/3.jpg" alt="Sample image"></img> */}
-                        <Playvideo link2={this.state.linkvideo}/>
+                        <Playvideo 
+                          link2={this.state.linkvideo} 
+                          idVideo={this.state.idVideo} 
+                          objExamVideo={this.state.objExamVideo}
+                          ObjSeccionesDelCurso={this.state.ObjSeccionesDelCurso}  
+                          objTakeExamControl={this.state.objTakeExamControl}       
+                        />
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -103,7 +189,7 @@ export default class TomarCursoPlay extends Component{
                                 return (
                                     <tr>
                                     <td class="flag-name" id="title-video">
-                                   <a><div ref={this.myRef} id={data2.idVideo} onClick={()=> this.onChange(data2.linkfile)}>
+                                   <a><div ref={this.myRef} id={data2.idVideo} onClick={()=> this.onChange(data2.linkfile,data2.idVideo)}>
                                      <i class="fas fa-play-circle p-1"  ></i>{data2.title}
                                     </div></a>
                                      {/* <input type="text" name="idvideo" onClick={this.onChange.bind(this)} value={data2.linkfile}></input> */}

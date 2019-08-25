@@ -111,32 +111,87 @@ export default class addMaterialApoyo extends Component{
         // toast.error(" Complete los campos vacios !",{position:"top-left"})
         
         if(this.state.warArchivo){
-            toast.error("Tipo de archivo no valido, vuelva a intentarlo",{position:"top-left"})
-            this.setState({
+            // toast.error("Tipo de archivo no valido, vuelva a intentarlo",{position:"top-left"})
+            // this.setState({
+            //     warArchivo:null 
+            // })
+            setTimeout(()=>{this.setState({
                 warArchivo:null 
-            })
+                    })
+                },5000)
+
+            return(
+                
+                <div class=" text-primary p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                    ¡Tipo de archivo no valido, vuelva a intentarlo! 
+                </div>
+                
+            )
         }
 
         if(this.state.inputs){
-            toast.warn("¡Complete los campos!",{position:"top-left"})
-            this.setState({
+            // toast.warn("¡Complete los campos!",{position:"top-left"})
+            setTimeout(()=>{this.setState({
                 inputs:false
-            })
+                    })
+                },5000)
+                
+            return(
+                <div class=" text-danger p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   <strong> ¡Complete los campos requeridos! </strong>
+                </div>
+                
+            )
+            
         }
 
         if(this.state.info){
-            toast.info("Antes de enviar el material de apoyo, agregue el video",{position:"top-left"})
-            this.setState({
+            // toast.info("Antes de enviar el material de apoyo, agregue el video",{position:"top-left"})
+            // this.setState({
+            //     info:null
+            // })
+            setTimeout(()=>{this.setState({
                 info:null
-            })
+                    })
+                },8000)
+            return(
+                <div class=" text-danger p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   <strong> ¡Antes de enviar el material de apoyo, agregue el video! </strong>
+                </div>
+                
+            )
         }
 
         if(this.state.succes){
-            toast.success("Material de apoyo enviado",{position:"top-left",hideProgressBar: true})
-            this.setState({
+            // toast.success("Material de apoyo enviado",{position:"top-left",hideProgressBar: true})
+            // this.setState({
+            //     succes:null
+            // })
+            setTimeout(()=>{this.setState({
                 succes:null
-            })
+                    })
+                },5000)
+            return(
+                <div class=" text-success p-0" role="alert">
+                    {/* <button  class="close" data-dismiss="alert">
+                        <span aria-hidden="true">×</span>
+                    </button> */}
+                   <strong> Material de apoyo enviado </strong>
+                </div>
+                
+            )
         }
+
+        
     }
 
     render(){
@@ -145,7 +200,7 @@ export default class addMaterialApoyo extends Component{
         return(
             <div>
 
-            <ToastContainer
+            {/* <ToastContainer
             
                 position="top-left"
                 autoClose={5000}
@@ -156,7 +211,7 @@ export default class addMaterialApoyo extends Component{
                 pauseOnVisibilityChange
                 draggable
                 pauseOnHover
-            />
+            /> */}
 
                 <div class="" id="modalContactForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog cascading-modal mt-5" id="from-modal-file1" role="document">
@@ -164,7 +219,7 @@ export default class addMaterialApoyo extends Component{
                         <div class="modal-content" id="modal-content-from">
 
 
-                            {this.renderAlert()}
+                            
                             <div class="modal-header primary-color white-text">
                                 <h4 class="title">
                                 <i class="far fa-file-archive"></i> Añadir un archivo como material de Apoyo</h4>
@@ -173,10 +228,13 @@ export default class addMaterialApoyo extends Component{
                             
                             </div>
                             <div class="modal-body" id="modal-body-upload-material-apoyo">
+                            
+                            {this.renderAlert()}
+
                             <h6>Puede agregar un archivo(.pdf,.txt,.doc)</h6>
                             <div class="md-form form-sm">
                                 <input  type="file" ref={this.myRef} onChange={this.onChangefile.bind(this)}  name="file" class="custom-file-input" id="customFileLang" lang="in"></input>
-                                <label  class="custom-file-label" for="customFileLang">{this.state.nameFile}</label>
+                                <label  class="custom-file-label" for="customFileLang">{this.state.nameFile===""?"Seleccione un archivo":this.state.nameFile}</label>
                             </div>
 
                                     
@@ -184,7 +242,6 @@ export default class addMaterialApoyo extends Component{
                                     <input value={this.state.filenameinput} onChange={this.onChangeInput.bind(this)} name="filenameinput" type="text" id="materialFormEmailModalEx1" class="form-control form-control-sm" placeholder="Nombre del recurso"></input>
                                     <label for="materialFormEmailModalEx1"></label>
                                 </div>
-
 
                                 <div class="text-center mt-4 mb-2">
                                         <i class="fa fa-send ml-2"></i>

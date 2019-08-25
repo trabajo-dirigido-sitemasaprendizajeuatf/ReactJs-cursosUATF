@@ -6,6 +6,9 @@ import { format, render, cancel, register } from 'timeago.js';
 import Banner from './banner'
 import StarRating from './ratingStar'
 
+// spinner Loding
+import Spinner from './spinner-esfera/spennir'
+import SpinnerLoading from './spinner-loading/spinner-loadin'
 
 import './body.css'
 
@@ -50,19 +53,9 @@ class Body extends Component{
        if(!this.state.curso[0]){
            return(
             <div className="pt-5">
-            
-            <h1 className="pt-5">Loading....</h1>
-              
-            <div>
-                <i class="fas indigo-text fa-circle-notch fa-spin fa-2x"></i>
-                {/* <i class="fas fa-spinner fa-spin"></i> */}
-                
-            </div>
-
-    
-           
-           
-   </div>
+          
+                  <Spinner/> 
+             </div>
            )
 
        }else
@@ -87,12 +80,12 @@ class Body extends Component{
             <h3 className="font-weight-bolde pb-5 text-left"> Nuestros cursos ahora a tu alcance</h3>
 
             <div className=""></div>
-                <div class="card-deck " >
+                <div class="card-deck" >
                 
                 {this.state.curso.map(data=>{
                     return(
                     <div class="row col-md-3 ">
-                    <div class="card mb-3">
+                    <div class="card mb-3 hoverable">
 
                         <div class="view overlay">
                         <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>

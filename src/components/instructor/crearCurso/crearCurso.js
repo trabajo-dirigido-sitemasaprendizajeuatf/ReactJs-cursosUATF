@@ -124,31 +124,31 @@ class CreateCourso extends Component{
                 </div>
 
                     <br/>
-                    <h3 className="font-weight-bold">Datos de curso</h3>
+                    <h3 className="font-weight-bold">Datos del curso</h3>
                    
             <div className="container w-50 p-3 bg-white" id="container-form">
             {this.renderAlert()}
-                <form onSubmit={this.sendData}>
+                <form onSubmit={this.sendData} className="form-crear-curso z-depth-4 p-4 mb-5 text-left">
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 pr-2 pl-2 m-0">
                     <label for="inputEmail4">Materia</label>
                     <input value={this.state.namecourse} onChange={this.onChange.bind(this)} name="namecourse" type="text" class="form-control" id="inputEmail4" placeholder="Materia"></input>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 p-0 m-0">
                     <label for="inputPassword4">Sigla</label>
                     <input value={this.state.sigla} onChange={this.onChange.bind(this)} type="text" name="sigla" class="form-control" id="inputPassword4" placeholder="SIS-756"></input>
                     </div>
                 </div>
 
-                <div class="form-group ">
+                <div class="form-group">
                     <label for="inputAddress">Nivel</label>
                     <input value={this.state.lavel} onChange={this.onChange.bind(this)} name="lavel" type="Number" class="form-control" id="inputAddress" placeholder="1,2,3,4,...."></input>
                 </div>
-                <div class="form-group purple-border">
+                <div class="form-group purple-border p-0 m-0">
                     <label for="exampleFormControlTextarea4">Descripcion del curso</label>
                     <textarea value={this.state.descripcion}  onChange={this.onChange.bind(this)} name="descripcion" class="form-control" id="exampleFormControlTextarea4" rows="3"></textarea>
                 </div>
-                <div class="form-row">
+                <div class="form-row p-0 m-0">
                     <label for="inputCity">Autor</label>
                     <input   value={this.state.autor} onChange={this.onChange.bind(this)} name="autor" type="text" class="form-control" id="inputCity" placeholder="Ing. Pablo Miranda, youtube, otros"></input>
                 </div>

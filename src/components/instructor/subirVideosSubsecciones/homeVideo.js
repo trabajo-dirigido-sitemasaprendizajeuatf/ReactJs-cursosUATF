@@ -109,7 +109,7 @@ export default class HomeVidel extends Component{
                 
                    
                 </div>
-                <div class="col-4  bg-dark">
+                <div class="col-4  container-reco">
                 <div className="content-text">
                     <h6>
                     <h5>recomendaciones:</h5><br/>

@@ -1,0 +1,17 @@
+
+.container-form-newSeccion{
+    padding-left: 19%;
+    padding-right: 19%;
+    padding-top: 1%;
+
+    margin: 0px;
+   
+}
+
+.form-newSeccion input{
+    border-radius: 7mm;
+}
+
+.alert{
+    border-radius: 7mm;
+}

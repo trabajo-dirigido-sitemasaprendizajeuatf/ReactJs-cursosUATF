@@ -11,8 +11,8 @@
 .container-form{
     padding-left: 5%;
     padding-right: 5%;
-
 }
+
 
 /* buttons  */
 .button-menu-video{
@@ -25,11 +25,19 @@
 }
 
 /* texto de recomedaciones */
+.container-reco{
+    background-color: #4769ff;
+    background-image: linear-gradient(0deg, #4769ff 0%, #5002a3 74%);
+    
+}
+
 .content-text{
+    
     text-align: left;
     color: #ffff;
     
 }
+
 .date-context{
    
     text-align: end;

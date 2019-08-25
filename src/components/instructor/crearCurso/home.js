@@ -51,14 +51,15 @@ class Home extends Component{
                 </div>
 
             {/* courses */}
-            <div className="container-course "> 
-            <h1 className="text-left">Cursos</h1>
+            <div className="container-course pt-5 "> 
+            <h1 className="text-left pt-5 pl-5">Mis Cursos</h1>
+            {/* <hr className="hr-dark"></hr> */}
             <div className=""></div>
                 <div class="card-deck " >
                 
                 {this.state.curso.map(data=>{
                     return(
-                    <div class="row col-md-3 ">
+                    <div class="row col-md-3 pt-5">
                     <div class="card mb-3">
 
                         <div class="view overlay">

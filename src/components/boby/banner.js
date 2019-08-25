@@ -31,8 +31,8 @@ export default class Banner extends Component{
     render(){
         return(
             <div>
-                <section className="zoomm">
-                    <div className="container-image">
+                <section className="zoomm ">
+                    <div className="container-image gradient ">
                                         
                         <div className="container-text"> 
                             <p className="title-text"> Céntrate en tu futuro</p>

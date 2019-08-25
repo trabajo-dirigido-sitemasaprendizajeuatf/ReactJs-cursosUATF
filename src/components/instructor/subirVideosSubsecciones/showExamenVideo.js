@@ -45,7 +45,7 @@ export default class ShowExamenVideo extends Component{
                                                     return(
                                                     <div>
                                                     <div class="respuestas2">
-                                                        <input type="radio" name="preg1" value={indice+1} /> {posibleres}<br/>
+                                                    {indice+1}) <input type="radio" name="preg1" value={indice+1} />  {posibleres}<br/>
                                                     </div>
                                                     </div>
                                                     )
@@ -56,8 +56,14 @@ export default class ShowExamenVideo extends Component{
                                             
                                             <div class="respuestasCorrectas">
                                             _____________________<br/>
-                                           <h6>Respuestas Correctas:</h6>
-                                           <h1>{data.respuestaCorrecta.map((d3,i3)=>{ return(<h6>{d3}</h6>)})}</h1>
+                                           <h6>Respuestas Correctas:</h6> 
+                                           <span>{data.respuestaCorrecta.map((d3,i3)=>{ 
+                                                    return(
+                                                    <div className="contend-res">
+                                                        <h6 className="resp">{d3})</h6>
+                                                    </div>
+                                                )}
+                                               )}</span>
                                             </div>
                                         
                                     </div>
@@ -127,9 +133,15 @@ export default class ShowExamenVideo extends Component{
                         <div class="pregunta">2. ¿Crees que HTML es una buena tecnología?<br />
                         </div>
                         <div class="respuestas">
-                        <input type="radio" name="preg2" value="1" /> Sí<br />
-                        <input type="radio" name="preg2" value="2" /> No<br />
-                        <input type="radio" name="preg2" value="3" /> Ns/Nc<br />
+                        1 <input type="radio" name="preg1" value="1" /> Sí<br />
+                        2 <input type="radio" name="preg1" value="2" /> No<br />
+                        3 <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+                        </div>
+                        <div class="respuestasCorrectas">
+                        _____________________<br/>
+                        Respuestas Correctas:<br />
+                          1 <br/>
+                          2
                         </div>
                     </div>
 
@@ -138,9 +150,15 @@ export default class ShowExamenVideo extends Component{
                         <div class="pregunta">3. ¿Crees que HTML es una buena tecnología?<br />
                         </div>
                         <div class="respuestas">
-                        <input type="radio" name="preg1" value="1" /> Sí<br />
-                        <input type="radio" name="preg1" value="2" /> No<br />
-                        <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+                        1 <input type="radio" name="preg1" value="1" /> Sí<br />
+                        2 <input type="radio" name="preg1" value="2" /> No<br />
+                        3 <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+                        </div>
+
+                        <div class="respuestasCorrectas">
+                        _____________________<br/>
+                        Respuestas Correctas:<br />
+                          3
                         </div>
                     </div>
 
