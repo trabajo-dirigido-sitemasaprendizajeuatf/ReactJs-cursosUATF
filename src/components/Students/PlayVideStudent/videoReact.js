@@ -38,7 +38,9 @@ class Playvideo extends Component{
 
           // objeto examenVideo que llega en props  --> this.props.objExamVideo
 
-          examen:''
+          examen:'',
+
+          modalSgow:false
 
       }
       
@@ -120,7 +122,7 @@ class Playvideo extends Component{
     var check=false
     this.props.objTakeExamControl.map((d,i)=>{
 
-        check =d.examenResuelto
+        check = d.examenResuelto
     })
 
       if(this.state.timeShowExamen===this.props.time && check==false){
@@ -133,6 +135,33 @@ class Playvideo extends Component{
   }
 
 
+  formReload=()=>{
+    
+  }
+
+
+  playerVideo=()=>{
+
+    this.setState({
+      modalSgow:true
+    })
+
+    if(this.durationRef.current.paused ){
+      setTimeout(()=>{
+        this.setState({
+          modalSgow:false
+        })
+
+        $('#modalExamenForm').modal('hide');
+        this.durationRef.current.play();
+
+      },3000)
+      
+      }else{
+        
+        this.durationRef.current.pause();
+      }
+  }
 
   render(){ 
     // var timeVideo = document.getElementById("movie")
@@ -180,12 +209,16 @@ class Playvideo extends Component{
                 
                 <MainVideoExamen objExamVideo={this.props.objExamVideo} time={this.state.progressTime} 
                   ObjSeccionesDelCurso={this.props.ObjSeccionesDelCurso}
+                  playerVideo={this.playerVideo}
+                  modalSgow={this.state.modalSgow}
+                  formReload={this.state.formReload}
+
                 />
 
-                <div class="text-center">
+                {/* <div class="text-center">
                   <a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalContactForm">Launch
                     Modal Contact</a>
-                </div>
+                </div> */}
               
               </div>
 

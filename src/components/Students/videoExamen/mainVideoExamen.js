@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 
 import URLtakeexamvideo from '../../../config'
 import './mainVideoExamen.css'
-
 import URLcourseTakesExam from '../../../config'
+
+import 'bootstrap/js/src/modal'
+import $ from 'jquery'
 
 export default class MainVideoExamen extends Component{
 
@@ -15,9 +17,14 @@ export default class MainVideoExamen extends Component{
             
             respuestasCorrectas:'',
             respuestasUser:'',
-            nota:0,
+            
+            cantidadPreguntas:'',
             idUser:'',
-            idCourse:''
+            idCourse:'',
+
+            nota:0,
+            sobre:0,
+            calificado:this.props.modalSgow
             
 
         }
@@ -25,6 +32,7 @@ export default class MainVideoExamen extends Component{
         this.respuestaCorrectaRef2=React.createRef();
     }
     
+
     async onChange(e){
         e.preventDefault();
       // console.log(e.target.querySelectorAll(".pregresp"))
@@ -65,6 +73,7 @@ export default class MainVideoExamen extends Component{
 
       //  calificacion del examne
       var nota=0;
+      var sobre=respeustasCorretas.length;
 
     // console.log(respeustasCorretas[0])
 
@@ -79,7 +88,12 @@ export default class MainVideoExamen extends Component{
 
       console.log('nota/total')
       console.log(`${nota}/${respeustasCorretas.length}`)
-      
+
+      var c=respeustasCorretas.length
+      this.setState({
+        nota:nota,
+        cantidadPreguntas:c
+      })
 
 
       var idVideoExam;
@@ -139,6 +153,15 @@ export default class MainVideoExamen extends Component{
         .then(res=>res.json())
         .then(data=>{
           console.log(data)
+
+          this.setState({
+            // calificado:true,
+            nota:nota,
+            sobre:sobre
+          })
+          // this.props.formReload()
+          
+          this.props.playerVideo()
         })
         .catch((err)=>{
           console.log(err)
@@ -158,21 +181,53 @@ export default class MainVideoExamen extends Component{
     senData=()=>{
 
       this.setState({objExamenVideo:this.props.objExamVideo})
-      
-      console.log('====================================');
-      console.log(this.state);
-      console.log('====================================');
-
         
     }
 
+   calificado=()=>{
+    
+    // setTimeout(()=>{
+    //   this.setState({
+    //     calificado:false
+    //   },2000)
+    // })
+    
+   }
+
+    ShowAnswers=()=>{
+      
+      // setTimeout(()=>{
+      //   this.setState({
+      //     calificado:false
+      //   })
+      // },2000)
+
+      
+      return(
+        <form class="form-nota-exam text-center border border-light p-5 mb-4">
+            <div class="text-center">
+            <h2 class="dark-text mb-4"><strong>Calificacion Obtenida </strong></h2>
+            </div>
+            
+            <p class="text-success mb-4"><h3>Nota: {this.state.nota}/{this.state.sobre}</h3></p>
+
+            <p class="text-muted mb-0">Resultados obtenidos: {this.state.nota} </p>
+            <p class="text-muted mb-4">Cantidad de Preguntas: {this.state.sobre} </p>
+
+            <button   class="btn btn-outline-default waves-effect w-50" style={{borderRadius:'7em'}}>Aceptar</button>
+        
+        </form>
+      )
+     
+    }
 
     render(){
+      console.log('===========fffff=========================');
+      console.log(this.props.modalSgow);
+      console.log('====================================');
 
-      
-    
-      
         return(
+
 
             <div>
             {/* modal fade */}
@@ -182,77 +237,86 @@ export default class MainVideoExamen extends Component{
                     <div class="modal-content">
 
                       <div class="modal-header light-blue darken-3 white-text">
-                        <h4 class="title"><i class="fas fa-pencil-alt"></i>Complete el siguiente examen</h4>
+                        {
+                          this.state.modalSgow?
+                            <h4 class="title"><i class="fas fa-glasses"></i>Calificación obtenida</h4>
+                          :
+                            <h4 class="title"><i class="fas fa-pencil-alt"></i>Complete el siguiente examen de reguntas cerradas</h4>
+
+                        }
                         <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">×</span>
                         </button>
                       </div>
                       <div class="modal-body ">
+
+                      {
+                        this.props.modalSgow? this.ShowAnswers()
+                        :
+                          <form onSubmit={this.onChange.bind(this)} class="conten-form">
+                              {
+                                
+                                this.props.objExamVideo.map((data, indice)=>{
+                                  // this.props.time===data.timeShowExamen?
+                                  if(this.props.time===data.timeShowExamen){
+                                    return(
+                                      data.examen.map((d,i)=>{
+                                        console.log(d.posiblerespuesta)
+                                        console.log(d)
+                                          return(
+                                        
                         
-                      <form onSubmit={this.onChange.bind(this)} class="conten-form">
-                          {
-                            
-                            this.props.objExamVideo.map((data, indice)=>{
-                              // this.props.time===data.timeShowExamen?
-                              if(this.props.time===data.timeShowExamen){
-                                return(
-                                  data.examen.map((d,i)=>{
-                                    console.log(d.posiblerespuesta)
-                                    console.log(d)
-                                      return(
-                                    
-                    
-                                          <div class="pregresp">
-                                            <div class="pregunta">{d.pregunta}<br />
-                                          </div>
-                                          {
-                                              d.posiblerespuesta.map((d2,i2)=>{
-                                                return(
-                                                
-                                                  <div class="respuestas">
-                                                    <input type="radio"  name={d.pregunta} value={i2+1} />  {d.pregunta}//{i2+1} //{d2}<br />
-                                                    {/* <div ref={this.respuestaCorrectaRef2}  >{d.respuestaCorrecta}</div> */}
-                                                    <input type="text" ref={this.respuestaCorrectaRef}  value={d.respuestaCorrecta}></input>
-                                                
-                                                  </div>
-                    
-                                                )
+                                              <div class="pregresp">
+                                                <div class="pregunta">{d.pregunta}<br />
+                                              </div>
+                                              {
+                                                  d.posiblerespuesta.map((d2,i2)=>{
+                                                    return(
+                                                    
+                                                      <div class="respuestas">
+                                                        <input type="radio"  name={d.pregunta} value={i2+1} />  {d.pregunta}//{i2+1} //{d2}<br />
+                                                        {/* <div ref={this.respuestaCorrectaRef2}  >{d.respuestaCorrecta}</div> */}
+                                                        <input type="text" ref={this.respuestaCorrectaRef}  value={d.respuestaCorrecta}></input>
+                                                    
+                                                      </div>
+                        
+                                                    )
+                                                      
+                                                  })
                                                   
-                                              })
+                                              }
                                               
-                                          }
-                                          
-                                        </div>
-                                      )
-                                  })
-                                )
+                                            </div>
+                                          )
+                                      })
+                                    )
+                                  }
+                                  
+                                
+                                })
+                                
+
+
                               }
-                              
-                            
-                            })
-                            
+                          
+                                {/* <div class="pregresp">
+                                  <div class="pregunta">2. ¿Crees que HTML es una buena tecnología xxxxxxxxxxxxxxxxxxxxxxx?<br />
+                                  </div>
+                                  <div class="respuestas">
+                                    <input type="radio" name="preg2" value="1" /> Sí<br />
+                                    <input type="radio" name="preg2" value="2" /> No<br />
+                                    <input type="radio" name="preg2" value="3" /> Ns/Nc<br />
+                                  </div>
+                                </div> */}
 
+                                <div class="text-center mt-1-half">
+                                    <button  class="btn btn-primary mb-2 waves-effect waves-light w-50" style={{borderRadius:'7em'}}>Enviar </button>
+                                </div>
+                                  
+                                  {/* <ShowNotasExam/> */}
 
-                          }
-                      
-                            {/* <div class="pregresp">
-                              <div class="pregunta">2. ¿Crees que HTML es una buena tecnología xxxxxxxxxxxxxxxxxxxxxxx?<br />
-                              </div>
-                              <div class="respuestas">
-                                <input type="radio" name="preg2" value="1" /> Sí<br />
-                                <input type="radio" name="preg2" value="2" /> No<br />
-                                <input type="radio" name="preg2" value="3" /> Ns/Nc<br />
-                              </div>
-                            </div> */}
-
-                            <div class="text-center mt-1-half">
-                                <button  class="btn btn-info mb-2 waves-effect waves-light">Send </button>
-                              </div>
-
-                      </form>
-                        
-                        
-
+                          </form>
+                      }
                       </div>
                     </div>
                   </div>

@@ -14,6 +14,7 @@
     border: 1px solid #7DA5E0;
     padding: 10px;
     margin: 10px;
+    border-radius:2em;   
     font-family: Arial, Verdana, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: bold;
@@ -30,4 +31,16 @@
     color: #000000;
     }
 
+
+.form-nota-exam{
+    -webkit-border-radius: 5px;
+    -webkit-border-top-left-radius: 45px;
+    -webkit-border-bottom-right-radius: 45px;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topleft: 45px;
+    -moz-border-radius-bottomright: 45px;
+    border-radius: 5px;
+    border-top-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
     
