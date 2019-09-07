@@ -30,7 +30,21 @@ const config={
     UlrCourseTakeExam: `http://localhost:3005/courses/takes/exam`,
 
         // controla los examenes que ya fueron tomados por un usuario de un video
-    UrlTakeExamControl: `http://localhost:3005/courses/examen/resolved`
+    UrlTakeExamControl: `http://localhost:3005/courses/examen/resolved`,
+
+        //MATERIAL DE APOYO
+        //->/Show/file/Materia/Apoyo/idVideo=:idVideo
+    UrlFileMaterilaApoyo:`http://localhost:3005/Show/file/Materia/Apoyo/idVideo=`,
+        //-> /Show/materialapoyo/links/idVideo=:idVideo
+    UrlLinksMaterialApoyo:`http://localhost:3005/Show/materialapoyo/links/idVideo=`,
+
+        //AGREGAR A MIS CURSOS
+    UlrAgregarCursoMisCurso:`http://localhost:3005/add/course/student`,
+
+
+        // Mis cursos - student
+    UrlShowMisCoursesStudent:`http://localhost:3005/show/my/courses/student`
+
 }
 
 export default config

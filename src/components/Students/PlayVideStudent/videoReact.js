@@ -188,8 +188,10 @@ class Playvideo extends Component{
               </video>
 
               {/* _::::::::metadatos del video del video::::::: */}
+
               <div>
-                <span> tiempo ss:  {this.state.duration}</span> <br/>
+                
+                {/* <span> tiempo ss:  {this.state.duration}</span> <br/>
                 <span> tiempo hh/mm/ss:  {utils.parseTimeString(this.state.duration)}</span>  <br/>
                 <span> tiempo ss:  {this.state.progressTime}</span> <br/>
                 <span> tiempo hh/mm/ss:  {utils.parseTimeString(this.state.progressTime)}</span> <br/>
@@ -197,6 +199,8 @@ class Playvideo extends Component{
                 <progress max="100" value={utils.percentageNumber(this.state.progressTime,this.state.duration)} ></progress> <br/>
 
                 <span> {utils.percentageNumber(this.state.progressTime,this.state.duration)===100? "video completado" : 'video no completad'}  </span>
+                 */}
+
                 
                 {
                   

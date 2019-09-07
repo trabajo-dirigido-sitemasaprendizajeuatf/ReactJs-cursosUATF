@@ -7,12 +7,22 @@ import Url from '../../config'
 // valoracion de estrelas
 import RatingStar from '../boby/ratingStar'
 
+//agregar curso a mis cursos (student)
+import AgregarCurso from './agregarCurso/agregarCurso'
+
+import 'bootstrap/js/src/modal'
+import $ from 'jquery'
+
 export default class MostrarDetalleDelcurso extends Component{
     constructor(props){
         super(props)
             this.state={
               course:this.props.course,
-              courseSeccion:[]
+              courseSeccion:[],
+
+              // alerts of del boton agrgar curso
+              debeloguearse:false,
+              cursoAgregado:false
 
             }
     }
@@ -34,6 +44,125 @@ export default class MostrarDetalleDelcurso extends Component{
 
     }
     
+    modtrarModalEvent=(p)=>{
+      // e.preventDefault();
+ 
+      var d=p
+      console.log('==modtrarModalEvent==');
+      console.log(d)
+      console.log('=======-------=======');
+
+      if(p==='debeLoguearse'){
+
+        $("#sideModalTLInfo").modal('show')
+      }
+
+      if(p==='ok'){
+        $("#sideModalTLInfoSucces").modal('show')
+
+      }
+
+      if(p==='message'){
+        $("#sideModalTLInfoYafueAgregado").modal('show')
+
+      }
+      
+      
+    }
+
+    modalEvent2=()=>{
+
+          return(
+              <div>
+                <div class="modal fade left" id="sideModalTLInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-notify modal-info" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <p class="heading lead">Información</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true" class="white-text">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-body">
+                        <div class="text-center">
+                        <i class="fas fa-users fa-3x pb-3"></i>
+                          <p className="pb-4">Para añadir un curso, primero debe iniciar sesión</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          )
+      
+  }
+
+  modalEvent3=()=>{
+
+    return(
+        <div>
+          <div class="modal fade left" id="sideModalTLInfoSucces" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-success" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <p class="heading lead">Información</p>
+
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="text-center">
+
+                    <i class="fas fa-check fa-4x mb-3 animated rotateIn"></i>
+                    <p className="pb-4">El curso fue agregado exitosamente</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    )
+
+}
+
+modalEvent4=()=>{
+
+  return(
+      <div>
+        <div class="modal fade left" id="sideModalTLInfoYafueAgregado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-notify modal-info" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <p class="heading lead">Información</p>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-body">
+                <div class="text-center">
+
+                <i class="fas fa-check-double fa-3x animated rotateIn pb-4"></i>
+                  <p className="pb-4">El curso ya fue agregado</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  )
+
+}
+
+
 
     render(){
       console.log(this.props);
@@ -50,7 +179,9 @@ export default class MostrarDetalleDelcurso extends Component{
                   <p>{<RatingStar idCourse={this.props.course._id} />}</p>
                  <br/>
                   
-                  
+                  {this.modalEvent2()}
+                  {this.modalEvent3()}  
+                  {this.modalEvent4()}
 
                 </div>
                     <div className="card" id="card-content">
@@ -61,16 +192,42 @@ export default class MostrarDetalleDelcurso extends Component{
                           <h6 className="card-title text-dark"><a>Autor:</a></h6>
                           <p className="card-text">{this.state.course.autor}</p>
                           <p className="card-text">Creado hace {format(this.state.course.createDateCourse)}</p>
-        <Link to={`/playerCourse/${this.props.course._id}`}> <a href="#" className="btn btn-primary pl-4 pr-4 ml-3">Tomar Curso</a> </Link>
-                          <a href="#" className="btn btn-primary pl-4 pr-4 ml-2">Agregar Curso</a>
+                          
+                          <div className="contanner">
+
+                          
+                          <div className="div-padre row pl-3 pr-3">
+
+                            <div className="col-ms-12 col-lg-6 p-0 pr-1 pb-1 mt-1">
+                              <Link to={`/playerCourse/${this.props.course._id}`}> 
+                                <a href="#" className="btn btn-primary m-0">
+                                  Tomar Curso
+                                </a>
+                              </Link>
+                              </div>
+                              {/* <a href="#" className="btn btn-primary pl-4 pr-4 ml-2">
+                              </a> */}
+                              <div className="col-ms-12 col-lg-6 p-0 pl-1 mt-1">
+
+                              
+                                <AgregarCurso
+                                  idCourse={this.props.course._id}
+                                  modtrarModalEvent={this.modtrarModalEvent}
+                                  />
+                              </div>
+                            
+                          
+                          </div>
+                          </div>
+
                         </div>
                      </div>
               </div>
             </div>
 
               <div className="container-acordion pt-3">
-                <div class="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx194" role="tablist" aria-multiselectable="true" style={{background:'#009688'}} >
-                <h4 class="text-left text-uppercase  py-0 px-5 pt-2 text-white" >Contenido del curso:</h4>
+                <div class="accordion md-accordion accordion-3 z-depth-1-half border" id="accordionEx194" role="tablist" aria-multiselectable="true" style={{background:'#ffff'}} >
+                <h4 class="text-left text-uppercase  py-0 px-5 pt-2  font-weight-bolder " style={{color:"#31708F"}} >Contenido del curso:</h4>
 
                 <hr class="mb-0"></hr>
                 <div class="card">

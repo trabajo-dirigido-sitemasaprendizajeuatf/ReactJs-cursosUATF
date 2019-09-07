@@ -1,0 +1,7 @@
+
+
+.modal-envento{
+    z-index: 1050 !important;
+    position: fixed !important;
+    /* background: red; */
+}

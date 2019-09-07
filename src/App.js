@@ -27,6 +27,12 @@ import HomeVide from './components/instructor/subirVideosSubsecciones/homeVideo'
 import NuevaSeccion from './components/instructor/CrearSeccion/nuevaSeccion'
 import TomarCursoPLayer from './components/Students/TomarElcursoPlay'
 import PlayVideo from './components/Students/PlayVideStudent/videoReact'
+
+// mis curso
+
+import MisCursosUser from './components/Students/MisCursosUser/misCursosUser'
+
+
 // history
 import History from './components/utils/history'
 // pruebas
@@ -132,6 +138,8 @@ class App extends Component {
 
         <Route  path="/DetalleCurso/:id"  component={DetalleCurso} />
         <Route  path="/homevide/:id" component={HomeVide}/>
+
+        <Route path="/my/courses/student" component={MisCursosUser} />
         {/* <Body/> */}
           {/* <Formulario/> */}
           

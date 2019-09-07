@@ -56,7 +56,11 @@ export default class addMaterialApoyoLinks extends Component{
                  .then(res=>res.json())
                  .then(res=>{
                      console.log(res)
-                     this.setState({succes:true})
+                     this.setState({
+                         succes:true,
+                         link:'',
+                         namelink:'',
+                    })
                  })
                  .catch(err=>{
                      console.log({err,error:'No se guardaron los datos'})
@@ -123,7 +127,7 @@ export default class addMaterialApoyoLinks extends Component{
                     })
                 },7000)
             return(
-                <div class=" text-info p-0" role="alert">
+                <div class=" text-success p-0" role="alert">
                     {/* <button  class="close" data-dismiss="alert">
                         <span aria-hidden="true">×</span>
                     </button> */}
@@ -154,7 +158,7 @@ export default class addMaterialApoyoLinks extends Component{
 
     render(){
 
-        console.log(this.state)
+        // console.log(this.state)
         return(
             <div>
 

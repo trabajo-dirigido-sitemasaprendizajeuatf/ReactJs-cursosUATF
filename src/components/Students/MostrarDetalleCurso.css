@@ -96,10 +96,10 @@
 }
 
 
+/* botones tomar curso y agregar curso */
 
-.zoon-component:hover{
-    transform: scale(1.9);
-    z-index: 100;
-    
-    box-shadow: 0 0px 4px rgba(0, 0, 0, .1);
+.div-padre{
+    display: flex;
+    justify-content: center;
+
 }

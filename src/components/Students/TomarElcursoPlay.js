@@ -7,6 +7,12 @@ import './TomarElcursoPlayer.css'
 import ChatGbobalStudent from './chats/chatGlobalStudent'
 import URLtakeExman from '../../config'
 
+import TmaterialApoyo from './tmaterialApoyo/materialApoyo'
+
+// muestra los datos del curso
+import DatosDelCurso  from '../Students/tdatosCurso/datosDelCurso'
+
+
 export default class TomarCursoPlay extends Component{
 
     constructor(props){
@@ -81,7 +87,7 @@ export default class TomarCursoPlay extends Component{
         fetch(url)
          .then(res=>res.json())
          .then(data=>{
-          //  console.log("++++++++++++++++++++ddddd")
+           console.log("++++++++++++++++++++ddddd")
             console.log(data);
             this.setState({
                 ObjSeccionesDelCurso:data
@@ -136,17 +142,17 @@ export default class TomarCursoPlay extends Component{
       console.log(this.state.linkvideo,'9999999');
 
         return(
-            <div className="container-curso-playerVideo">
+            <div className="container-curso-playerVideo pt-4 pl-4 pr-4">
 
                 <section class="magazine-section">
 
                 <div class="row">
                     {/* ------------seccion del videos player-------- */}
-                    <div class="col-lg-8 col-md-12">
+                    <div class="col-lg-8 col-md-12" id="video-container">
 
-                    <div class="single-news mb-lg-0 mb-4">
+                    <div class="single-news mb-lg-0 mb-4" >
                     
-                        <div class="video overlay rounded z-depth-1-half mb-2">
+                        <div class="video overlay rounded z-depth-1-half mb-2" id="video-containe2"  >
                         {/* <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Slides/3.jpg" alt="Sample image"></img> */}
                         <Playvideo 
                           link2={this.state.linkvideo} 
@@ -155,6 +161,7 @@ export default class TomarCursoPlay extends Component{
                           ObjSeccionesDelCurso={this.state.ObjSeccionesDelCurso}  
                           objTakeExamControl={this.state.objTakeExamControl}       
                         />
+                        
                         <a>
                             <div class="mask rgba-white-slight"></div>
                         </a>
@@ -173,31 +180,49 @@ export default class TomarCursoPlay extends Component{
                     <div class="single-news mb-5">
 
 
-{/* ---------------- */}
- <div class="table-wrapper-scroll-y my-custom-scrollbar">
+{/* -------SCROLL - CONTENIDO DEL CURSO--------- */}
+ <div class="table-wrapper-scroll-y my-custom-scrollbar  ">
+          {/* titulo del scrol --Contenido del curso */}
+          
+        <div className=" border-0 pt-2 pl-3 pt-2 pb-2" style={{background:'#6664D4'}}>
+          <tr>
+          <th><h6 className="font-weight-bold text-white " id="seccion-title">Contenido del curso</h6></th>
+          </tr>
+        </div>
+
  {
      this.state.ObjSeccionesDelCurso.map(data=>{
                 return(
 
-                    <table id="mdb-flag-table" class="table table-hover">
+                    <table id="mdb-flag-table" class="table table-hover border-0">
                         <thead>
                         <tr>
-                        <th><h6 className="font-weight-bold" id="seccion-title"> Seccion:{data.seccion} {data.titleSeccion}</h6></th>
+                        <th className="border-0"><h6 className="font-weight-bold border-0" id="seccion-title"> Seccion:{data.seccion} {data.titleSeccion}</h6></th>
                         </tr></thead>
                         <tbody>
                             {data.video.map(data2=>{
                                 return (
                                     <tr>
-                                    <td class="flag-name" id="title-video">
+                                    <td class="flag-name video-seccion border-0" id="title-video">
                                    <a><div ref={this.myRef} id={data2.idVideo} onClick={()=> this.onChange(data2.linkfile,data2.idVideo)}>
                                      <i class="fas fa-play-circle p-1"  ></i>{data2.title}
                                     </div></a>
                                      {/* <input type="text" name="idvideo" onClick={this.onChange.bind(this)} value={data2.linkfile}></input> */}
                                      </td>
-                                    <td class="disabled"></td>
+                                    {/* <td class="disabled"></td>
                                     <td><i class="far fa-arrow-alt-circle-down">
                                       <a href="../pdfs/reporte2-05-10.pdf" download="Reporte2Mayo2010">Materia de apoyo</a>
-                                    </i></td>
+                                    </i></td> */}
+
+                                    <td class="disabled border-0"></td>
+                                    <td className="border-0">
+                                      <a href="#">
+                                        <TmaterialApoyo
+                                          idVideo={data2.idVideo}
+                                        /> 
+                                      </a>
+                                      
+                                    </td>
                                     
                                       </tr>
                                 )
@@ -219,20 +244,32 @@ export default class TomarCursoPlay extends Component{
                     </div>
                     {/* ---end de lateral derecho-- */}
 
+
+           
+
                 </div>
+{/* ------DATOS DEL CURSO */}
+
+
+            
 
                 </section>
 {/* ------------- */}
-<div class="classic-tabs mx-2">
+
+
+
+
+
+<div class=" classic-tabs mx-2 p-0">
 
 <ul class="nav tabs-cyan" id="myClassicTabShadow" role="tablist">
   <li class="nav-item">
-    <a class="nav-link  waves-light active show" id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
-      role="tab" aria-controls="profile-classic-shadow" aria-selected="true">Comentarios</a>
+    <a class="nav-link  waves-light active show"  id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
+      role-toggle="tab" aria-controls="profile-classic-shadow" aria-selected="true">Descripción</a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-light" id="follow-tab-classic-shadow" data-toggle="tab" href="#follow-classic-shadow"
-      role="tab" aria-controls="follow-classic-shadow" aria-selected="false">Follow</a>
+      role="tab" aria-controls="follow-classic-shadow" aria-selected="false">Comentarios</a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-light" id="contact-tab-classic-shadow" data-toggle="tab" href="#contact-classic-shadow"
@@ -244,17 +281,24 @@ export default class TomarCursoPlay extends Component{
   </li>
 </ul>
 
-<div class="tab-content card" id="myClassicTabContentShadow">
+<div class="tab-content card z-depth-0" id="myClassicTabContentShadow">
   <div class="tab-pane fade active show" id="profile-classic-shadow" role="tabpanel" aria-labelledby="profile-tab-classic-shadow">
     <p>
-          <ChatGbobalStudent/>
+          
+
+          <DatosDelCurso
+            idCourse={this.state.IDCOURSE}
+          />
+
 
     </p>
   </div>
   <div class="tab-pane fade" id="follow-classic-shadow" role="tabpanel" aria-labelledby="follow-tab-classic-shadow">
-    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-      aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-      quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    <p>
+
+          <ChatGbobalStudent/>
+
+    </p>
   </div>
   <div class="tab-pane fade" id="contact-classic-shadow" role="tabpanel" aria-labelledby="contact-tab-classic-shadow">
     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum

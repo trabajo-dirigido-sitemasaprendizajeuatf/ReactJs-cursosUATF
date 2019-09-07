@@ -81,10 +81,10 @@ class Navbar extends Component{
             <a class="navy-blue-skin">
               <Link to="/">  <img src={iconSistem} height="44" alt="mdb logo" className="animated jello slow infinite "></img></Link>
             </a>
-                <a className="navbar-brand text-dark" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
+                {/* <a className="navbar-brand text-dark" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
                 <button id="btn-menu-navbar" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
-                </button>
+                </button> */}
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
@@ -93,14 +93,14 @@ class Navbar extends Component{
                     {/* //---------------- */}
                     {
                         this.props.token ? 
-                        <a className="nav-link text-dark" href="#">Home <span className="sr-only">(current)</span></a>
+                       <Link to='/'> <a className="nav-link text-dark" href="#">Home <span className="sr-only">(current)</span></a> </Link>
                         : ''
                     }
 
                     {/* --------------------- */}
                         {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
                     </li>
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
                         </a>
@@ -114,7 +114,7 @@ class Navbar extends Component{
                     </li>
                     <li className="nav-item ">
                         <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+                    </li> */}
                     </ul>
 
                     <form class="form-inline active-cyan-4 long">
@@ -136,7 +136,8 @@ class Navbar extends Component{
                         
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="#">
-                            <i></i> Mis cursos</a>
+
+                            <i></i><Link className="text-dark" to="/my/courses/student">  Mis cursos </Link></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link waves-effect waves-light">1
@@ -175,10 +176,10 @@ class Navbar extends Component{
                                 </li>
                             : <td>
                                 <li>
-                                <button type="button" class="btn btn-outline-default waves-effect btn-md" to="/signin" data-toggle="modal" data-target="#modalLoginForm">
+                                <button type="button" class="btn btn-outline-default waves-effect btn-md mb-1 mt-0" to="/signin" data-toggle="modal" data-target="#modalLoginForm">
                                    Sign in
                                 </button>
-                                <button type="button" class="btn btn-danger btn-md" data-toggle="modal" data-target="#modalRegisterForm">
+                                <button type="button" class="btn btn-danger btn-md mb-1 mt-0" data-toggle="modal" data-target="#modalRegisterForm">
                                     Sign up
                                 </button></li>
 

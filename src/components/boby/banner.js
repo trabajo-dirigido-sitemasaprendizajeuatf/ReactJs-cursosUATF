@@ -31,10 +31,10 @@ export default class Banner extends Component{
     render(){
         return(
             <div>
-                <section className="zoomm ">
+                <section className="zoomm view">
                     <div className="container-image gradient ">
                                         
-                        <div className="container-text"> 
+                        <div className="container-text mask rgba-black-light"> 
                             <p className="title-text"> Céntrate en tu futuro</p>
                             <p className="contenido-texto">Toma nuestros cursos enfocados en tus objetivos</p> 
                         </div>

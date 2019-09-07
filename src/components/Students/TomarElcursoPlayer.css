@@ -1,3 +1,4 @@
+
 .container-curso-playerVideo{
     padding-left: 1%;
     padding-right:2%;
@@ -20,20 +21,36 @@
 
 .table-wrapper-scroll-y {
     display: block;
-    background: #FFFFFF
+    background: #29303B;
 }
 
 /* contenido dl scroll */
 #mdb-flag-table{
-color: rgb(0, 0, 0);
+color: #FFFFFF;
 text-align: left;
 
 }
 #seccion-title{
-    color: black;
+    color: #FFFFFF;
     text-align: left;
 }
 
 #title-video{
     padding-left: 40px;
+}
+
+
+.video-seccion:hover{
+    transform: scale(1.1);
+    /* z-index: 100; */
+    color: #6664D4;
+    /* box-shadow: 0 0px 4px rgba(0, 0, 0, .1); */
+}
+
+#video-container{
+    padding-right: 6px !important;
+}
+
+#video-containe2{
+    padding-right: 0px !important;
 }
