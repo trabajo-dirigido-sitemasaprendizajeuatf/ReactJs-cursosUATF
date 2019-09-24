@@ -6,7 +6,7 @@ import video from './Chernobyl.mp4'
 // import poster from '../../img/sia.png'
 import MainVideoExamen from '../videoExamen/mainVideoExamen'
 
-import URLtakeExman from '../../../config'
+import URL from '../../../config'
 // importando la funcion que convierte los minutos a horas
 import utils from './utils'
 
@@ -97,8 +97,10 @@ class Playvideo extends Component{
       tiempoExamen.push(this.props.objExamVideo.map((d,i)=>{
         console.log(d.timeShowExamen)
         console.log(this.state.progressTime)
-        
-          if(d.timeShowExamen===this.state.progressTime){
+         
+          var idUser = localStorage.getItem('id')
+
+          if(d.timeShowExamen===this.state.progressTime && idUser ){
             // this.setState({tiemposDeExam:tiempoExamen,cont:1})
             console.log(d.timeShowExamen)
             
@@ -117,19 +119,23 @@ class Playvideo extends Component{
   
   }
 
-  examen=()=>{
+ examen=()=>{
 
     var check=false
-    this.props.objTakeExamControl.map((d,i)=>{
+    
+    
+    var objTakeExamControl = this.props.objTakeExamControl;
 
-        check = d.examenResuelto
+    objTakeExamControl.map((d,i)=>{
+          check = d.examenResuelto
     })
 
-      if(this.state.timeShowExamen===this.props.time && check==false){
+
+      if(this.state.timeShowExamen===this.props.time && check===false){
 
         $('#modalExamenForm').modal('show');
         this.durationRef.current.pause();
-    
+
       }
 
   }

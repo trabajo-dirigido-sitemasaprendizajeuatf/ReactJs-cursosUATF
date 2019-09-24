@@ -130,7 +130,7 @@ export default class TmaterialApoyo extends Component{
                             :
                             this.state.objMaterialApoyo.map((d,i)=>{
                                 return(
-                                    <a class="dropdown-item file-name border-0" href={d.linkfile}>
+                                    <a class="dropdown-item file-name border-0" href={d.linkfile} target="_blank" >
                                     <i class="far fa-file-alt pr-2 border-0"></i>
                                     {d.filename}
                                     </a>
@@ -145,7 +145,7 @@ export default class TmaterialApoyo extends Component{
                             :
                             this.state.objLinks.map((d,i)=>{
                                 return(
-                                    <a class="dropdown-item file-name border-0" href={d.link}>
+                                    <a class="dropdown-item file-name border-0" href={d.link} target="_blank">
                                     <i class="fas fa-link pr-2 border-0"> </i>
                                     {d.nameLink}
                                     </a>

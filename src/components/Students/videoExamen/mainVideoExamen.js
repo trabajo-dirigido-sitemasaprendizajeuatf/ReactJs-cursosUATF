@@ -155,7 +155,7 @@ export default class MainVideoExamen extends Component{
           console.log(data)
 
           this.setState({
-            // calificado:true,
+            calificado:true,
             nota:nota,
             sobre:sobre
           })
@@ -186,21 +186,21 @@ export default class MainVideoExamen extends Component{
 
    calificado=()=>{
     
-    // setTimeout(()=>{
-    //   this.setState({
-    //     calificado:false
-    //   },2000)
-    // })
+    setTimeout(()=>{
+      this.setState({
+        calificado:false
+      },2000)
+    })
     
    }
 
     ShowAnswers=()=>{
       
-      // setTimeout(()=>{
-      //   this.setState({
-      //     calificado:false
-      //   })
-      // },2000)
+      setTimeout(()=>{
+        this.setState({
+          calificado:false
+        })
+      },2000)
 
       
       return(
@@ -214,7 +214,7 @@ export default class MainVideoExamen extends Component{
             <p class="text-muted mb-0">Resultados obtenidos: {this.state.nota} </p>
             <p class="text-muted mb-4">Cantidad de Preguntas: {this.state.sobre} </p>
 
-            <button   class="btn btn-outline-default waves-effect w-50" style={{borderRadius:'7em'}}>Aceptar</button>
+            {/* <button   class="btn btn-outline-default waves-effect w-50" style={{borderRadius:'7em'}}>Aceptar</button> */}
         
         </form>
       )
@@ -245,7 +245,7 @@ export default class MainVideoExamen extends Component{
 
                         }
                         <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">×</span>
+                          {/* <span aria-hidden="true">×</span> */}
                         </button>
                       </div>
                       <div class="modal-body ">

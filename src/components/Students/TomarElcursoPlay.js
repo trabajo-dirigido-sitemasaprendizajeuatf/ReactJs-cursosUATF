@@ -12,6 +12,13 @@ import TmaterialApoyo from './tmaterialApoyo/materialApoyo'
 // muestra los datos del curso
 import DatosDelCurso  from '../Students/tdatosCurso/datosDelCurso'
 
+//psinner lodingMessages
+import LoadingMessage from '../Students/chats/loadingMessages/loadingMessages';
+
+import ReatingStart from './reatingStar/main'
+
+import GReatingStar from './reatingStar/ratingStar'
+
 
 export default class TomarCursoPlay extends Component{
 
@@ -112,6 +119,7 @@ export default class TomarCursoPlay extends Component{
         idUser:idUser,
         idVideo:idVideo
       }
+      //http://localhost:3005/courses/examen/resolved 
       var url = URL.UrlTakeExamControl
       var params = {
         method:'POST',
@@ -127,9 +135,9 @@ export default class TomarCursoPlay extends Component{
           this.setState({
             objTakeExamControl:res
           })
-          console.log('====================================');
+          console.log('========@@@@@==============');
           console.log(res)
-          console.log('====================================');
+          console.log('========@@@@@==============');
         })
         .catch((err)=>{
             console.log(err)
@@ -159,7 +167,7 @@ export default class TomarCursoPlay extends Component{
                           idVideo={this.state.idVideo} 
                           objExamVideo={this.state.objExamVideo}
                           ObjSeccionesDelCurso={this.state.ObjSeccionesDelCurso}  
-                          objTakeExamControl={this.state.objTakeExamControl}       
+                          objTakeExamControl={this.state.objTakeExamControl}
                         />
                         
                         <a>
@@ -262,24 +270,27 @@ export default class TomarCursoPlay extends Component{
 
 <div class=" classic-tabs mx-2 p-0">
 
-<ul class="nav tabs-cyan" id="myClassicTabShadow" role="tablist">
+
+<ul class="nav nav-pills mb-2 menu-horizontal" id="myClassicTabShadow" role="tab">
   <li class="nav-item">
-    <a class="nav-link  waves-light active show"  id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
+    <a class="nav-link  active  waves-light active show"  id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
       role-toggle="tab" aria-controls="profile-classic-shadow" aria-selected="true">Descripción</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link waves-light" id="follow-tab-classic-shadow" data-toggle="tab" href="#follow-classic-shadow"
-      role="tab" aria-controls="follow-classic-shadow" aria-selected="false">Comentarios</a>
+    <a class="nav-link  waves-light" id="follow-tab-classic-shadow" data-toggle="tab" href="#follow-classic-shadow"
+      role="tab" aria-controls="follow-classic-shadow" aria-selected="false">Preguntas y respuesta</a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-light" id="contact-tab-classic-shadow" data-toggle="tab" href="#contact-classic-shadow"
-      role="tab" aria-controls="contact-classic-shadow" aria-selected="false">Contact</a>
+      role="tab" aria-controls="contact-classic-shadow" aria-selected="false">Calificar el curso</a>
   </li>
   <li class="nav-item">
     <a class="nav-link waves-light" id="awesome-tab-classic-shadow" data-toggle="tab" href="#awesome-classic-shadow"
       role="tab" aria-controls="awesome-classic-shadow" aria-selected="false">Be awesome</a>
   </li>
 </ul>
+
+  <hr className="hr-menu"/>
 
 <div class="tab-content card z-depth-0" id="myClassicTabContentShadow">
   <div class="tab-pane fade active show" id="profile-classic-shadow" role="tabpanel" aria-labelledby="profile-tab-classic-shadow">
@@ -296,17 +307,39 @@ export default class TomarCursoPlay extends Component{
   <div class="tab-pane fade" id="follow-classic-shadow" role="tabpanel" aria-labelledby="follow-tab-classic-shadow">
     <p>
 
-          <ChatGbobalStudent/>
+          {
+            this.state.idVideo?<ChatGbobalStudent
+                              idVideo={this.state.idVideo}
+                            />
+            :<LoadingMessage/>
+            
+          
+          
+          }
+          
 
     </p>
   </div>
   <div class="tab-pane fade" id="contact-classic-shadow" role="tabpanel" aria-labelledby="contact-tab-classic-shadow">
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-      deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-      provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
-      Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
-      eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas
-      assumenda est, omnis dolor repellendus. </p>
+   
+      <div className="content-reatings">
+      <section className="mt-5">
+        <h3 class="h4-responsive font-weight-bold text-center my-1"><i class="fas fa-american-sign-language-interpreting"></i>  Calificar el curso</h3>
+          <p class="text-center w-responsive mx-auto mb-5 p-5">Puedes calificar este curso de acuerdo a la cantidad de estrellas, 1 estrella: malo, 
+          2 estrellas: No esta bien, 3 estrellas: Promedio, 4 estrella: Bueno y 5 estrellas: Exelente.</p>
+      </section>
+      
+              <div className="containner-start">
+                  {/* <ReatingStart
+                    idCourse={this.state.IDCOURSE}
+                  /> */}
+                  <GReatingStar
+                    idCourse={this.state.IDCOURSE}
+                  />
+              </div>
+   
+      </div>
+
   </div>
   <div class="tab-pane fade" id="awesome-classic-shadow" role="tabpanel" aria-labelledby="awesome-tab-classic-shadow">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

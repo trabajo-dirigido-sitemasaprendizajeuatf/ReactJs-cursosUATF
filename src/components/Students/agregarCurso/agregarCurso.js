@@ -79,7 +79,7 @@ export default class AgregarCurso extends Component{
               
              
                 <div onClick={this.agregarCurso}  className=" btn btn-primary m-0 ml-0">
-                    Agregar curso
+                    Agregar a mis curso
                 </div>
              
                 

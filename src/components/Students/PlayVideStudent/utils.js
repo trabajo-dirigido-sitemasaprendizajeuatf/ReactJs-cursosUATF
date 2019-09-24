@@ -42,8 +42,36 @@ function percentageNumber(number,numberTotal){
 }
 
 
+// convierte la fecha de fornati ISO (YYYY-MM-DDTHH:MM:SSZ)   ---> "2019-01-14T20:14:49.414Z"
+
+function convertirFecha(date){
+    var meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+    var f=new Date(date);
+
+    var fecha=`${f.getDate()} de ${meses[f.getMonth()]} de ${f.getFullYear()}`
+
+    return fecha;
+
+    // document.write(f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+}
+
+function covertirAhoraMinuto(date){
+
+    var day = new Array("Lunes","Martes","miércoles","Jueves","Viernes","sábado","Domingo");
+    var f = new Date(date);
+
+    var fecha= `${day[f.getDay()-1]} a las ${f.getUTCHours()}:${f.getUTCMinutes()}`;
+
+    return fecha;
+    
+}
+
+
 export default {
       parseTimeString,
       parseTimeMinute,
-      percentageNumber
+      percentageNumber,
+      convertirFecha,
+      covertirAhoraMinuto
 }

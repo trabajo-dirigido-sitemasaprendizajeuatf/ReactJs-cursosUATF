@@ -8,6 +8,7 @@ const config={
     Url:'http://localhost:3005/courses/api/v1.0/signup',
     urlLognin:'http://localhost:3005/courses/api/v1.0/signin',
     urlUsers:'http://localhost:3005/courses/api/v1.0/users',
+    UrlListUserId: `http://localhost:3005/user/id=`,
     urlPrivate:'http://localhost:3005/courses/api/v1.0/private',
     UrlCreateCourse:'http://localhost:3005/courses/api/v1.0/crearcurso',
     UrlListartodoslosCursos:'http://localhost:3005/courses/api/v1.0/listarcursos',
@@ -20,8 +21,12 @@ const config={
     UrlUploadMaterialSupport:`http://localhost:3005/Upload/file/Materia/Apoyo`,
     UrlUploadLinks:`http://localhost:3005/Upload/links`,
 
+    // Reating star
                  //  http://localhost:3005/avarage/rating/start 
     UrlRatingStar:`http://localhost:3005/avarage/rating/start`,
+                //  recibe idUser idVideo voto --> voto de estrellas de un curso.
+    UrlVotarRatingStart:'http://localhost:3005/rating/star',
+    UrlViewReatingStarUser :`http://localhost:3005/reating/star/user`,      //muestra el voto de un usuario de un curos 
 
         // material de apoyo (examen, mat doc. y url) 
     UrlExamenVideo: `http://localhost:3005/take/exam/student`,
@@ -43,7 +48,12 @@ const config={
 
 
         // Mis cursos - student
-    UrlShowMisCoursesStudent:`http://localhost:3005/show/my/courses/student`
+    UrlShowMisCoursesStudent:`http://localhost:3005/show/my/courses/student`,
+
+
+    //------link Server SOCKET.IO ------
+    URLSERVERSOCKET : `http://localhost:3005/`,
+    URLshowChatForum:`http://localhost:3005/show/chat/forum/video`
 
 }
 

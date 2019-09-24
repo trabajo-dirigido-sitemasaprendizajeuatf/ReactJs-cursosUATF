@@ -64,6 +64,8 @@ class Signin extends Component{
                             console.log(res.token);
                             localStorage.setItem('token',res.token)
                             localStorage.setItem('id',res.id)
+                            localStorage.setItem('nameUser',res.name)
+                            localStorage.setItem('lastName',res.lastname)
                             this.props.updateToken2(res.name, res.email, res.role);    ////--->>> funcion que recibe del padre como parametro
 
                             console.log('Inicio de session adecuado')

@@ -201,7 +201,7 @@ modalEvent4=()=>{
                             <div className="col-ms-12 col-lg-6 p-0 pr-1 pb-1 mt-1">
                               <Link to={`/playerCourse/${this.props.course._id}`}> 
                                 <a href="#" className="btn btn-primary m-0">
-                                  Tomar Curso
+                                  Ver curso completo
                                 </a>
                               </Link>
                               </div>

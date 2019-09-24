@@ -1,25 +1,29 @@
 
 .container-curso-playerVideo{
+
     padding-left: 1%;
-    padding-right:2%;
+    padding-right:1%;
     margin-top: 0px;
-    margin-left: -13px;
+    margin-left: 0px;
     
 
 }
 
 /* Scroll  */
 .my-custom-scrollbar {
+    
     background:#FFFFFF;
     margin-top: 2px;
     margin-right: -26px;
     margin-left: -20px;
     position: relative;
-    height: 485px;
+    height: 489px;
     overflow: auto;
     }
 
 .table-wrapper-scroll-y {
+    /* position: fixed;
+    z-index: 2; */
     display: block;
     background: #29303B;
 }
@@ -48,9 +52,54 @@ text-align: left;
 }
 
 #video-container{
-    padding-right: 6px !important;
+    padding-right: 5px !important;
+    
+    padding-left: 0px !important;
 }
 
 #video-containe2{
     padding-right: 0px !important;
 }
+/* 
+.content-menu{
+    background-color: #0196d2;
+background-image: linear-gradient(270deg, #0196d2 0%, #05ff8c 100%);
+color:white !important; 
+text-decoration: none   
+} */
+
+
+
+/* ----menu de seleccion */
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #007791;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+.menu-horizontal{
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 0;
+}
+
+
+.hr-menu{
+    /* padding: 0%; */
+    width: 90%;
+    border: 0; height: 1px; text-align: center;background-color: #21D4FD;
+    background-image: linear-gradient(60deg, #21D4FD 0%, #B721FF 33%, #0910f1 66%, #0cd1e7 100%);
+    
+}
+
+
+/* ---------REATINGS START---------- */
+.containner-start{
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* -------------------------------- */

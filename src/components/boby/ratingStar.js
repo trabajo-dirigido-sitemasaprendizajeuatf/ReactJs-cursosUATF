@@ -63,7 +63,7 @@ changeRating( newRating, name ) {
 
             <StarRatings
               rating={this.state.promedio}
-              starRatedColor="yellow"
+              starRatedColor="gold"
               starDimension="20px"
               starSpacing="1px"
             />
