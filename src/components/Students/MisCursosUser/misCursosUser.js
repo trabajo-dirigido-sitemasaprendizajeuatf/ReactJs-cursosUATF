@@ -4,6 +4,8 @@ import URL from '../../../config'
 import { Link } from 'react-router-dom'
 import StarRating from '../../boby/ratingStar'
 
+// import  './misCursosUser.css'
+
 export default class MisCursosUser extends Component{
 
     constructor(props){
@@ -44,33 +46,22 @@ export default class MisCursosUser extends Component{
        
         
         return(
-            <div className="home-body">
-                {/* <div className="containerBtn text-left">
-                <Link className="text-white" to="CreateCourse" >
-                    <button type="button" class="btnButton btn btn-primary " id="fullHeightModalRight">
-                        <i class="fas fa-chalkboard-teacher"></i> CREAR NUEVO CURSO 
-                    </button>
-                </Link>
-                </div> */}
-
-            {/* courses */}
+            <div className="home-body pb-5">
 
 
+             {/*----- courses---- */}
 
-            
-
-            
             <div className="container-course"> 
             <h3 className="font-weight-bolde pb-5 text-left pt-4">Mis estudios</h3>
 
 
             <div className=""></div>
-                <div class="card-deck" >
+                <div class="card-deck p-0" >
                 
                 {this.state.curso.map(data=>{
                     return(
                     <div class="row col-md-3 ">
-                    <div class="card mb-3 hoverable">
+                    <div class="card  hoverable m-1">
 
                         <div class="view overlay">
                         <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>

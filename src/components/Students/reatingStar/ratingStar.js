@@ -43,18 +43,21 @@ constructor(props){
       }
     }
 
-    fetch(url,params)
-      .then(data=>data.json())
-      .then(res=>{
-        console.log(res)
-        this.setState({
-          voto:res.voto,
-      
+    if(obj.idUser && obj.idCourse){
+
+      fetch(url,params)
+        .then(data=>data.json())
+        .then(res=>{
+          console.log(res)
+          this.setState({
+            voto:res.voto,
+        
+          })
         })
-      })
-      .catch(err=>{
-        console.log(err)
-      })
+        .catch(err=>{
+          console.log(err)
+        })
+    }
 
  }
 
@@ -150,7 +153,7 @@ constructor(props){
     // aggregateRating = 2.35;
   console.log(this.state)
     return (
-      <div className="contend-start ">
+      <div className="contend-reating-star ">
         
           {this.alerts()}  
 

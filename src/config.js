@@ -49,11 +49,16 @@ const config={
 
         // Mis cursos - student
     UrlShowMisCoursesStudent:`http://localhost:3005/show/my/courses/student`,
+            //-- muestra la clase de una seccion (title video render notas)
+    UrlShowDataVide:`http://localhost:3005/show/data/video/class`,
 
 
     //------link Server SOCKET.IO ------
     URLSERVERSOCKET : `http://localhost:3005/`,
-    URLshowChatForum:`http://localhost:3005/show/chat/forum/video`
+    URLshowChatForum:`http://localhost:3005/show/chat/forum/video`,
+
+    //----muestra las calificaiones de estdiante por cursos
+    URLshowNotasPorCursos: `http://localhost:3005/view/exam/student/course`
 
 }
 

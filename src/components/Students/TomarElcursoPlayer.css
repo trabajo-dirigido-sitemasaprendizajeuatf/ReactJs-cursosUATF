@@ -72,7 +72,7 @@ text-decoration: none
 
 /* ----menu de seleccion */
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+.nav-pills2 .nav-link.active, .nav-pills .show>.nav-link {
     color: #fff;
     background-color: #007791;
     padding-top: 1px;

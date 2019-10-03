@@ -271,7 +271,7 @@ export default class TomarCursoPlay extends Component{
 <div class=" classic-tabs mx-2 p-0">
 
 
-<ul class="nav nav-pills mb-2 menu-horizontal" id="myClassicTabShadow" role="tab">
+<ul class="nav nav-pills nav-pills2 mb-2 menu-horizontal" id="myClassicTabShadow" role="tab">
   <li class="nav-item">
     <a class="nav-link  active  waves-light active show"  id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
       role-toggle="tab" aria-controls="profile-classic-shadow" aria-selected="true">Descripción</a>

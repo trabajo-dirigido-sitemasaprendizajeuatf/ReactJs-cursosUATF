@@ -80,12 +80,12 @@ class Body extends Component{
             <h3 className="font-weight-bolde pb-5 text-left"> Nuestros cursos ahora a tu alcance</h3>
 
             <div className=""></div>
-                <div class="card-deck" >
+                <div class="card-deck pb-5" >
                 
                 {this.state.curso.map(data=>{
                     return(
                     <div class="row col-md-3 ">
-                    <div class="card mb-3 hoverable">
+                    <div class="card mb-3 hoverable ml-2 mr-2">
 
                         <div class="view overlay">
                         <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>

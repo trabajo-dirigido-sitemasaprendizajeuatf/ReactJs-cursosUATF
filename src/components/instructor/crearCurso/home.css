@@ -23,7 +23,7 @@
 .containerBtn{
     /* padding:6px 0px 6px 0; */
     text-align: center;
-    background: #29303B
+    background: rgb(40, 54, 75)
 }
 
 
@@ -34,7 +34,7 @@
     padding-right: 4px;
 }
 
-.containerBtn i:hover{
+/* .containerBtn i:hover{
     transform: rotate3d(-3,-3,-3,60deg);
 
-}
+} */

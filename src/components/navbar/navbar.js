@@ -134,11 +134,18 @@ class Navbar extends Component{
                         }
                         
                         
-                        <li class="nav-item">
+                        {/* <li class="nav-item">
                             <a class="nav-link text-dark" href="#">
 
                             <i></i><Link className="text-dark" to="/my/courses/student">  Mis cursos </Link></a>
+                        </li> */}
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="#">
+
+                            <i></i><Link className="text-dark" to="/my/courses/sudent/report">  Mis cursos </Link></a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link waves-effect waves-light">1
                             <i class="fas fa-envelope"></i>

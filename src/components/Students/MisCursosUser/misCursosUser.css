@@ -1,0 +1,32 @@
+/* mis cursos config. global */
+/* .body-mis-cursos{
+    padding:10px 10% 0px 10%;
+
+} */
+
+
+.container-menu-superior{
+    padding:0px 0% 0px 6%;
+    text-align: center;
+    color: white;
+    background: #28364B;
+}
+
+.container-title-menu{
+    text-align: left;
+    padding-top: 2%;
+    padding-bottom: 3%;
+    color: white;
+}
+
+.nav-pills3 .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    /* background-color: #007791; */
+    /* padding-top: 1px; */
+    border-bottom: white 5px solid;
+    padding-bottom: 1px;
+}
+
+.nav-pills3 a{
+    color: white;
+}
