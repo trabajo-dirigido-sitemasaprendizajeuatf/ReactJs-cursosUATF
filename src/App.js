@@ -28,6 +28,9 @@ import NuevaSeccion from './components/instructor/CrearSeccion/nuevaSeccion'
 import TomarCursoPLayer from './components/Students/TomarElcursoPlay'
 import PlayVideo from './components/Students/PlayVideStudent/videoReact'
 
+// notas de los estudinates
+import VerNotas from './components/instructor/verNotas/main'
+
 // mis curso
 
 import MisCursosUser from './components/Students/MisCursosUser/misCursosUser'
@@ -143,7 +146,10 @@ class App extends Component {
         {/* <Route path="/my/courses/student" component={MisCursosUser} /> */}
 
         <Route path="/my/courses/sudent/report" component={MisCursosUserReport} />
-        
+
+        <Route path="/view/notes/course" component={VerNotas} />  
+
+
         {/* <Body/> */}
           {/* <Formulario/> */}
           

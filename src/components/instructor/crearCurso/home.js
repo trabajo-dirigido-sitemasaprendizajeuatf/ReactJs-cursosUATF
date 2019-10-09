@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Urlapi from '../../../config'
 import './home.css'
 import { Link } from 'react-router-dom'
+import SideBarTeacher from '../SideBarTeacher/barraLateral'
+
 import CrearSeccion from '../CrearSeccion/CrearSeccion'
 
 
@@ -42,17 +44,23 @@ class Home extends Component{
         
         return(
             <div className="">
-                <div className="containerBtn text-left">
+
+            <SideBarTeacher/>
+
+                {/* <div className="containerBtn text-left">
+
+
                 <Link className="text-white" to="CreateCourse" >
                     <button type="button" class="btnButton btn btn-primary" id="fullHeightModalRight">
                     <h6 className="pt-2 pb-2"><i class="fas fa-chalkboard-teacher"></i> CREAR NUEVO CURSO</h6>
                     </button>
                 </Link>
-                </div>
+                </div> */}
 
             {/* courses */}
             <div className="container-course pt-5 "> 
-            <h1 className="text-left pt-5 pl-5">Mis Cursos</h1>
+
+            <h1 className="text-left pt-5 pl-5 ml-5 pb-5">Mis Cursos</h1>
             {/* <hr className="hr-dark"></hr> */}
             <div className=""></div>
                 <div class="card-deck " >

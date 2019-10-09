@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 import 'bootstrap/js/src/modal'
 import './login.css'
+
+import './signin.css'
 import Config from '../../config'
 
 class Signin extends Component{
@@ -133,16 +135,16 @@ class Signin extends Component{
 
         return(
             
-            <div className="container-formulario">
+            <div className="container-formulario-signin">
              <form onSubmit={this.send} className="form-login text-center">
                  {/* class="modal fade" */}
                 <div    class="modal fade"     id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
 
-                        <div className="modal-content color ">
+                        <div className="content-form-signIn  modal-content  color ">
                         <div className="bg-imagen">
                         <div className="modal-header text-center ">
-                            <h4 className="modal-title w-100 font-weight-bold">Sign in</h4>
+                            <h4 className="modal-title w-100 font-weight-bold text-white">Sign in</h4>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
@@ -153,19 +155,21 @@ class Signin extends Component{
                             {this.renderCampos()}
 
                         <div className="modal-body mx-3">
-                            <div className="md-form mb-5">
-                            <input value={this.state.email} onChange={this.onChange.bind(this)} name="email" type="text" id="defaultForm-email" className="form-control validate" placeholder="Introduzca su correo electronico"></input>
+                            <div className="group-longin md-form mb-5">
+                            <input value={this.state.email} onChange={this.onChange.bind(this)} name="email" type="text" id="defaultForm-email" className="form-control validate" placeholder="Introduzca su correo electronico o su C.I."></input>
                             </div>
 
-                            <div className="md-form mb-4">
-                            <input  value={this.state.password}  onChange={this.onChange.bind(this) } name="password" type="password" id="defaultForm-pass" className="form-control validate" placeholder="Introduzca su clave o contraseña"></input>
+                            <div className="group-longin md-form mb-4">
+                            <input  value={this.state.password}  onChange={this.onChange.bind(this) } name="password" type="password" id="defaultForm-pass" className="form-control validate" placeholder="Introduzca su contraseña o clave de matricula"></input>
                             </div>
+                            <div className="btn-login modal-footer d-flex justify-content-center">
+                            <button type="submit" className="btn-from-signin btn">Sign in</button>
+                        </div>
+
 
                         </div>
                         </div>
-                        <div className="btn-login modal-footer d-flex justify-content-center">
-                            <button type="submit" className="btn btn-default">Login</button>
-                        </div>
+                        
                         </div>
                         
                     </div>
@@ -175,7 +179,7 @@ class Signin extends Component{
                     <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
                         Modal Login Form</a>
                     </div>  */}
-                    </form>
+                </form>
             </div>
                 
         )

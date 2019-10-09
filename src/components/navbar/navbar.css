@@ -15,7 +15,7 @@
     float: left;
     /* width: 2px; */
     color: #ffffff;
-    margin-top: 0em;
+    margin-top: -6px;
     /* margin-right: 1em; */
     position: relative;
     
@@ -36,6 +36,7 @@
 }
 
 #navbar-global{
+    /* position: absolute !important; */
     z-index: 1050;
     width: 100%;
     min-height: 25px;

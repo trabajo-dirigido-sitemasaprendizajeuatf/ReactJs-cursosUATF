@@ -45,7 +45,7 @@ export default class MisNotasStudent extends Component{
     }
 
     render(){
-        console.log(this.state.objMisNotas)
+        console.log(this.state.objMisNotas.length)
         
         if(this.state.objMisNotas.length>0){
             return(

@@ -67,7 +67,7 @@ class Navbar extends Component{
     render(){
         // console.log(faker.internet.email())
         console.log(this.props);
-        console.log('ñññññññññ')
+        // console.log('ñññññññññ')
         
         return(
            

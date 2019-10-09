@@ -58,7 +58,12 @@ const config={
     URLshowChatForum:`http://localhost:3005/show/chat/forum/video`,
 
     //----muestra las calificaiones de estdiante por cursos
-    URLshowNotasPorCursos: `http://localhost:3005/view/exam/student/course`
+    URLshowNotasPorCursos: `http://localhost:3005/view/exam/student/course`,
+
+    // muestra todas las notas de los estudinates de uno o varios cursos dictados por un teacher
+    UrlShowNotaStudentsForCourse: `http://localhost:3005/show/notas/students/course`,
+    UrlShowDataStundent:`http://localhost:3005/show/data/stundent/for/course`,
+    UrlShowNotaStudent :`http://localhost:3005/show/notas/student`      
 
 }
 

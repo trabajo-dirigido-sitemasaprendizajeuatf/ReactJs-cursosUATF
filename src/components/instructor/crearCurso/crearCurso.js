@@ -3,6 +3,8 @@ import Url from '../../../config'
 import { Link } from 'react-router-dom'
 import SubirPoster from './subirPoster'
 import './crearCurso.css'
+
+import SideBarTeacher from '././../SideBarTeacher/barraLateral'
 class CreateCourso extends Component{
 
     constructor(props){
@@ -119,6 +121,9 @@ class CreateCourso extends Component{
         }else
         return(
             <div>
+
+                <SideBarTeacher/>
+
                 <div className="containerBtn text-left text-white p-1">
                     <h5>Complete los campos para crear el curso</h5>
                 </div>
