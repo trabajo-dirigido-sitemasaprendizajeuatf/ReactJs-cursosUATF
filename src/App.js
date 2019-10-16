@@ -37,6 +37,11 @@ import MisCursosUser from './components/Students/MisCursosUser/misCursosUser'
 
 import MisCursosUserReport from './components/Students/MisCursosUser/menuMiscursos'
 
+// admin
+import MainAdmin from './components/admin/mainAdmin'
+import ShowStundents from './components/admin/students/showStudents'
+import ShowTeacher from './components/admin/teachers/ShowTeachers'
+
 // history
 import History from './components/utils/history'
 // pruebas
@@ -149,6 +154,11 @@ class App extends Component {
 
         <Route path="/view/notes/course" component={VerNotas} />  
 
+        {/* admin */}
+
+        <Route path="/admin/" component={ MainAdmin } />
+        <Route path="/admin/show/students" component={ ShowStundents } />
+        <Route path="/admin/show/all/teachers" component={ ShowTeacher } />
 
         {/* <Body/> */}
           {/* <Formulario/> */}

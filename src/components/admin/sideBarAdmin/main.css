@@ -1,0 +1,162 @@
+/* @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300); */
+
+.main-menu-sidebar-admin .fa-2x {
+font-size: 2em;
+}
+.main-menu-sidebar-admin .fa {
+position: relative;
+display: table-cell;
+width: 60px;
+height: 37px;
+text-align: center;
+vertical-align: middle;
+font-size:20px;
+}
+/* variante de los iconos */
+.icon-sidebar-admin {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 37px;
+  text-align: center;
+  vertical-align: middle;
+  font-size:20px;
+  }
+
+/* ---end teacher-- */
+
+/* .main-menu-sidebar-admin:hover,nav.main-menu-sidebar-admin.expanded {
+width:260px;
+overflow:visible;
+} */
+
+.main-menu-sidebar-admin {
+  text-align: left;
+    /* position: fixed; */
+background:#06163A;
+border-right:1px solid #e5e5e5;
+position:fixed;
+top:55px;
+bottom:0;
+height:92%;
+left:0;
+width:250px;
+overflow:hidden;
+-webkit-transition:width .04s linear;
+transition:width .04s linear;
+    /* -webkit-transform:translateZ(0) scale(1,1); */
+z-index:1000;
+}
+
+.main-menu-sidebar-admin>ul {
+margin:7px 0;
+}
+
+.main-menu-sidebar-admin li {
+position:relative;
+display:block;
+width:250px;
+}
+
+.main-menu-sidebar-admin li>a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color:#fdfafa;
+ font-family: arial;
+font-size: 14px;
+text-decoration:none;
+/* -webkit-transform:translateZ(0) scale(1,1); */
+-webkit-transition:all .1s linear;
+transition:all .1s linear;
+  
+}
+
+.main-menu-sidebar-admin .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu-sidebar-admin .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.main-menu-sidebar-admin>ul.logout {
+position:absolute;
+left:0;
+bottom:0;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu-sidebar-admin li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
+color:#fff;
+background-color:rgb(3, 55, 119);
+}
+.area {
+float: left;
+background: #e2e2e2;
+width: 100%;
+height: 100%;
+}
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
+}
+
+
+/* Color de Link sideBar */
+.link-sideBar-admin{
+    color:rgb(235, 232, 232) !important;
+}
+
+.link-sideBar:hover{
+    color:rgb(255, 255, 255) !important;
+}
+
+
+/* ....muetra un elementos selecciona...barra sideBar--menu   funcion con jqyery*/
+
+.main-menu-sidebar-admin > ul > li > a.seleccionado {
+  background: #2D8CFF;
+  color: #ffffff;
+}
+

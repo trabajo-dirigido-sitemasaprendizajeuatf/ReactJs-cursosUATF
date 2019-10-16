@@ -9,6 +9,9 @@ import './navbar.css'
 import './barraLateral/main.css'
 import './barraLateral/main.js'
 
+import SearchNavbar from './SearchNavbar/seacrhNavbar'
+import ShowModal from './SearchNavbar/showModal'
+
 // Home instructor
 import Home from '../instructor/crearCurso/home'
 
@@ -117,12 +120,28 @@ class Navbar extends Component{
                     </li> */}
                     </ul>
 
-                    <form class="form-inline active-cyan-4 long">
-                        <input class="form-control form-control-sm mr-3 w-75" id="search" type="text" placeholder="Search" aria-label="Search"></input>
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </form>
+                    {/* <div className="search-box">
+                        <form class=" from-search form-inline active-cyan-4 long">
+                            <input class="form-sear-nav form-control form-control-sm mr-1" id="search" type="text" placeholder="Search" aria-label="Search"></input>
+                            <i class="btn-search-nav fas fa-search" aria-hidden="true"></i>
+                        </form>
+                    </div> */}
+
+                    <SearchNavbar/>
+                    {/* <ShowModal/> */}
 
                     <ul class="navbar-nav ml-auto nav-flex-icons">
+
+                        {
+                            this.props.role==='teacher'? <li class="nav-item">
+                                <a>
+                                <i></i>  <Link className="nav-link text-dark" to="/admin">Administrador</Link>
+                                <span class="sr-only">(current)</span>
+                                </a>
+                                </li>
+                                :''
+                        }
+
                         {
                             this.props.role==='teacher'? <li class="nav-item">
                                 <a>

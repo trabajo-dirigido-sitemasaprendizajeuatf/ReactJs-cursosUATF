@@ -63,7 +63,11 @@ const config={
     // muestra todas las notas de los estudinates de uno o varios cursos dictados por un teacher
     UrlShowNotaStudentsForCourse: `http://localhost:3005/show/notas/students/course`,
     UrlShowDataStundent:`http://localhost:3005/show/data/stundent/for/course`,
-    UrlShowNotaStudent :`http://localhost:3005/show/notas/student`      
+    UrlShowNotaStudent :`http://localhost:3005/show/notas/student`,
+    
+    // :::ADMIN:::
+    UrlShowAllStudents: `http://localhost:3005/admin/show/students`,
+    UrlShowAllTeachers: `http://localhost:3005/admin/show/teachers`
 
 }
 

@@ -101,7 +101,7 @@ export default class VerNotas extends Component{
                                     })
                                 }   
                             <table class="table table-striped">      
-                            <thead className=" darken-4 white-text" style={{background:'#64A62B'}}>
+                            <thead className=" darken-4 white-text" style={{background:'#1976D2'}}>
                                 <tr>
                                 <th>Nro</th>
                                 <th >Nombres</th>

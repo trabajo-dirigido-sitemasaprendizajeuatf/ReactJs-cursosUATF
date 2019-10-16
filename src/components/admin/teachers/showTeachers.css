@@ -1,0 +1,27 @@
+
+.contents-showStudents{
+    text-align: center;
+    /* position: fixed; */
+    /* background: rgb(216, 216, 216); */
+    padding-left: 250px;
+    width: 100%;
+
+}
+
+.form-search-student{
+    display: flex !important;
+    /* background: royalblue; */
+    width: 70%;
+    border: 0;
+}
+
+.input-search{
+    /* background: seagreen !important;     */
+    text-align: left;
+}
+
+.icon-sear-student{
+    position: absolute;
+    right:17px;
+    height: 23px;
+}
