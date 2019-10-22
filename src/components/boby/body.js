@@ -88,7 +88,7 @@ class Body extends Component{
                     <div class="card mb-3 hoverable ml-2 mr-2">
 
                         <div class="view overlay">
-                        <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>
+                        <img class="card-img-top" src={data.posterCurso} alt="Card image cap" style={{height:'180px'}}></img>
                         <Link to={`/DetalleCurso/${data._id}`}>
                             <div class="mask rgba-white-slight"></div>
                         </Link>

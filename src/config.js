@@ -65,9 +65,18 @@ const config={
     UrlShowDataStundent:`http://localhost:3005/show/data/stundent/for/course`,
     UrlShowNotaStudent :`http://localhost:3005/show/notas/student`,
     
-    // :::ADMIN:::
+    
+    // ::::::::::::::::::::ADMIN:::::::::::::::::
     UrlShowAllStudents: `http://localhost:3005/admin/show/students`,
-    UrlShowAllTeachers: `http://localhost:3005/admin/show/teachers`
+    UrlShowAllTeachers: `http://localhost:3005/admin/show/teachers`,
+    UrlUpdateRoleUser: `http://localhost:3005/admin/update/role/user`,
+    UrlShowAssistants:  `http://localhost:3005/admin/show/all/asistants`,
+    // reportes (descargar excel) admin
+    UrlDownloadFileStudents:`http://localhost:3005/admin/show/students/report`,
+    UrlDownloadFileTeacherts: `http://localhost:3005/admin/show/teachers/report`,
+    UrlDownloadFileAssistants: `http://localhost:3005/admin/show/assistant/report`,
+    // reportes de las notas de los cursos pertenecientes a un docente
+    UrlDownloadFileNotasTeacher: `http://localhost:3005/teacher/reports/notas`
 
 }
 

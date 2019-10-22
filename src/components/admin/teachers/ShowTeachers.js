@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import './showTeachers.css'
 
 import URL from '../../../config'
+import EditRoleTeacher from './editRoleTeacher'
+import FetchFileTeacherts from './fetchLinkFileTeacherts'
 
 
 
@@ -87,6 +89,7 @@ export default class ShowTeachers extends Component{
                     </div>
                     <div className="col">
                         {/* intervalo */}
+                        <FetchFileTeacherts/>
                     </div>
                    
                     
@@ -105,6 +108,7 @@ export default class ShowTeachers extends Component{
                         <th class="th-sm">A. Materno</th>
                         <th class="th-sm">C.I.</th>
                         <th class="th-sm">R.U.</th>
+                        <th class="th-sm">rol</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,6 +124,10 @@ export default class ShowTeachers extends Component{
                                         <td>{d.motherlastename}</td>
                                         <td>{d.ci}</td>
                                         <td>{d.ru}</td>
+                                        <EditRoleTeacher
+                                            role={d.role}
+                                            idUser={d._id}
+                                        />
                                     </tr>
                                
                             )
@@ -134,6 +142,7 @@ export default class ShowTeachers extends Component{
                         <th>A. Materno</th>
                         <th>C.I.</th>
                         <th>R.U.</th>
+                        <th>Rol</th>
                         </tr>
                     </tfoot>
                     </table>

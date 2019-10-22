@@ -17,6 +17,8 @@ import Home from '../instructor/crearCurso/home'
 
 // img's  
 import iconSistem from '../img/sistemas.jpg'
+import iconSistem1 from './barraLateral/img/soloLogo.jpg'
+import iconSistemLetras from './barraLateral/img/soloLogoletras.jpg'
 import avatarImg from '../img/avatar.jpg'
 
 class Navbar extends Component{
@@ -82,7 +84,8 @@ class Navbar extends Component{
             <nav className="navbar  navbar-expand-lg navbar-white white scrolling-navbar fixed-top" id="navbar-global">
             {/*  */}
             <a class="navy-blue-skin">
-              <Link to="/">  <img src={iconSistem} height="44" alt="mdb logo" className="animated jello slow infinite "></img></Link>
+              <Link to="/">  <img src={iconSistem1} height="44" alt="mdb logo" className="animated jello slow infinite "></img></Link>
+              <Link to="/">  <img src={iconSistemLetras} height="44" alt="mdb logo" className=""></img></Link>
             </a>
                 {/* <a className="navbar-brand text-dark" href="#" id="toggle-btn-navar"><i class="fas fa-graduation-cap"></i>Carreras   </a>
                 <button id="btn-menu-navbar" className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

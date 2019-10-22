@@ -8,3 +8,43 @@
     margin-right: auto;
 }
 
+
+
+/* icon file list notas teacher */
+
+.icon-file-excel-notas{
+    font-size: 4vh;
+    position: absolute;
+    top: 17%;
+    right: 230px;
+    color: rgb(4, 161, 4);
+    text-decoration: none;
+}
+
+.icon-file-excel-notas:hover{
+    color: rgb(2, 110, 2);
+}
+
+.iconDescription-notas {
+    position: absolute;
+    font-size: 15px;
+    top: 22%;
+    bottom: 0;
+    /* left: 17%; */
+    right: 160px;
+    height: 5%;
+    background: rgba(29, 106, 154, 0.72);
+    color: rgb(255, 255, 255);
+    /* visibility: hidden; */
+    opacity: 0;
+    width: 150px;
+    border-radius: 5vh;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom:auto;
+}
+
+.content-icons-download-file-notas:hover .iconDescription-notas{
+    visibility: visible;
+    opacity: 1;
+}

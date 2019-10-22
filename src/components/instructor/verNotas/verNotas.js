@@ -4,6 +4,10 @@ import './verNotas.css'
 import URL from '../../../config'
 import FectTitileCurso from '../../Students/MisCursosUser/misNotasStudent/fetchTitleCurso'
 import ViewDataStudent from './viewDataStundent'
+
+import FetchLinkFileNotasTeachert from './fetchLinkFileNotasTeachert'
+
+
 export default class VerNotas extends Component{
 
     constructor(props){
@@ -77,6 +81,9 @@ export default class VerNotas extends Component{
                             Calificaciones
                         </h5> 
                     </div>
+                    <div>
+                        <FetchLinkFileNotasTeachert/>
+                    </div>
     
     
                     
@@ -94,6 +101,7 @@ export default class VerNotas extends Component{
                                             return(
                                                 <span>
                                                     <br/>
+                                                    {/* {a.idCourse} */}
                                                     <FectTitileCurso idCourse={a.idCourse}/>    
                                                 </span>
                                             )

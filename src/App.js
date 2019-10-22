@@ -41,6 +41,7 @@ import MisCursosUserReport from './components/Students/MisCursosUser/menuMiscurs
 import MainAdmin from './components/admin/mainAdmin'
 import ShowStundents from './components/admin/students/showStudents'
 import ShowTeacher from './components/admin/teachers/ShowTeachers'
+import ShowAssistants from './components/admin/auxiliares/showAuxiliares'
 
 // history
 import History from './components/utils/history'
@@ -159,6 +160,7 @@ class App extends Component {
         <Route path="/admin/" component={ MainAdmin } />
         <Route path="/admin/show/students" component={ ShowStundents } />
         <Route path="/admin/show/all/teachers" component={ ShowTeacher } />
+        <Route path="/admin/show/all/assistants" component={ ShowAssistants } />
 
         {/* <Body/> */}
           {/* <Formulario/> */}

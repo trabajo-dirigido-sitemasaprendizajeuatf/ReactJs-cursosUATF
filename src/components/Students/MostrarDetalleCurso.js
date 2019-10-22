@@ -185,7 +185,7 @@ modalEvent4=()=>{
 
                 </div>
                     <div className="card" id="card-content">
-                        <img className="card-img-top" src={this.state.course.posterCurso      } alt="Card image cap"></img>
+                        <img className="card-img-top" src={this.state.course.posterCurso      } style={{height:'230px'}} alt="Card image cap"></img>
                         <div className="card-body">
                         <h4 className="card-title text-dark"><a>{this.state.course.namecourse}</a></h4>
 

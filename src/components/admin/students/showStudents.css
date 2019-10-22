@@ -25,3 +25,66 @@
     right:17px;
     height: 23px;
 }
+
+
+
+/* ---edit role--- */
+.btn-edit-role {
+    text-transform: lowercase;
+    padding: 0 0 0 0;
+    border-radius: 7vmin;
+}
+
+.menu-select-role >a:hover{
+    background:#0B51C5;
+    color: #ffffff;
+}
+
+.menu-select-role{
+    padding: 0 0 0 0;
+}
+
+
+/* --- edit role--- */
+
+
+/* icon downlod excel */
+
+.icon-file-excel{
+    font-size: 4vh;
+    position: absolute;
+    top: 30%;
+    right: 12px;
+    color: rgb(4, 161, 4);
+    text-decoration: none;
+}
+
+.icon-file-excel:hover{
+    color: rgb(2, 110, 2);
+}
+
+.iconDescription {
+    position: absolute;
+    font-size: 15px;
+    top: 40px;
+    bottom: 0;
+    /* left: 0; */
+    right: -80px;
+    height: 148%;
+    background: rgba(29, 106, 154, 0.72);
+    color: rgb(255, 255, 255);
+    visibility: hidden;
+    opacity: 0;
+    width: 50%;
+    border-radius: 5vh;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom:auto;
+}
+
+.content-icons-download-file:hover .iconDescription{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ------------ */

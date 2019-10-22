@@ -43,6 +43,7 @@ class BarraLateral extends Component{
 
       <div class="area"></div>
       <nav class="main-menu-sidebar-admin">
+
             <ul className="mt-3">
                 <li>
                     <Link to="/admin/show/students">
@@ -50,12 +51,24 @@ class BarraLateral extends Component{
                     <i class="icon-sidebar-admin fas fa-users fa-1x"></i>
 
                         <span class="nav-text ">
-                            Estudinates
+                            Estudiantes
                         </span>
                     </a>
                     </Link>
                   
                 </li>
+
+                <li class="has-subnav">
+                    <Link to={`/admin/show/all/assistants`}>
+                        <a href="#" className="link-sideBar-admin">
+                        <i class="icon-sidebar-admin fas fa-user-friends fa-1x"></i>
+                            <span class="nav-text">
+                                Auxiliares
+                            </span>
+                        </a>
+                    </Link>
+                </li>
+
                 <li class="has-subnav">
                     <Link to="/admin/show/all/teachers">
 
@@ -68,16 +81,9 @@ class BarraLateral extends Component{
                     </Link>
                     
                 </li>
-                <li class="has-subnav">
-                    <Link to={`/view/notes/course`}>
-                        <a href="#" className="link-sideBar-admin">
-                        <i class="icon-sidebar-admin fas fa-user-graduate fa-1x"></i>
-                            <span class="nav-text">
-                                Ver notas
-                            </span>
-                        </a>
-                    </Link>
-                </li>
+
+               
+
                 <li class="has-subnav">
                     <a href="#">
                        <i class="fa fa-folder-open fa-2x"></i>

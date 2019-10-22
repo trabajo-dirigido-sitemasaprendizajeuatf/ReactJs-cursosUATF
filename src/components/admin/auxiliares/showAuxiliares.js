@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 
-import './showStudents.css'
+// import './showStudents.css'
 
 import URL from '../../../config'
-import EditRole from './editRole'
-
-import FetchFile from './fetchLinkFile'
-
+import EditRole from '../auxiliares/editRoleAssistant'
+import FetchFileAsistants from './fetchLinkFileAssistants'
 
 
 function searchingFor(term){
@@ -23,7 +21,7 @@ function searchingFor(term){
 }
 
 
-export default class ShowStundents extends Component{
+export default class ShowAssistants extends Component{
 
     constructor(props){
         super(props)
@@ -36,7 +34,7 @@ export default class ShowStundents extends Component{
 
     componentWillMount(){
 
-        const url = URL.UrlShowAllStudents;
+        const url = URL.UrlShowAssistants;
         fetch(url)
         .then(data=>data.json())
         .then(res=>{
@@ -64,7 +62,7 @@ export default class ShowStundents extends Component{
 
     }
 
-   
+
     render(){
 
        
@@ -72,13 +70,13 @@ export default class ShowStundents extends Component{
             <div className="contents-showStudents">
                 <div className="pt-5 pb-2">
 
-                    <h5>Lista de estudiantes</h5>
+                    <h5>Lista de auxiliares</h5>
                 </div>
 
                 <div className="form-search-student row content pt-3 pb-3">
                     
                 <div className="col pl-0 ml-0">
-                        <form class="form-inline">
+                        <form class="form-inline   ">
                             <input 
                                 onChange={this.searchTable.bind(this)} 
                                 value={this.state.keyUp} 
@@ -88,12 +86,9 @@ export default class ShowStundents extends Component{
                             <i class="icon-sear-student fas fa-search" aria-hidden="true"></i>
                         </form>
                     </div>
-
-                    <div className="col" style={{background:''}}>
+                    <div className="col">
                         {/* intervalo */}
-                        <FetchFile
-                        
-                        />
+                        <FetchFileAsistants/>
                     </div>
                    
                     
