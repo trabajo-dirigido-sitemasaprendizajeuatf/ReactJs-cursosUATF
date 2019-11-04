@@ -76,9 +76,20 @@ const config={
     UrlDownloadFileTeacherts: `http://localhost:3005/admin/show/teachers/report`,
     UrlDownloadFileAssistants: `http://localhost:3005/admin/show/assistant/report`,
     // reportes de las notas de los cursos pertenecientes a un docente
-    UrlDownloadFileNotasTeacher: `http://localhost:3005/teacher/reports/notas`
+    UrlDownloadFileNotasTeacher: `http://localhost:3005/teacher/reports/notas`,
 
+    //::::EEDIT DATA USER::::::::
+    UrlUploadProfileUser: `http://localhost:3005/edit/my/account/user/idUser=`,  //recibe una imagen(foto de perfil) y un idUser
+    UrlShowImageAvatar:`http://localhost:3005/Show/image/avatar/idUser=` ,       // revueve el link de la imagene del avara
+    UlrShowDataUser: `http://localhost:3005/edit/show/users/data/iduser=`,   // URI get que recibe un idUde para mostrar los datos de usuario
+    UrlEditDataUser :  `http://localhost:3005/edit/my/account/user/data`,  // URI  que recibe los datos la confuracio de los datos
+    
+    // security email ci y password clave Matricula
+    UrlUpdateEmailCI : `http://localhost:3005/security/update/email/ci/user`,   //  URI que recibe el idUser, new email.
+    UrlUpdatPasswordClveM: `http://localhost:3005/security/update/password/clavem`  // URI qie recibe en idUser, password, newPasswordClaveM de un usuario
+    
 }
+
 
 export default config
 

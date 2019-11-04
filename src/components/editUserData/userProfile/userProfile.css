@@ -1,0 +1,21 @@
+
+.content-form-user-profile{
+    padding: 0 200px 0 200px;
+}
+
+.btn-user-profile{
+    height: 36px;
+    padding: auto;
+    /* border-radius: 7em; */
+}
+
+.labels-form{
+    font-size: 1.3vmax;
+    margin-bottom: 0;
+    color: rgb(148, 140, 140);
+}
+
+/* .content-form-user-profile >form >input{
+    background: rgb(230, 228, 228);
+} */
+

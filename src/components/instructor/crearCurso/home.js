@@ -43,7 +43,7 @@ class Home extends Component{
        
         
         return(
-            <div className="">
+            <div className="pl-5 pb-5">
 
             <SideBarTeacher/>
 
@@ -71,7 +71,7 @@ class Home extends Component{
                     <div class="card mb-3">
 
                         <div class="view overlay">
-                        <img class="card-img-top" src={data.posterCurso} alt="Card image cap"></img>
+                        <img class="card-img-top" src={data.posterCurso} alt="Card image cap" style={{height:'170px'}}></img>
                         <Link  to={`/seccions/${data._id}`} >
                             <div class="mask rgba-white-slight"></div>
                         </Link>

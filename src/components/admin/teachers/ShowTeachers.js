@@ -41,7 +41,7 @@ export default class ShowTeachers extends Component{
         .then(res=>{
             console.log(res)
             
-            if(res.message!='no hay estudiantes'){
+            if(res.message!='no hay docentes'){
                 this.setState({
                     objAllStudents:res
                 })

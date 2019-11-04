@@ -97,11 +97,12 @@ class Navbar extends Component{
                     <li className="nav-item active">
 
                     {/* //---------------- */}
-                    {
+
+                    {/* {
                         this.props.token ? 
                        <Link to='/'> <a className="nav-link text-dark" href="#">Home <span className="sr-only">(current)</span></a> </Link>
                         : ''
-                    }
+                    } */}
 
                     {/* --------------------- */}
                         {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
@@ -136,7 +137,7 @@ class Navbar extends Component{
                     <ul class="navbar-nav ml-auto nav-flex-icons">
 
                         {
-                            this.props.role==='teacher'? <li class="nav-item">
+                            this.props.role==='admin'? <li class="nav-item">
                                 <a>
                                 <i></i>  <Link className="nav-link text-dark" to="/admin">Administrador</Link>
                                 <span class="sr-only">(current)</span>
@@ -162,11 +163,17 @@ class Navbar extends Component{
                             <i></i><Link className="text-dark" to="/my/courses/student">  Mis cursos </Link></a>
                         </li> */}
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="#">
+                        
+                        {
+                            this.props.token ?
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">
+                                    <i></i><Link className="text-dark" to="/my/courses/sudent/report">  Mis cursos </Link></a>
+                                </li>
+                            :''
+                        }
 
-                            <i></i><Link className="text-dark" to="/my/courses/sudent/report">  Mis cursos </Link></a>
-                        </li>
+                        
 
                         <li class="nav-item">
                             <a class="nav-link waves-effect waves-light">1
@@ -196,8 +203,9 @@ class Navbar extends Component{
                                 
                                     <Link className="nav-link" to="/signup" data-toggle="modal" data-target="#modalRegisterForm">Signup</Link>
                                     
+                                    <Link className="nav-link" to="/my/account/user"> <a class="dropdown-item" href="#">Mi cuenta</a> </Link>
                                     
-                                    <a class="dropdown-item" href="#">Mi cuenta</a>
+
                                     <a class="dropdown-item" href="#">Cursos agregados</a>
                                     <a class="dropdown-item" href="#">My account</a>
                                     <a class="dropdown-item" href="#" onClick={this.closeUser}>Cerrar sesión</a>

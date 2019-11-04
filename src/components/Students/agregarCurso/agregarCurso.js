@@ -38,7 +38,7 @@ export default class AgregarCurso extends Component{
                   }
             }
 
-            if(this.state.idUser!=undefined && this.props.idCourse){
+            if(this.state.idUser!='' && this.props.idCourse){
                 fetch(url,params)
                 .then(data=>data.json())
                 .then(res=>{

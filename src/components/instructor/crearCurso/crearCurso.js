@@ -122,11 +122,13 @@ class CreateCourso extends Component{
         return(
             <div>
 
+
+
                 <SideBarTeacher/>
 
-                <div className="containerBtn text-left text-white p-1">
+                {/* <div className="containerBtn text-left text-white p-1">
                     <h5>Complete los campos para crear el curso</h5>
-                </div>
+                </div> */}
 
                     <br/>
                     <h3 className="font-weight-bold">Datos del curso</h3>

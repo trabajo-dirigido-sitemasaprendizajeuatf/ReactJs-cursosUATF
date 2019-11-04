@@ -40,7 +40,7 @@ export default class ShowAssistants extends Component{
         .then(res=>{
             console.log(res)
             
-            if(res.message!='no hay estudiantes'){
+            if(res.message!='no hay auxiliares'){
                 this.setState({
                     objAllStudents:res
                 })
@@ -112,7 +112,7 @@ export default class ShowAssistants extends Component{
                     </thead>
                     <tbody>
                     {
-
+                        
                         this.state.objAllStudents.filter(searchingFor(this.state.term)).map((d,i)=>{
                             return(
                                 
@@ -131,6 +131,7 @@ export default class ShowAssistants extends Component{
                                
                             )
                         })
+                        
                     }
                     </tbody>
                     <tfoot>

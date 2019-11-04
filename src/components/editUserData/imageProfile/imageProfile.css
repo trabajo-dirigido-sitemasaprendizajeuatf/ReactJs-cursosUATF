@@ -1,0 +1,41 @@
+
+.content-image-profile{
+    padding: 12px 220px 200px 220px;
+}
+
+.title-image-data-user{
+    padding-left: 30px;
+    
+}
+
+.card-content-image-file{
+    margin: auto;
+    width: 400px;
+    height:460px;
+}
+
+.card-content-image-file >img >div{
+   background: red;
+}
+
+/* input file */
+.custom-file-label-imag-user::after {
+    position: absolute;
+    height: calc(1.5em + 0.75rem);
+    padding: 0.275rem 0.15rem;
+    color: #495057;
+    content: "Seleccionar" ;
+    background-color: #1362b1;
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+
+.containner-img {
+    /* Asignamos una altura mínima */
+    min-height: 350px;
+    
+    background-image: url('./img/default.png');
+    background-size: cover;
+    background-position: center;
+  }
+
