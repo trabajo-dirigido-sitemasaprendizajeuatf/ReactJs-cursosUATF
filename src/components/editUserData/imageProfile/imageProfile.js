@@ -43,6 +43,7 @@ export default class ImageProfile extends Component{
     onChange(){
 
         console.log(this.myRef.current.files[0])
+        console.log(this.myRef.current.files)
         this.setState({
             nameFile:this.myRef.current.files[0].name.substr(0,30)
         })
@@ -150,7 +151,7 @@ export default class ImageProfile extends Component{
                     <div class="card-body">
 
                         <h4 class="card-title">Foto de perfil de usuario</h4>
-                        <p class="card-text">Se recomienda que la foto o imagen de perfil tenga las siguinetes dimenciones 400 x 400 px.</p>
+                        <p class="card-text">Se recomienda que la foto o imagen de perfil tenga las siguinetes dimenciones 400 x 400 - 720 x 720 px .</p>
                        
                         <a href="#" class="btn btn-info" data-toggle="modal" data-target="#modalImageProfile">Cambior foto de perfil</a>
 

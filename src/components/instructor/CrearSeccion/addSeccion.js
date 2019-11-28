@@ -80,14 +80,14 @@ export default class AddSeccion extends Component{
                 <hr class="mb-0"></hr>
                 <div class="card">
 
-                  <div class="card-header" role="tab" id="heading5">
+                  {/* <div class="card-header" role="tab" id="heading5">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5" aria-expanded="false"
                       aria-controls="collapse5">
                       <h3 class="mb-0 red-text">
                         You're the greatest accordion! <div class="animated-icon1 float-right mt-1"><span></span><span></span><span></span></div>
                       </h3>
                     </a>
-                  </div>
+                  </div> */}
 
                   <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx194">
                     <div class="card-body pt-0">

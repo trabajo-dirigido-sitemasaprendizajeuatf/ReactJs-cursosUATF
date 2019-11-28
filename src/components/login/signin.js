@@ -143,10 +143,10 @@ class Signin extends Component{
 
                         <div className="content-form-signIn  modal-content  color ">
                         <div className="bg-imagen">
-                        <div className="modal-header text-center ">
+                        <div className="modal-header text-center border-0">
                             <h4 className="modal-title w-100 font-weight-bold text-white">Sign in</h4>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
+                            <button type="button" className="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" className="text-white">&times;</span>
                             </button>
 
 
@@ -162,7 +162,7 @@ class Signin extends Component{
                             <div className="group-longin md-form mb-4">
                             <input  value={this.state.password}  onChange={this.onChange.bind(this) } name="password" type="password" id="defaultForm-pass" className="form-control validate" placeholder="Introduzca su contraseña o clave de matricula"></input>
                             </div>
-                            <div className="btn-login modal-footer d-flex justify-content-center">
+                            <div className="btn-login modal-footer d-flex justify-content-center border-0">
                             <button type="submit" className="btn-from-signin btn">Sign in</button>
                         </div>
 

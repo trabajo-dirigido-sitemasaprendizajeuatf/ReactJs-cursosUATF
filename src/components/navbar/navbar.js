@@ -21,6 +21,8 @@ import iconSistem1 from './barraLateral/img/soloLogo.jpg'
 import iconSistemLetras from './barraLateral/img/soloLogoletras.jpg'
 import avatarImg from '../img/avatar.jpg'
 
+import URL from '../../config'
+
 class Navbar extends Component{
 
     constructor(props){
@@ -28,11 +30,34 @@ class Navbar extends Component{
             this.state={
                tokenNav:'',
 
+               linkImageAvatar:''
+
             }
             
             this.closeUser=this.closeUser.bind(this);
             this.initialName=this.initialName.bind(this);
     }
+
+    // peticion del perfil de usuario
+    componentWillMount(){
+        
+        const url = `${URL.UrlShowImageAvatar}${localStorage.getItem('id')}`
+        
+        fetch(url)
+        .then(data=>data.json())
+        .then(res=>{
+            // console.log(res)
+            // console.log(res.message)
+            if(!res.message){
+                this.setState({
+                    linkImageAvatar:res.linkAvatar
+    
+                })
+            }
+           
+        })
+    }
+
 
     selecNavbar(){
         if(!this.props.token){
@@ -48,6 +73,8 @@ class Navbar extends Component{
         e.preventDefault()
         localStorage.token="";
         localStorage.id="";
+        localStorage.nameUser="";
+        localStorage.lastName="";
         
         this.props.cerrarSesion()
         
@@ -184,17 +211,27 @@ class Navbar extends Component{
                         {
                             this.props.token ? 
                                 <li class="nav-item avatar dropdown">
-                                    <a  class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    {/* "https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" */}
-                                    {/* <img  src={ avatarImg } class="rounded-circle z-depth-0" alt="avatar image" height="38"></img> */}
-                                    <div className="user-avatar" style={{backgroundColor: `${faker.internet.color()}`}}>
                                     
-                                        <span className="user-initial">{this.initialName()} </span>
-                                    </div>
+
+                                    {
+                                        this.state.linkImageAvatar?
+                                            <a  class="nav-link dropdown-toggle p-0" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                                <img  src={ this.state.linkImageAvatar } class="rounded-circle z-depth-0" alt="avatar image" height="39" width="39"></img>
+                                            </a>
+                                        :
+
+                                            <a  class="nav-link dropdown-toggle " id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <div className="user-avatar" style={{backgroundColor: `${faker.internet.color()}`}}>
+                                                <span className="user-initial">{this.initialName()} </span>
+                                            </div>
+                                            </a>
+                                    }
+                                    
                                     
                                    
-                                    </a>
+                                    
                                     <div class="dropdown-menu dropdown-menu-right dropdown-secondary"
                                     aria-labelledby="navbarDropdownMenuLink-55">
                                     <a class="dropdown-item" href="#">{this.props.email? this.props.email:this.props.name}</a>
@@ -203,12 +240,16 @@ class Navbar extends Component{
                                 
                                     <Link className="nav-link" to="/signup" data-toggle="modal" data-target="#modalRegisterForm">Signup</Link>
                                     
-                                    <Link className="nav-link" to="/my/account/user"> <a class="dropdown-item" href="#">Mi cuenta</a> </Link>
+                                    <Link className="nav-link pl-0 pt-0 pb-0" to="/my/account/user"> <a class="dropdown-item" href="#">Mi cuenta</a> </Link>
                                     
 
                                     <a class="dropdown-item" href="#">Cursos agregados</a>
-                                    <a class="dropdown-item" href="#">My account</a>
-                                    <a class="dropdown-item" href="#" onClick={this.closeUser}>Cerrar sesión</a>
+                                    {/* <a class="dropdown-item" href="#">My account</a> */}
+                                   
+                                        <a class="dropdown-item" href="#" onClick={this.closeUser}>
+                                        <Link className="nav-link pl-0 pt-0 pb-0" to="/" > Cerrar sesión</Link>
+
+                                            </a>
                                     </div>
                                 </li>
                             : <td>

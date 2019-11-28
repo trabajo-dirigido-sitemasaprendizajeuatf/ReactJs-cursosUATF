@@ -274,9 +274,9 @@ export default class MainVideoExamen extends Component{
                                                     return(
                                                     
                                                       <div class="respuestas">
-                                                        <input type="radio"  name={d.pregunta} value={i2+1} />  {d.pregunta}//{i2+1} //{d2}<br />
+                                                        <input type="radio"  name={d.pregunta} value={i2+1} /> {i2+1} )R.-{d2}<br />
                                                         {/* <div ref={this.respuestaCorrectaRef2}  >{d.respuestaCorrecta}</div> */}
-                                                        <input type="text" ref={this.respuestaCorrectaRef}  value={d.respuestaCorrecta}></input>
+                                                        {/* <input type="text" ref={this.respuestaCorrectaRef}  value={d.respuestaCorrecta}></input> */}
                                                     
                                                       </div>
                         

@@ -192,7 +192,7 @@ export default class TomarCursoPlay extends Component{
  <div class="table-wrapper-scroll-y my-custom-scrollbar  ">
           {/* titulo del scrol --Contenido del curso */}
           
-        <div className=" border-0 pt-2 pl-3 pt-2 pb-2" style={{background:'#6664D4'}}>
+        <div className=" border-0 pt-2 pl-3  pb-2" style={{background:'#6664D4'}}>
           <tr>
           <th><h6 className="font-weight-bold text-white " id="seccion-title">Contenido del curso</h6></th>
           </tr>
@@ -268,10 +268,10 @@ export default class TomarCursoPlay extends Component{
 
 
 
-<div class=" classic-tabs mx-2 p-0">
+<div class=" classic-tabs mx-0 p-0">
 
 
-<ul class="nav nav-pills nav-pills2 mb-2 menu-horizontal" id="myClassicTabShadow" role="tab">
+<ul class="nav nav-pills nav-pills2 mb-0 menu-horizontal" id="myClassicTabShadow" role="tab">
   <li class="nav-item">
     <a class="nav-link  active  waves-light active show"  id="profile-tab-classic-shadow" data-toggle="tab" href="#profile-classic-shadow"
       role-toggle="tab" aria-controls="profile-classic-shadow" aria-selected="true">Descripción</a>
@@ -284,10 +284,10 @@ export default class TomarCursoPlay extends Component{
     <a class="nav-link waves-light" id="contact-tab-classic-shadow" data-toggle="tab" href="#contact-classic-shadow"
       role="tab" aria-controls="contact-classic-shadow" aria-selected="false">Calificar el curso</a>
   </li>
-  <li class="nav-item">
+  {/* <li class="nav-item">
     <a class="nav-link waves-light" id="awesome-tab-classic-shadow" data-toggle="tab" href="#awesome-classic-shadow"
       role="tab" aria-controls="awesome-classic-shadow" aria-selected="false">Be awesome</a>
-  </li>
+  </li> */}
 </ul>
 
   <hr className="hr-menu"/>

@@ -5,7 +5,7 @@
 	/* max-width:525px;
 	min-height:670px; */
 	/* position:relative; */
-	background:url(./img/loginCity.jpg) no-repeat center;
+	background:url(./img/loginCity2.jpg) no-repeat center;
     box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
     /* overflow: auto; */
 
@@ -34,7 +34,7 @@
     width: 56%;
     border-radius: 2em;
     color:white;
-    background:#1161ee;
+    background:#FF7043;
 }
 
 .btn-from-signin:hover{

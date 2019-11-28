@@ -12,10 +12,12 @@ class Signup extends Component{
                 lastname:'',
                 email:'',
                 password:'',
+                passwordCheck:'',
                 phone:'',
                 erroremail:'',
                 responoseLogin:'',
-                compliteData:''
+                compliteData:'',
+                alertCheckPassword:false
 
             }
             //this.onChange = this.onChange.bind(this)
@@ -45,40 +47,61 @@ class Signup extends Component{
                 }
 
             }
-        if(this.state.name!=='' && this.state.lastname!=='' && this.state.email!=='' && this.state.password!==''&&this.state.phone!==''){
-            console.log('rgistro realizado exitosamente')
+        if(this.state.password === this.state.passwordCheck){
 
-            this.setState({
-                compliteData:''
-            })
-
-            fetch(Url,params)
-            .then(res=>res.json())
-            .then(res=>{
-                console.log(res)
-
-                if(res){
-                    if(res.message){
-                        console.log(res.message)
-                        this.setState({
-                            erroremail:res.message,
-                            responoseLogin:''
-
-                        })
-                    }if(res.token){
+            if(this.state.name!=='' && this.state.lastname!=='' && this.state.email!=='' && this.state.password!==''&&this.state.phone!==''){
+                console.log('rgistro realizado exitosamente')
+    
+                this.setState({
+                    compliteData:''
+                })
+    
+                fetch(Url,params)
+                .then(res=>res.json())
+                .then(res=>{
+                    console.log(res)
+    
+                    if(res){
+                        if(res.message){
+                            console.log(res.message)
                             this.setState({
-                                responoseLogin:'Registro realizado correctamente',
-                                erroremail:''
+                                erroremail:res.message,
+                                responoseLogin:'',
+                                email:'',
+                                name:'',
+                                lastname:'',
+                                password:'',
+                                passwordCheck:''
+    
                             })
+                        }if(res.token){
+                                this.setState({
+                                    responoseLogin:'Registro realizado correctamente',
+                                    erroremail:'',
+                                    email:'',
+                                    name:'',
+                                    lastname:'',
+                                    password:'',
+                                    passwordCheck:''
+                                })
+                        }
                     }
-                }
-            })
+                })
+            }else{
+                console.log('complete los campos vacios')
+                this.setState({
+                    compliteData:'Complete los campos vacios'
+                })
+            }
         }else{
-            console.log('complete los campos vacios')
             this.setState({
-                compliteData:'Complete los campos vacios'
+                alertCheckPassword:true,
+                password:'',
+                passwordCheck:''
             })
         }
+
+  
 
         
         console.log(Config.Url)
@@ -117,7 +140,8 @@ class Signup extends Component{
             )
         }
 
-      
+
+
     }
 
     renderCampos(){
@@ -133,6 +157,22 @@ class Signup extends Component{
         }
     }
 
+    renderAlertCheckPassword=()=>{
+
+        setTimeout(()=>{
+            this.setState({
+                alertCheckPassword:false
+            })
+            },30000)
+      
+        if(this.state.alertCheckPassword){
+            return(
+                <div className="alert alert-danger" role="alert">
+                    Las contraseñas no coinciden.
+                </div>
+            )
+        }
+    }
     render(){
 
         return(
@@ -146,15 +186,16 @@ class Signup extends Component{
                         <div className="content-from-signup modal-content ">
                         <div className="bg-imagen-signup">
 
-                            <div className="modal-header text-center text-white">
+                            <div className="modal-header text-center text-white border-0">
                                 <h4 className="modal-title w-100 font-weight-bold">Sign up</h4>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true" className="text-white">&times;</span>
                                 </button>
                             </div>
 
                             {this.renderAlert()}
                             {this.renderCampos()}
+                            {this.renderAlertCheckPassword()}
 
                             {/* formulario de signup */}
                             <form onSubmit={this.send} className="text-center text-white  p-5">
@@ -178,10 +219,18 @@ class Signup extends Component{
 
                                 <div className="group-signup md-form mb-2" >
                                     <input  value={this.state.password} onChange={this.onChange.bind(this)} name="password" type="password" id="defaultRegisterFormPassword" className="form-control" placeholder="Contraseña o clave" aria-describedby="defaultRegisterFormPasswordHelpBlock"></input>
-                                    <small id="defaultRegisterFormPasswordHelpBlock" className="form-text text-muted mb-4">
-                                            Al menos 8 caracteres y 1 digito.
-                                    </small>
+                                    {/* <small id="defaultRegisterFormPasswordHelpBlock" className="form-text text-muted mb-4">
+                                            Al menos 8 caracteres.
+                                    </small> */}
+
                                 </div>
+
+                                <div className="group-signup md-form mb-2" >
+                                    <input  value={this.state.passwordCheck} onChange={this.onChange.bind(this)} name="passwordCheck" type="password" id="defaultRegisterFormPassword" className="form-control" placeholder="Repetir la contraseña o clave" aria-describedby="defaultRegisterFormPasswordHelpBlock"></input>
+
+                                </div>
+
+
 
                                 <div className="group-signup md-form mb-2">
 
@@ -190,6 +239,7 @@ class Signup extends Component{
                                     <small id="defaultRegisterFormPhoneHelpBlock" className="form-text text-muted mb-4">
                                         Opcional - forma 2 de registro
                                     </small>
+                                    
                                 </div>
 
 
@@ -202,7 +252,7 @@ class Signup extends Component{
                                 {/* <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button> */}
 
 
-                                <p>or sign up with:</p>
+                                {/* <p>or sign up with:</p>
 
                                 <a type="button" className="light-blue-text mx-2">
                                     <i className="fab fa-facebook-f"></i>
@@ -215,11 +265,11 @@ class Signup extends Component{
                                 </a>
                                 <a type="button" className="light-blue-text mx-2">
                                     <i className="fab fa-github"></i>
-                                </a>
+                                </a> */}
                                 
                                 {/* ---formulario de signup----- */}
 
-                                <div className=" modal-footer d-flex justify-content-center">
+                                <div className=" modal-footer d-flex justify-content-center border-0">
                                     <button id="send"name="send" type="submit" className="btn-form-signUp btn btn-deep-orange">Sign up</button>
                                 </div>
                             </form>

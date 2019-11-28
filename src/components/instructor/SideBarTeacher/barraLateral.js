@@ -66,24 +66,17 @@ class BarraLateral extends Component{
                     <a href="#">
                        <i class="fa fa-folder-open fa-2x"></i>
                         <span class="nav-text">
-                            Pages
+                            Paginas
                         </span>
                     </a>
                    
                 </li>
-                <li>
-                    <a href="#">
-                    <i class="icon-sidebar-teacher fas fa-chart-bar"></i>
-                        <span class="nav-text">
-                            Graphs and Statistics
-                        </span>
-                    </a>
-                </li>
+              
                 <li>
                     <a href="#">
                         <i class="fa fa-font fa-2x"></i>
                         <span class="nav-text">
-                           Quotes
+                           Apuntes
                         </span>
                     </a>
                 </li>
@@ -91,7 +84,7 @@ class BarraLateral extends Component{
                    <a href="#">
                        <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
-                            Tables
+                            Tablas
                         </span>
                     </a>
                 </li>
@@ -99,7 +92,7 @@ class BarraLateral extends Component{
                    <a href="#">
                         <i class="fa fa-map-marker fa-2x"></i>
                         <span class="nav-text">
-                            Maps
+                            Mapas
                         </span>
                     </a>
                 </li>
@@ -107,7 +100,7 @@ class BarraLateral extends Component{
                     <a href="#">
                        <i class="fa fa-info fa-2x"></i>
                         <span class="nav-text">
-                            Documentation
+                            Documentacion
                         </span>
                     </a>
                 </li>
