@@ -38,7 +38,8 @@ export default class AgregarCurso extends Component{
                   }
             }
 
-            if(this.state.idUser!='' && this.props.idCourse){
+            if(this.state.idUser!='' && this.state.idUser!=undefined && this.props.idCourse){
+                console.log(this.state.idUser)
                 fetch(url,params)
                 .then(data=>data.json())
                 .then(res=>{
@@ -78,8 +79,8 @@ export default class AgregarCurso extends Component{
             return(
               
              
-                <div onClick={this.agregarCurso}  className=" btn btn-primary m-0 ml-0">
-                    Agregar a mis curso
+                <div onClick={this.agregarCurso}  className=" btn-agregar-curso btn btn-primary">
+                    Agregar a mis cursos
                 </div>
              
                 

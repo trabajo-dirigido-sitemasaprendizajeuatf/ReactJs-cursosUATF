@@ -19,6 +19,7 @@ export default class fetchLinkFileNotasTeachert extends Component{
         const idTeacher={
             idTeacher:localStorage.getItem('id')
         }
+        console.log(idTeacher)
         const params={
             method:'POST',
             body:JSON.stringify(idTeacher),

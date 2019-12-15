@@ -241,7 +241,7 @@ export default class MainVideoExamen extends Component{
                           this.state.modalSgow?
                             <h4 class="title"><i class="fas fa-glasses"></i>Calificación obtenida</h4>
                           :
-                            <h4 class="title"><i class="fas fa-pencil-alt"></i>Complete el siguiente examen de reguntas cerradas</h4>
+                            <h4 class="title"><i class="fas fa-pencil-alt"></i>Complete el siguiente examen de preguntas cerradas</h4>
 
                         }
                         <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">

@@ -71,6 +71,9 @@ const config={
     UrlShowAllTeachers: `http://localhost:3005/admin/show/teachers`,
     UrlUpdateRoleUser: `http://localhost:3005/admin/update/role/user`,
     UrlShowAssistants:  `http://localhost:3005/admin/show/all/asistants`,
+    UrlUploadStudentMongoDB :'http://localhost:3005/upload' , 
+    UrlBackup:'http://localhost:3005/backup',
+    
     // reportes (descargar excel) admin
     UrlDownloadFileStudents:`http://localhost:3005/admin/show/students/report`,
     UrlDownloadFileTeacherts: `http://localhost:3005/admin/show/teachers/report`,

@@ -4,6 +4,7 @@ import { format, render, cancel, register } from 'timeago.js';
 import { Link } from 'react-router-dom'
 import Url from '../../config'
 
+import '../utils/timeagoEs'
 // valoracion de estrelas
 import RatingStar from '../boby/ratingStar'
 
@@ -165,6 +166,8 @@ modalEvent4=()=>{
 
 
     render(){
+
+      
       console.log(this.props);
         return(
             <div>
@@ -191,25 +194,24 @@ modalEvent4=()=>{
 
                           <h6 className="card-title text-dark"><a>Autor:</a></h6>
                           <p className="card-text">{this.state.course.autor}</p>
-                          <p className="card-text">Creado hace {format(this.state.course.createDateCourse)}</p>
+                          <p className="card-text">Creado {format(this.state.course.createDateCourse,'es_ES')}</p>
                           
                           <div className="contanner">
 
                           
                           <div className="div-padre row pl-3 pr-3">
 
-                            <div className="col-ms-12 col-lg-6 p-0 pr-1 pb-1 mt-1">
+                            {/* <div className="col-ms-12 col-lg-6 p-0 pr-1 pb-1 mt-1">
                               <Link to={`/playerCourse/${this.props.course._id}`}> 
                                 <a href="#" className="btn btn-primary m-0">
                                   Ver curso completo
                                 </a>
                               </Link>
-                              </div>
+                              </div> */}
+
                               {/* <a href="#" className="btn btn-primary pl-4 pr-4 ml-2">
                               </a> */}
-                              <div className="col-ms-12 col-lg-6 p-0 pl-1 mt-1">
-
-                              
+                              <div className="col-ms-12 mt-2">
                                 <AgregarCurso
                                   idCourse={this.props.course._id}
                                   modtrarModalEvent={this.modtrarModalEvent}

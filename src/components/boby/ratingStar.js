@@ -67,7 +67,7 @@ changeRating( newRating, name ) {
               starDimension="20px"
               starSpacing="1px"
             />
-          <span className="content-promedio pt-2 mt-3">{this.state.promedio} ( {this.state.cantidadAlumnos} )</span> 
+          <span className="content-promedio pt-2 mt-3">{Math.round(this.state.promedio*100)/100 } ( { this.state.cantidadAlumnos} )</span> 
        
       </div>
       

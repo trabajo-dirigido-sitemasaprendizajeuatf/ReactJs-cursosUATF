@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route }  from "react-router-dom"
+import { Router, Route, Redirect }  from "react-router-dom"
 
 
 
@@ -42,9 +42,12 @@ import MainAdmin from './components/admin/mainAdmin'
 import ShowStundents from './components/admin/students/showStudents'
 import ShowTeacher from './components/admin/teachers/ShowTeachers'
 import ShowAssistants from './components/admin/auxiliares/showAuxiliares'
+import ScrapingStudent from './components/admin/realizarScraping/studentScraping'
+import Backup from './components/admin/backups/backup'
 
 // edit data user
 import EditDataUser from './components/editUserData/editDataUser'
+
 
 // history
 import History from './components/utils/history'
@@ -52,6 +55,8 @@ import History from './components/utils/history'
 import PEstados from './pruebas/estado'
 import Formulario from './pruebas/formulario'
 import EditRoleTeacher from './components/admin/teachers/editRoleTeacher';
+
+import ErrorPeticion from './components/utils/codigosErrores/errorPermisos'
 
 class App extends Component {
     constructor(props){
@@ -139,10 +144,19 @@ class App extends Component {
         {/* <Route exact path="/signup" render={()=><Signup onClickF={this.asignarUsuarioState}/>}/> */}
         {/* <PEstados/> */}
       
-        <Route exact path="/instructor" render={()=><Home onClickF={this.asignarUsuarioState}/>}/>
+        {/* <Route exact path="/instructor" render={()=><Home onClickF={this.asignarUsuarioState}/>}/> */}
         <Route exact path="/" render={()=><Body onClickF={this.asignarUsuarioState}/>}/>
-        <Route exact path="/createcourse" render={()=><CreateCourse onClickF={this.asignarUsuarioState}/>} />
-        <Route exact path="/subirposter" render={()=><SubirPoster onClickF={this.asignarUsuarioState}/>} />
+        {
+          this.state.role==='teacher' || this.state.role==='admin'?(
+            <div>
+              <Route exact path="/createcourse" render={()=><CreateCourse onClickF={this.asignarUsuarioState}/>} />
+              <Route exact path="/subirposter" render={()=><SubirPoster onClickF={this.asignarUsuarioState}/>} />
+              <Route exact path="/instructor" render={()=><Home onClickF={this.asignarUsuarioState}/>}/>
+            </div>
+
+          ):null
+        }
+        {/* <Route exact path="/createcourse" render={()=><CreateCourse onClickF={this.asignarUsuarioState}/>} /> */}
 
         <Route exact path="/playerCourse/:id" component={TomarCursoPLayer} />
         <Route  exact path="/playerCourse/idvideo/:id" component={PlayVideo} />
@@ -161,10 +175,18 @@ class App extends Component {
 
         {/* admin */}
 
-        <Route path="/admin/" component={ MainAdmin } />
-        <Route path="/admin/show/students" component={ ShowStundents } />
-        <Route path="/admin/show/all/teachers" component={ ShowTeacher } />
-        <Route path="/admin/show/all/assistants" component={ ShowAssistants } />
+        {
+          this.state.role==="admin"?(<div>
+            <Route path="/admin/" component={ MainAdmin } />
+            <Route path="/admin/show/students" component={ ShowStundents } />
+            <Route path="/admin/show/all/teachers" component={ ShowTeacher } />
+            <Route path="/admin/show/all/assistants" component={ ShowAssistants } />
+            <Route path="/admin/do/scraping" component={ScrapingStudent} />
+            <Route path="/admin/backup" component={Backup} />
+          </div>
+          ):null
+        }
+       
 
         <Route path='/my/account/user' component={ EditDataUser} />
 

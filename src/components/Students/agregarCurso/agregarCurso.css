@@ -5,3 +5,12 @@
     position: fixed !important;
     /* background: red; */
 }
+
+.btn-agregar-curso{
+    /* background: rebeccapurple !important; */
+    width: 100% !important;
+    /* padding-left: 43px !important;
+    padding-right: 43px !important; */
+    border-radius: 7vh !important;
+
+}

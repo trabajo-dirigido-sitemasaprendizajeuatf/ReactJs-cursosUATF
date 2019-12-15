@@ -167,7 +167,8 @@ constructor(props){
           {/* <span className="content-voto pt-2 mt-3">{this.state.voto}</span>  */}
           <br/>
           <br/>
-       <a className="font-weight-lighter" onClick={this.updateReating}>{this.state.voto>0?'Editar calificacion':'Calificar el curso'} </a>
+          <i class="fas fa-edit text-primary"></i>
+       <a className="font-weight-lighter text-primary" onClick={this.updateReating}>{this.state.voto>0?'Editar calificacion':'Calificar el curso'} </a>
       </div>
       
     );

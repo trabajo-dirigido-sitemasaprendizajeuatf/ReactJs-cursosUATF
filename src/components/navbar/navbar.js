@@ -201,12 +201,13 @@ class Navbar extends Component{
                         }
 
                         
+                        {/* icono de mesajes y notificaion de mensajes */}
 
-                        <li class="nav-item">
+                        {/* <li class="nav-item">
                             <a class="nav-link waves-effect waves-light">1
                             <i class="fas fa-envelope"></i>
                             </a>
-                        </li>
+                        </li> */}
 
                         {
                             this.props.token ? 

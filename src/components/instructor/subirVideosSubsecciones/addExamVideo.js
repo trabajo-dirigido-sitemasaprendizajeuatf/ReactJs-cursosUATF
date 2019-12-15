@@ -267,12 +267,12 @@ export default class AddExamVideo extends Component{
                     })
                 },7000)
             return(
-                <div class=" text-success p-0" role="alert ">
+                <div class="alert alert-info" role="alert ">
                     {/* <button  class="close" data-dismiss="alert">
                         <span aria-hidden="true">×</span>
                     </button> */}
-                   Pregunta agregada
-
+                    <i class="fas fa-check pr-1"></i>
+                   Pregunta agregada al examen
                 </div>
             )
         }
@@ -287,10 +287,11 @@ export default class AddExamVideo extends Component{
                     })
                 },7000)
             return(
-                <div class=" text-success p-0" role="alert ">
+                <div class="alert alert-info" role="alert ">
                     {/* <button  class="close" data-dismiss="alert">
                         <span aria-hidden="true">×</span>
                     </button> */}
+                    <i class="fas fa-check-double pr-1"></i>
                    El examen se agregado al video
 
                 </div>
@@ -405,15 +406,20 @@ export default class AddExamVideo extends Component{
 
                                     <p className="text-left"><i class="fa fa-pencil-alt prefix"/> Respuestas posibles:{this.POSSIBLE.length}</p>
                                     <div ref={this.myRefPosibleResponse} class="md-form form-sm"> {
-                                        this.state.newFormPossibleAnswer.map(data=>{
-                                            return(data)
+                                        this.state.newFormPossibleAnswer.map((data,i)=>{
+                                            return(
+                                                data
+                                                
+                                                )
                                         })
                                     }</div>
 
                                     <p className="text-left"><i class="fa fa-pencil-alt prefix"></i> Respuestas correctas:{this.ANSWER.length}</p>
                                     <div ref={this.myRefAnswer} class="md-form form-sm">{
-                                        this.state.newFormAnswer.map(data=>{
-                                            return(data)
+                                        this.state.newFormAnswer.map((data,i)=>{
+                                            return(data
+                                            
+                                                )
                                         })
                                     }</div>
                                 </div>
@@ -430,13 +436,15 @@ export default class AddExamVideo extends Component{
                                     
                                 {this.renderAlrt2()}
                                     
-                                <div class="text-center mt-4 mb-2">
-                                    <button  onClick={this.agregarPregunta.bind(this)} class="btn btn-primary">Agragar al Examen
-                                        <i class="fa fa-send ml-2"></i>
+                                <div class="text-center mt-4 mb-2 pb-5">
+                                    <button  onClick={this.agregarPregunta.bind(this)} class=" btn-agregar-examne btn btn-amber">
+                                    <i class="far fa-plus-square pr-1"></i>  
+                                        Agragar al Examen
                                     </button>
 
-                                    <button  onClick={this.sendData.bind(this)} class="btn btn-primary">Subir Examen al video 
-                                        <i class="fa fa-send ml-2"></i>
+                                    <button  onClick={this.sendData.bind(this)} class=" btn-enviar-examen btn btn-amber">
+                                    <i class="far fa-paper-plane pr-1"></i> 
+                                        Subir Examen al video 
                                     </button>
                                 </div>
 

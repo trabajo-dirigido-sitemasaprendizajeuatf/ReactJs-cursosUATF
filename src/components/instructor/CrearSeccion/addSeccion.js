@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Link, Redirect, withRouter } from "reac
 
 import { format, render, cancel, register } from 'timeago.js';
 
+import '../../utils/timeagoEs'
+import './addSeccion.css'
+
 
 
 export default class AddSeccion extends Component{
@@ -66,7 +69,7 @@ export default class AddSeccion extends Component{
                   <h5>Sigla: {this.state.obcurso.sigla}</h5>
                   <h5>{this.props.idCourse}</h5>
                   <h6>{this.state.obcurso.descripcion}</h6>
-                  <h6 class="yellow-text"> Creado hace : {format(this.state.obcurso.createDateCourse)}</h6>
+                  <h6 class="yellow-text"> Creado : {format(this.state.obcurso.createDateCourse,'es_ES')}</h6>
                  <br/>
                     
                      </div>
@@ -74,8 +77,8 @@ export default class AddSeccion extends Component{
             </div>
 
               <div className="container-acordion container-crear-seccion">
-                <div class="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx194" role="tablist" aria-multiselectable="true">
-                <h2 class="text-left text-uppercase  py-4 px-3">Contenido del curso:</h2>
+                <div class="accordion md-accordion accordion-3 z-depth-1-half title-content" id="accordionEx194" role="tablist" aria-multiselectable="true">
+                <h2 class="text-left text-uppercase  py-4 px-3 title-contenido">Contenido del curso:</h2>
 
                 <hr class="mb-0"></hr>
                 <div class="card">
@@ -117,7 +120,7 @@ export default class AddSeccion extends Component{
                     <div class="card-header" role="tab" id="heading6">
                     
                     <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm content-seccion">
                       <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href={`#${valor}`} aria-expanded="false" aria-controls="collapse6">
                         
                               <h3 class="mb-0 text-dark">
@@ -139,9 +142,11 @@ export default class AddSeccion extends Component{
                     </div>
 
                     <div id={valor} class="collapse" role="tabpanel" aria-labelledby="heading6" data-parent="#accordionEx194">
-                      <div class="card-body pt-0">
+                      <div class="card-body pt-0 temas-content">
                         <p> { data.video.map(title=>{
-                              return <p>{title.title}</p>
+                          return <div>
+                            <i class="fas fa-play fa-1x icon-player"></i> {title.title}
+                          </div>
                         }) }</p>
                       </div>
 
@@ -154,7 +159,7 @@ export default class AddSeccion extends Component{
                 </div>
                 </div>
                 <Link to={`/seccions/addseccion/${this.state.courseSeccion.length+1}/${this.state.iddelcurso}`} >
-                    <div class="btn-group-vertical w-100" role="group" aria-label="Vertical button group">
+                    <div class="btn-group-vertical w-100 button-add-seccion" role="group" aria-label="Vertical button group">
                         <button type="button" value="" onClick={this.nextComponent} class="btn btn-indigo ml-0"><i class="fas fa-layer-group p-1"></i> Añadir Nueva Seccion</button>
                     </div>
                     </Link>

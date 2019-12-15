@@ -4,6 +4,8 @@ import './home.css'
 import { Link } from 'react-router-dom'
 import SideBarTeacher from '../SideBarTeacher/barraLateral'
 
+import { format, render, cancel, register } from 'timeago.js';
+
 import CrearSeccion from '../CrearSeccion/CrearSeccion'
 
 
@@ -82,7 +84,7 @@ class Home extends Component{
                         
                         <h6 class="card-title">{data.namecourse}</h6>
                         <p class="card-text">{data.sigla}</p>
-                        <p class="card-text">{data.createDateCourse}</p>
+                        <p class="card-text">Creado {format(data.createDateCourse,'es_ES')}</p>
                         <Link to= {`/seccions/${data._id}`}>
                         <button type="button" class="btn btn-blue btn-md">Añadir Seccion</button>
                         </Link>

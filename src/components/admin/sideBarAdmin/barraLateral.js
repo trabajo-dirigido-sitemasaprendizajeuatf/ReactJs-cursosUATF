@@ -82,17 +82,28 @@ class BarraLateral extends Component{
                     
                 </li>
 
-               
-
-                <li class="has-subnav">
-                    <a href="#">
-                       <i class="fa fa-folder-open fa-2x"></i>
+                <li className="has-subnav">
+                    <Link to='/admin/do/scraping'>
+                   <a href="#" className="link-sideBar-admin" >
+                       <i class="fa fa-table fa-2x"></i>
                         <span class="nav-text">
-                            Pages
+                            Importar DB estudinates
                         </span>
                     </a>
-                   
+                    </Link>
                 </li>
+
+                <li class="has-subnav">
+                <Link to='/admin/backup'>
+                    <a href="#" className="link-sideBar-admin">
+                       <i class="fa fa-hdd fa-2x"></i>
+                        <span class="nav-text">
+                            Backup
+                        </span>
+                    </a>
+                    </Link>
+                </li>
+                
                 <li>
                     <a href="#">
                     <i class="icon-sidebar-admin fas fa-chart-bar"></i>
@@ -109,14 +120,7 @@ class BarraLateral extends Component{
                         </span>
                     </a>
                 </li>
-                <li>
-                   <a href="#">
-                       <i class="fa fa-table fa-2x"></i>
-                        <span class="nav-text">
-                            Tables
-                        </span>
-                    </a>
-                </li>
+              
                 <li>
                    <a href="#">
                         <i class="fa fa-map-marker fa-2x"></i>

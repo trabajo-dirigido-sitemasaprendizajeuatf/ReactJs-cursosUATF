@@ -125,7 +125,13 @@ class Signup extends Component{
         // }
 
         if(!this.state.erroremail){
+
             if(this.state.responoseLogin){
+                setTimeout(()=>{
+                    this.setState({
+                        responoseLogin:''
+                    })
+                },4000)
                 return(
                     <div className="alert alert-success" role="alert">
                         {this.state.responoseLogin}
@@ -147,6 +153,11 @@ class Signup extends Component{
     renderCampos(){
 
         if(this.state.compliteData){
+            setTimeout(()=>{
+                this.setState({
+                    compliteData:''
+                })
+            },4000)
             return(
                 <div className="alert alert-danger" role="alert">
                      {this.state.compliteData}

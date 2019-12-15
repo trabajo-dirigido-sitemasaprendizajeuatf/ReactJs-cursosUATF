@@ -42,7 +42,8 @@ class CreateCourso extends Component{
                 method:'POST',
                 body:JSON.stringify(newCourse),
                 headers:{
-                    'Content-type':'application/json'
+                    'Content-type':'application/json',
+                    autorization:`Bearer ${localStorage.getItem('token')}`
                 }
             }
 

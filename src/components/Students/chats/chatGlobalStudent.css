@@ -1,10 +1,6 @@
-
-
-/* imag avatar */
-
-.user-avatar {
-    width: 35px;
-    height: 35px;
+.user-avatar-chat {
+    width: 38px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +8,8 @@
     float: left;
     /* width: 2px; */
     color: #ffffff;
-    margin-top: -8px;
+    margin-top: 11px;
+    /* margin-left: -12px !important; */
     /* margin-right: 1em; */
     position: relative;
     
@@ -26,21 +23,15 @@
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
-/* footer */
 
-.user-initial{
-    font-size: 20px;
-}
-
-#navbar-global{
-    /* position: absolute !important; */
-    z-index: 1050;
-    width: 100%;
-    min-height: 25px;
-    position: fixed;
+.user-initial-chat{
+    margin-left: -20px !important;
+    margin-top: 1px;
+    font-size: 15px;
 }
 
 
-.navbar{
-    padding-right:16px !important;
+/* contenre pregunta realizada  */
+.postinfobot{
+        height: 1px;
 }

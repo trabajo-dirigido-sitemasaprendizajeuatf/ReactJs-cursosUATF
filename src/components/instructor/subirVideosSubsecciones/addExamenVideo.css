@@ -94,3 +94,15 @@
   } 
 
 /* end range input */
+
+
+/* buttons */
+
+.btn-agregar-examne{
+  border-radius: 7vh !important;
+}
+
+
+.btn-enviar-examen{
+  border-radius: 7vh !important;
+}

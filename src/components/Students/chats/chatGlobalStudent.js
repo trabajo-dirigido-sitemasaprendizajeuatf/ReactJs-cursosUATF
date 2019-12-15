@@ -7,6 +7,8 @@ import './css/custom.css'
 import URL from '../../../config'
 import UTILS from '../PlayVideStudent/utils'
 
+import faker from 'faker'
+import './chatGlobalStudent.css'
 
 export default class ChatGlobalStudent extends Component{
 
@@ -161,6 +163,22 @@ export default class ChatGlobalStudent extends Component{
             }
         }
 
+        initialName(e){
+            if(e!=null){
+                var name=e;
+            
+                var nameIncial=name.substr(0,1)
+                var nameInicialCapitalice=nameIncial.toUpperCase();
+        
+                return(
+                    <li>{nameInicialCapitalice}</li>
+                )
+            }
+            
+        }
+
+
+
         render(){
             
             console.log(this.state)
@@ -177,9 +195,13 @@ export default class ChatGlobalStudent extends Component{
                                                 <div class="wrap-ut pull-left">
                                                     <div class="userinfo pull-left">
                                                         <div class="avatar">
-                                                            <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(17)-mini.jpg" class="rounded-circle z-depth-1-half" />
+                                                            {/* <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(17)-mini.jpg" class="rounded-circle z-depth-1-half" />
                                                         
-                                                            <div class="status red">&nbsp;</div>
+                                                            <div class="status red">&nbsp;</div> */}
+                                                            
+                                                            <div className="user-avatar-chat" style={{backgroundColor: `${faker.internet.color()}`}}>
+                                                            <span className="user-initial-chat">{this.initialName(d.name)} </span>
+                                                        </div>
                                                         </div>
                 
                                                         <div class="icons">
@@ -195,28 +217,28 @@ export default class ChatGlobalStudent extends Component{
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="postinfo pull-left">
-                                                    <div class="comments">
+                                                    {/* <div class="comments">
                                                         <div class="commentbg">
                                                             456
                                                             <div class="mark"></div>
                                                         </div>
                 
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                                 <div class="clearfix"></div>
 
 
                                                 <div class="postinfobot">
-                                                    <div class="likeblock pull-left">
+                                                    {/* <div class="likeblock pull-left">
                                                         <a href="#" class="up"><i class="far fa-thumbs-up"></i>25</a>
                                                         <a href="#" class="down"><i class="far fa-thumbs-down"></i>3</a>
-                                                    </div>
+                                                    </div> */}
 
-                                                    <div class="prev pull-left">                                        
+                                                    {/* <div class="prev pull-left">                                        
                                                         <a href="#"><i class="fa fa-reply"></i></a>
-                                                    </div>
+                                                    </div> */}
                                                                                                                 
-                                                    <div class="posted pull-left"><i class="fa fa-clock-o"></i>{d.date} --- Posted on : 20 Nov @ 9:30am</div>
+                                                    {/* <div class="posted pull-left"><i class="fa fa-clock-o"></i> Pregunta  en {d.date}</div> */}
 
                                                     {/* <div class="next pull-right">                                        
                                                         <a href="#"><i class="fa fa-share"></i></a>
@@ -321,10 +343,14 @@ export default class ChatGlobalStudent extends Component{
                                             <div class="post border border-light">
                                                 <div class="wrap-ut pull-left">
                                                     <div class="userinfo pull-left">
-                                                        <div class="avatar">
+                                                        {/* <div class="avatar">
                                                             <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(17)-mini.jpg" class="rounded-circle z-depth-1-half" />
                                                         
                                                             <div class="status red">&nbsp;</div>
+                                                        </div> */}
+
+                                                        <div className="user-avatar-chat" style={{backgroundColor: `${faker.internet.color()}`}}>
+                                                            <span className="user-initial-chat">{this.initialName(d.name)} </span>
                                                         </div>
                 
                                                         <div class="icons">
@@ -345,11 +371,11 @@ export default class ChatGlobalStudent extends Component{
                                                 </div>
                                                 <div class="postinfo pull-left">
                                                     <div class="comments">
-                                                        <div class="commentbg">
-                                                            {/* cantidad de comentarios */}
+                                                        {/* <div class="commentbg">
+                                                            cantidad de comentarios
                                                             {d.likes}
                                                             <div class="mark"></div>
-                                                        </div>
+                                                        </div> */}
                 
                                                     </div>
                                                 </div>
@@ -357,16 +383,16 @@ export default class ChatGlobalStudent extends Component{
 
                                                     {/* ---en esta parte ira los likes y dislikes --- */}
                                                 <div class="postinfobot">
-                                                    <div class="likeblock pull-left">
-                                                        <a href="#" class="up"><i class="far fa-thumbs-up"></i>{d.likes}</a>
-                                                        <a href="#" class="down"><i class="far fa-thumbs-down"></i>{d.disLike}</a>
-                                                    </div>
+                                                        {/* <div class="likeblock pull-left">
+                                                            <a href="#" class="up"><i class="far fa-thumbs-up"></i>{d.likes}</a>
+                                                            <a href="#" class="down"><i class="far fa-thumbs-down"></i>{d.disLike}</a>
+                                                        </div> */}
 
-                                                    <div class="prev pull-left">                                        
+                                                    {/* <div class="prev pull-left">                                        
                                                         <a href="#"><i class="fa fa-reply"></i></a>
-                                                    </div>
+                                                    </div> */}
 
-                                                    <div class="posted pull-left"><i class="fa fa-clock-o"></i> Ralizada el : {UTILS.convertirFecha(d.date)}</div>
+                                                    {/* <div class="posted pull-left"><i class="fa fa-clock-o"></i> Pregunta realizada el  : {UTILS.convertirFecha(d.date)}</div> */}
 
                                                     {/* <div class="next pull-right">                                        
                                                         <a href="#"><i class="fa fa-share"></i></a>
@@ -440,11 +466,6 @@ export default class ChatGlobalStudent extends Component{
                                     
                                 </div> */}
                                 {/* --post---- */}
-
-
-                           
-
-
 
 
                                 </div>

@@ -113,21 +113,21 @@ export default class HomeVidel extends Component{
                 <div className="content-text">
                     <h6>
                     <h5>recomendaciones:</h5><br/>
-                    <h6>1. Al momento de agragar el viedo, recuerder que el titulo ira como subtitulo de la seccion del curso.</h6> 
-                    <h6>2. Si usted quiere agregar un examen al video(curso), la cantidad de preguntas que deben realizarse deben ser mayores a 3 preguntas.</h6>
-                    <h6>- Por cada pregunta  que se añada  al examen se debran añadir mas 2 posibles respuesta(escritas) y se debe colocar las respuesta conrrectas con un numero (como se muestra en el ejemplo) </h6>
-                    <h6>- Despues de realizar todas la preguntas (cerrada) debe precionar el boton "subir el examen al video", para que el examen se agregue al video, el cual se mostra una vez que el estudinate tome el curso.</h6>
+                    <h6>1. Al momento de agregar el video, recuerde que el título del vídeo irá como subtítulo de la sección del curso.</h6> 
+                    <h6>2. Si usted quiere agregar un exámen al video(curso), la cantidad de preguntas que deben realizarse deben ser mayores a 2 preguntas.</h6>
+                    <h6>- Por cada pregunta que se añada al examen se deberán añadir 2 o más posibles respuestas y se debe colocar las respuesta correctas con un número (como se muestra en el ejemplo). </h6>
+                    <h6>- Después de realizar todas las preguntas (cerrada) debe presionar el botón "subir el examen al video", para que el examen se agregue al video en el minuto seleccionado, el cual se mostrará una vez que el estudiante vea el video(clase).</h6>
                     </h6>
                    
                 </div>
-                <br/><br/>
+                <br/>
                 <div className="date-context">
                     <h6>Fecha:{this.state.date.getDate() + "/" + (this.state.date.getMonth() +1) + "/" + this.state.date.getFullYear()} </h6>
                 </div>
                 </div> 
-                
                 </div>
 
+                <br/> 
                     <div class="col-8">
                     <h6>¿Desea agregar material de apoyo al video?</h6>
                     <ul class="nav nav-pills mb-3 button-menu-video" id="pills-tab" role="tablist">

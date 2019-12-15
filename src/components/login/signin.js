@@ -103,12 +103,24 @@ class Signin extends Component{
     renderAlert(e){
         // console.log('renderAlert')
         if(this.state.error){
+            setTimeout(()=>{
+                this.setState({
+                    error:''
+                })
+            },4000)
             return(
                 <div className="alert alert-danger" role="allert">
                         { this.state.error }
                 </div>
             )
-        }if(this.state.loginok){
+        }
+        
+        if(this.state.loginok){
+            setTimeout(()=>{
+                this.setState({
+                    loginok:''
+                })
+            },4000)
             return(
                 <div className="alert alert-success" role="allert">
                             { this.state.loginok }
@@ -120,6 +132,11 @@ class Signin extends Component{
     
     renderCampos(){
         if(this.state.campos){
+            setTimeout(()=>{
+                this.setState({
+                    campos:''
+                })
+            },4000)
             return(
                 <div className="alert alert-danger" role="alert">
                     { this.state.campos }
